@@ -1,0 +1,15 @@
+.ejes {
+  /* padding: 20px; */
+  width: 100vw;
+  height: auto;
+}
+
+.planEstatalTxt{
+  margin: 0 20px;
+  text-align: center;
+}
+
+.ejes{
+margin: 0;
+padding: 0;
+}

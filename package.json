@@ -9,13 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@gsap/react": "^2.1.2",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/material": "^7.0.0",
+    "formik": "^2.4.6",
+    "gsap": "^3.12.7",
+    "leaflet": "^1.9.4",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-select": "^5.10.1",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.2.4"
   }
 }
