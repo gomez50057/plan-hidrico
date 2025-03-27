@@ -10,9 +10,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const txtRef = useRef(null);
-  const imgRef = useRef(null);
+  const maskRef = useRef(null);
+  const heroRef = useRef(null);
 
   useEffect(() => {
+    if (maskRef.current && heroRef.current) {
+      const maskEl = maskRef.current;
+
+      // Estado inicial: agujero pequeño (100px)
+      gsap.set(maskEl, {
+        "--mask-size": "100px"
+      });
+
+      // Durante los primeros 1000px de scroll la sección queda pinned y el agujero se expande hasta 100vw
+      gsap.to(maskEl, {
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "top+=1000 top", // Duración de la animación de la máscara
+          scrub: true,
+          pin: true,
+          markers: false,
+        },
+        "--mask-size": "100vw",
+        ease: "none"
+      });
+    }
+
     if (txtRef.current) {
       // Obtenemos la sección actual (header) y la siguiente sección
       const headerSection = document.getElementById("header");
@@ -41,49 +65,39 @@ export default function Hero() {
         }
         distance = nextSectionCenter - headerTxtDocBottom;
       }
-      
+
       // Estado inicial: sin transformación
       gsap.set(txtRef.current, { y: 0, opacity: 1, filter: 'none' });
-      
-      // Animación con ScrollTrigger: se desplaza el elemento hasta el centro de la siguiente sección,
-      // aplicando además el efecto "marca de agua"
+
+      // Animación para el texto que inicia al terminar la animación de la máscara
       gsap.to(txtRef.current, {
         scrollTrigger: {
           trigger: headerSection,
-          start: "top top",
+          start: "top+=1000 top", // Inicia cuando finaliza la animación de la máscara (1000px de scroll)
           end: "bottom top",
           scrub: true,
           markers: false,
         },
         y: distance,
+        scale: 1,
         opacity: 0.5,
         filter: "grayscale(100%) brightness(200%)",
         ease: "none"
-      });
-    }
-
-    if (imgRef.current) {
-      // Animación simple para la imagen secundaria: fadeIn
-      gsap.set(imgRef.current, { opacity: 0 });
-      gsap.to(imgRef.current, {
-        delay: 0.1,
-        opacity: 1,
-        duration: 1,
-        ease: "power1.out"
       });
     }
   }, []);
 
   return (
     <section id="header">
-      <div className={styles.contentHeader}>
+      <div className={styles.contentHeader} ref={heroRef}>
         <div className={`${styles.headerTxt} ${styles.fadeInTarget}`} ref={txtRef}>
           <img src={`${imgBasePath}headertxt.png`} alt="img_representativa" />
         </div>
-        <div className={`${styles.headerImg} ${styles.fadeInTarget}`} ref={imgRef}>
+        <div className={`${styles.headerImg}`}>
           <img src={`${imgBasePath}headerimg.png`} alt="img_representativa" className={styles.floatingImg} />
         </div>
       </div>
+      <div className={styles.maskOverlay} ref={maskRef} />
     </section>
   );
 }

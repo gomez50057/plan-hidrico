@@ -1,12 +1,11 @@
 import styles from "../../styles/About.module.css";
-// import AnimatePath from "./AnimatePath";
 
 export default function About() {
   return (
     <section>
       <div className={styles.aboutContainer}>
         <div className={styles.logoAcuerdo}>
-
+          hola
         </div>
         <div className={styles.aboutTxt}>
           <h2>Un <span>Plan</span> para el <span className="spanDoarado">Futuro de Hidalgo</span></h2>
@@ -22,11 +21,6 @@ export default function About() {
             áreas del gobierno y la sociedad.
           </p>
         </div>
-      </div>
-      <div>
-        {/* <div className={styles.tren}>
-          <AnimatePath />
-        </div> */}
       </div>
     </section>
   );
