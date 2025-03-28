@@ -4,14 +4,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: #F1F1F1;
   pointer-events: none;
   z-index: 10;
   /* La máscara se define con un gradiente radial:
      - El círculo transparente se basa en la variable --mask-size
      - Fuera del círculo se aplica opacidad total (negro en la máscara) */
-  mask-image: radial-gradient(circle var(--mask-size, 100px) at center, transparent 0%, black 100%);
-  -webkit-mask-image: radial-gradient(circle var(--mask-size, 100px) at center, transparent 0%, black 100%);
+  mask-image: radial-gradient(circle var(--mask-size, 400px) at center, transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(circle var(--mask-size, 400px) at center, transparent 0%, black 100%);
 }
 
 .contentHeader {

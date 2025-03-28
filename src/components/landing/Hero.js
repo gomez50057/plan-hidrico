@@ -11,69 +11,65 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const txtRef = useRef(null);
   const maskRef = useRef(null);
-  const heroRef = useRef(null);
 
   useEffect(() => {
-    if (maskRef.current && heroRef.current) {
-      const maskEl = maskRef.current;
+    // Pinnea la sección completa (elemento con id "header") durante 1000px de scroll
+    ScrollTrigger.create({
+      trigger: "#header",
+      start: "top top",
+      end: "top+=1000 top",
+      pin: true,
+      markers: false,
+    });
 
-      // Estado inicial: agujero pequeño (100px)
-      gsap.set(maskEl, {
-        "--mask-size": "100px"
+    // Animación de la máscara: expandir el agujero de 100px a 100vw sin que se mueva
+    if (maskRef.current) {
+      gsap.set(maskRef.current, {
+        "--mask-size": "400px"
       });
 
-      // Durante los primeros 1000px de scroll la sección queda pinned y el agujero se expande hasta 100vw
-      gsap.to(maskEl, {
+      gsap.to(maskRef.current, {
         scrollTrigger: {
-          trigger: heroRef.current,
+          trigger: "#header",
           start: "top top",
-          end: "top+=1000 top", // Duración de la animación de la máscara
+          end: "top+=1000 top",
           scrub: true,
-          pin: true,
           markers: false,
         },
-        "--mask-size": "100vw",
+        "--mask-size": "200vw",
         ease: "none"
       });
     }
 
     if (txtRef.current) {
-      // Obtenemos la sección actual (header) y la siguiente sección
+      // Cálculo de la distancia para la animación del texto
       const headerSection = document.getElementById("header");
       const nextSection = headerSection?.nextElementSibling;
-
-      // Obtenemos el rectángulo del elemento actual
       const headerTxtEl = txtRef.current;
       const headerTxtRect = headerTxtEl.getBoundingClientRect();
-      // Definimos headerTxtDocBottom como la posición absoluta inferior del elemento
       const headerTxtDocBottom = window.scrollY + headerTxtRect.bottom;
 
       let distance = 0;
       if (nextSection) {
-        // Obtenemos el rectángulo de la siguiente sección
         const nextSectionRect = nextSection.getBoundingClientRect();
-        // Buscamos el contenedor interno "logoAcuerdo" dentro de la siguiente sección.
-        // Usamos un selector que verifique que la clase contenga "logoAcuerdo".
         const innerContainer = nextSection.querySelector('[class*="logoAcuerdo"]');
         let nextSectionCenter = 0;
         if (innerContainer) {
           const innerRect = innerContainer.getBoundingClientRect();
           nextSectionCenter = window.scrollY + innerRect.top + innerRect.height;
         } else {
-          // Si no se encuentra, se usa el centro de la sección completa
           nextSectionCenter = window.scrollY + nextSectionRect.top + nextSectionRect.height / 2;
         }
         distance = nextSectionCenter - headerTxtDocBottom;
       }
 
-      // Estado inicial: sin transformación
       gsap.set(txtRef.current, { y: 0, opacity: 1, filter: 'none' });
 
-      // Animación para el texto que inicia al terminar la animación de la máscara
+      // Animación del texto que se inicia cuando finaliza la animación de la máscara (después de 1000px)
       gsap.to(txtRef.current, {
         scrollTrigger: {
-          trigger: headerSection,
-          start: "top+=1000 top", // Inicia cuando finaliza la animación de la máscara (1000px de scroll)
+          trigger: "#header",
+          start: "top+=1000 top",
           end: "bottom top",
           scrub: true,
           markers: false,
@@ -89,7 +85,7 @@ export default function Hero() {
 
   return (
     <section id="header">
-      <div className={styles.contentHeader} ref={heroRef}>
+      <div className={styles.contentHeader}>
         <div className={`${styles.headerTxt} ${styles.fadeInTarget}`} ref={txtRef}>
           <img src={`${imgBasePath}headertxt.png`} alt="img_representativa" />
         </div>
