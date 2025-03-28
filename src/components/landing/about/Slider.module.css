@@ -126,18 +126,9 @@
   padding: 2rem 0;
 }
 
-
-
-
-
-
-
-
 .mirrored {
   transform: scaleX(-1);
 }
-
-
 
 .title {
   font-size: 1.8rem;
