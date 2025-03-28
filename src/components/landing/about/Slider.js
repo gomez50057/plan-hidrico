@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ejesPlanEstatal } from '../../../utils/planEstal';
 import styles from './Slider.module.css';
-const imgBasePath = "/img/Ejes/Generales/";
+const imgBasePath = "/img/";
 const statsNumber = [
   { value: '500+', label: 'Total de algo' },
   { value: '500+', label: 'Total de algo más' },
@@ -61,7 +61,7 @@ const SingleSlider = ({ items }) => {
             <p>Construido Contigo</p>
           </div>
 
-          <div className={styles.element01}>
+          <div className={styles.element}>
             <div className={styles.imgBackContainer}>
               <div className={styles.backgroundShape}></div>
               <div className={styles.imgContainer}>
@@ -83,6 +83,40 @@ const SingleSlider = ({ items }) => {
             </div>
           </div>
 
+          <div className={styles.element}>
+            <div className={styles.fileShape}>
+              <h2 className={styles.title}>Generales</h2>
+
+              <div className={styles.cardElement02}>
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                </div>
+                <div className={styles.separator}></div>
+
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>texto</span>
+                </div>
+                <div className={styles.separator}></div>
+
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>texto</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.imgContainer}>
+              <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+            </div>
+            <div className={`${styles.fileShape} ${styles.mirrored}`}>
+
+
+              aaaaaaaa
+            </div>
+
+          </div>
 
 
           {/* {items.map((item, index) => (
