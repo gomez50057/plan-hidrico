@@ -21,6 +21,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-select": "^5.10.1",
+    "react-water-wave": "^2.0.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {

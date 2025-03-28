@@ -1,9 +1,12 @@
 .sliderContainer {
+  display: flex;
+  align-items: center;
   max-width: 100vw;
   width: auto;
-  height: auto;
+  height: 100vh;
   overflow: hidden;
   position: relative;
+  background-color: yellowgreen;
 }
 
 .row {
@@ -15,9 +18,110 @@
 
 .wrapper {
   display: flex;
-  max-height: 30vh;
+  background-color: aqua;
   gap: 50px;
 }
+
+.element01 {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  max-width: 40%;
+  padding: 0 10px;
+}
+
+.text h2 {
+  color: var(--grisClr);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.text p {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.imgBackContainer {
+  position: relative;
+  width: auto;
+  min-width: 60%;
+  height: 100%;
+  z-index: 1;
+}
+
+.backgroundShape {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 80%;
+  height: 100%;
+  background-color: #861a3e;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+
+.imgContainer {
+  position: relative;
+  right: 0;
+  width: auto;
+  min-width: 60%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.imgContainer img {
+  height: 95%;
+  width: auto;
+}
+
+.line {
+  width: 100%;
+  border: #861a3e solid 1px;
+  border-radius: 1px;
+}
+
+.containerNumber {
+  display: flex;
+  gap: 3rem;
+  padding: 15px 2rem;
+}
+
+.card {
+  display: inline-block;
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #666666;
+  margin: 0;
+}
+
+.label {
+  font-size: 1.5rem;
+  color: #999999;
+  margin: 0;
+}
+
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
 
 .slide {
   position: relative;
@@ -61,15 +165,6 @@
   border: 5px solid rgba(105, 27, 50, 0.6);
 }
 
-.text {
-  max-width: 40%;
-}
-
-.text h2 {
-  color: var(--grisClr);
-  font-weight: 600;
-  font-size: 1.5rem;
-}
 
 .titule h3,
 .titule p {
@@ -85,11 +180,7 @@
   color: var(--doradoOsc);
 }
 
-.text p {
-  margin-top: 10px;
-  font-weight: 300;
-  font-size: 0.9rem;
-}
+
 
 /* .imgContainer {
   position: absolute;
@@ -106,24 +197,7 @@
 } */
 
 
-.imgContainer {
-  position: relative;
-  right: 0;
-  width: auto;
-  min-width: 60%;
-  height: 100%;
-  border-radius: 0 80px 0 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.imgContainer img {
-  height: 95%;
-  width: auto;
-  /* object-fit: contain; */
-}
 
 
 /* Tamaño para 'lg' */
