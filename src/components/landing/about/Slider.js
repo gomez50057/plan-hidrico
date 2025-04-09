@@ -84,38 +84,47 @@ const SingleSlider = ({ items }) => {
           </div>
 
           <div className={styles.element}>
-            <div className={styles.fileShape}>
+            <div className={styles.fileShapeL}>
               <h2 className={styles.title}>Generales</h2>
-
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
                   <span className={styles.textElement02}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
                 </div>
                 <div className={styles.separator}></div>
-
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
                   <span className={styles.textElement02}>texto</span>
                 </div>
                 <div className={styles.separator}></div>
-
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
                   <span className={styles.textElement02}>texto</span>
                 </div>
               </div>
             </div>
-
             <div className={styles.imgContainer}>
               <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
-            <div className={`${styles.fileShape} ${styles.mirrored}`}>
-
-
-              aaaaaaaa
+            <div className={styles.fileShapeR}>
+              <h2 className={styles.title}>Específicos</h2>
+              <div className={styles.cardElement02}>
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                </div>
+                <div className={styles.separator}></div>
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>texto</span>
+                </div>
+                <div className={styles.separator}></div>
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>texto</span>
+                </div>
+              </div>
             </div>
-
           </div>
 
 

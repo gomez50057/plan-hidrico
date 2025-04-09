@@ -116,15 +116,24 @@
 /* Elemento 02 */
 /*  */
 
-.fileShape {
+.fileShapeL,
+.fileShapeR {
   height: 100%;
-  min-width: 356px ;
-  background-image: url('/img/file-mask.svg');
+  min-width: 500px;
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: left top;
   padding: 2rem 0;
 }
+
+.fileShapeL {
+  background-image: url('/img/file-mask-izquierda.svg');
+}
+
+.fileShapeR {
+  background-image: url('/img/file-mask-derecha.svg');
+}
+
 
 .mirrored {
   transform: scaleX(-1);
@@ -139,7 +148,7 @@
 }
 
 .cardElement02 {
-  width: calc(100% - 3rem);
+  width: calc(100% - 6rem);
   height: auto;
   background-color: #b5486b;
   border-radius: 20px;
