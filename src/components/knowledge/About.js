@@ -1,11 +1,12 @@
 import styles from "../../styles/knowledge/About.module.css";
+const imgBasePath = "/img/knowledge/";
 
 export default function About() {
   return (
     <section>
       <div className={styles.aboutContainer}>
-        <div className={styles.logoAcuerdo}>
-          hola
+        <div className={styles.aboutImg}>
+          <img src={`${imgBasePath}headerimg.png`} alt="imagen representativa de que es el plan hídrico metropolitano" className={styles.floatingImg} />
         </div>
         <div className={styles.aboutTxt}>
           <h2><span className="spanDoarado">Ecos</span> del <span>Territorio Hídrico</span></h2>
@@ -16,8 +17,12 @@ export default function About() {
         </div>
 
         <div className={styles.rectangulo}>
-            <p>Plan Hídrico Metropolitano de Hidalgo</p>
+          <div className={styles.scrollContainer}>
+            <p> Plan Hídrico Metropolitano de Hidalgo ⚪ Plan Hídrico Metropolitano de Hidalgo ⚪ Plan Hídrico Metropolitano de Hidalgo</p>
+            <p>⚪ Plan Hídrico Metropolitano de Hidalgo ⚪ Plan Hídrico Metropolitano de Hidalgo ⚪ Plan Hídrico Metropolitano de Hidalgo </p>
           </div>
+        </div>
+
       </div>
     </section>
   );

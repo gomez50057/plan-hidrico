@@ -10,30 +10,61 @@
 .aboutTxt {
   width: 60vw;
   height: auto;
-  padding: 8vh 2.5vw;
+  padding: 15vh 2.5vw;
   border: 3px solid var(--vinoOsc);
-  border-radius: 50px 0 0 0;
+  border-radius: 90px 0 0 0;
 }
 
-.logoAcuerdo{
- background-color: aqua;
- width: 40vw;
- height: auto;
-
+.rectangulo {
+  width: 60px;
+  height: 100vh;
+  margin-left: -20px;
+  background-color: var(--vinoOsc);
+  overflow: hidden;
+  position: relative;
 }
 
-.rectangulo{
- width: 60px;
- height: 100vh;
- background-color: var(--vinoOsc);
+.scrollContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scrollVerticalLoop 15s linear infinite;
 }
 
-/* 
-.aboutTxt {
-  width: 60vw;
+.scrollContainer p {
+  color: var(--blanco);
+  writing-mode: vertical-lr;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes scrollVerticalLoop {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.aboutImg {
+  width: 40vw;
   height: auto;
-  padding-right: 2.5vw;
-} */
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.floatingImg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; 
+}
 
 .aboutContainer p {
   text-align: justify;
@@ -50,43 +81,28 @@
     gap: 20px;
   }
 
-  .logoAcuerdo,
   .aboutTxt {
     width: 90vw;
   }
 
-  .logoAcuerdo {
-    height: 100px;
-  }
 }
 
 /* Tamaño para 'md' */
 /* @media (min-width: 576px) {
-  .aboutContainer {
-    background-color: lightblue;
-    flex-direction: column;
 
-  }
 } */
 
 /* Tamaño para 'lg' */
 /* @media (min-width: 768px) {
-  .aboutContainer {
-    background-color: lightgreen;
 
-  }
 } */
 
 /* Tamaño para 'xl' */
 /* @media (min-width: 1024px) {
-  .dualContainer {
-    background-color: lightcoral;
-  }
+
 } */
 
 /* Tamaño para 'xxl' */
-@media (min-width: 1400px) {
-  /* .dualContainer {
-    background-color: lightgoldenrodyellow;
-  } */
-}
+/* @media (min-width: 1400px) {
+
+} */
