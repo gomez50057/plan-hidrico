@@ -55,6 +55,19 @@
   height: auto;
 }
 
+.contentHeader .headerKey {
+  position: absolute;
+  top: 10.5%;
+  right: 0;
+  width: 20vw;
+  will-change: transform;
+}
+
+.contentHeader .headerKey img {
+  width: 100%;
+  height: auto;
+}
+
 .floatingImg {
   display: block;
   animation: floatingAnimation 10s infinite alternate ease-in-out, shadowAnimation 8s infinite alternate ease-in-out;

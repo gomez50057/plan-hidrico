@@ -127,8 +127,8 @@ const SingleSlider = ({ items }) => {
             {/* <div className={styles.imgContainerJustificacion}>
               <Image src={`${imgBasePath}eje2.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div> */}
-            <div className={styles.imgContainer}>
-              <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+            <div className={styles.imgContainerElement03}>
+              <Image src={`${imgBasePath}justificacion.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
             <div className={styles.textJustificacion}>
               <h2><span className="spanVino">Justificación</span> </h2>

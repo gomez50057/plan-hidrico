@@ -92,6 +92,9 @@ export default function Hero() {
         <div className={`${styles.headerImg}`}>
           <img src={`${imgBasePath}headerimg.png`} alt="img_representativa" className={styles.floatingImg} />
         </div>
+        <div className={`${styles.headerKey}`}>
+          <img src={`${imgBasePath}llave.png`} alt="img_representativa" className={styles.floatingImg} />
+        </div>
       </div>
       <div className={styles.maskOverlay} ref={maskRef} />
     </section>
