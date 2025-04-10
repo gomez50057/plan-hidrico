@@ -1,0 +1,92 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  padding: 50px 20px;
+  gap: 20px;
+}
+
+.aboutTxt {
+  width: 60vw;
+  height: auto;
+  padding: 8vh 2.5vw;
+  border: 3px solid var(--vinoOsc);
+  border-radius: 50px 0 0 0;
+}
+
+.logoAcuerdo{
+ background-color: aqua;
+ width: 40vw;
+ height: auto;
+
+}
+
+.rectangulo{
+ width: 60px;
+ height: 100vh;
+ background-color: var(--vinoOsc);
+}
+
+/* 
+.aboutTxt {
+  width: 60vw;
+  height: auto;
+  padding-right: 2.5vw;
+} */
+
+.aboutContainer p {
+  text-align: justify;
+}
+
+.aboutContainer h2 {
+  margin: 5px 0;
+}
+
+/* Tamaño para 'lg' */
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logoAcuerdo,
+  .aboutTxt {
+    width: 90vw;
+  }
+
+  .logoAcuerdo {
+    height: 100px;
+  }
+}
+
+/* Tamaño para 'md' */
+/* @media (min-width: 576px) {
+  .aboutContainer {
+    background-color: lightblue;
+    flex-direction: column;
+
+  }
+} */
+
+/* Tamaño para 'lg' */
+/* @media (min-width: 768px) {
+  .aboutContainer {
+    background-color: lightgreen;
+
+  }
+} */
+
+/* Tamaño para 'xl' */
+/* @media (min-width: 1024px) {
+  .dualContainer {
+    background-color: lightcoral;
+  }
+} */
+
+/* Tamaño para 'xxl' */
+@media (min-width: 1400px) {
+  /* .dualContainer {
+    background-color: lightgoldenrodyellow;
+  } */
+}

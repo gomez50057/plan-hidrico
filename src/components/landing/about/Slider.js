@@ -132,7 +132,7 @@ const SingleSlider = ({ items }) => {
             </div>
             <div className={styles.textJustificacion}>
               <h2><span className="spanVino">Justificación</span> </h2>
-              <h3><span>"Agua Segura, Futuro Seguro: Por un Hidalgo Sustentable y Próspero"</span></h3>
+              <h3><span>Agua Segura, Futuro Seguro: Por un Hidalgo Sustentable y Próspero</span></h3>
               <p>En Hidalgo, el agua no solo es un recurso esencial; es la base para el bienestar social, el desarrollo económico y la protección del medio ambiente. El crecimiento poblacional, la actividad agrícola e industrial, y los efectos del cambio climático han incrementado la presión sobre nuestros recursos hídricos, poniendo en riesgo su disponibilidad y calidad a largo plazo.</p>
               <p>El Plan Hídrico Metropolitano surge como una respuesta estratégica y urgente a estas necesidades. Este plan asegura agua potable para miles de familias, protege comunidades contra inundaciones, mejora el saneamiento y fortalece la producción agrícola mediante tecnologías innovadoras de riego.</p>
             </div>
