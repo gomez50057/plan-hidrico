@@ -347,8 +347,10 @@ const ProjectMap = () => {
         </div>
       </div>
       <div className="mapaTxt">
-        <h2><span>Explora</span> Nuestros <span>Proyectos</span> en el <span>Mapa</span> Interactivo</h2>
-        <p>Descubre nuestros proyectos más destacados alrededor de Hidalgo. Navega por el mapa y conoce cómo estamos transformando comunidades con soluciones innovadoras y sostenibles. ¡Haz clic en los marcadores para obtener más detalles sobre cada iniciativa!</p>
+        <h2><span>Huella Hídrica</span> <span className="spanDoarado">Dónde Estamos</span></h2>
+        <p>Descubre nuestro mapa interactivo, donde podrás visualizar de manera dinámica las zonas de mayor estrés hídrico y sobreexplotación de acuíferos, junto con la infraestructura hidráulica existente —presas, pozos, plantas de tratamiento y ríos— y los principales cuerpos de agua. Además, identifica las áreas impactadas por la contaminación y conoce en detalle la situación de los acuíferos.</p>
+        <p>Esta herramienta te acerca a la realidad hídrica de nuestra región, mostrando datos clave para impulsar soluciones y un futuro sostenible.</p>
+
       </div>
     </section>
   );
