@@ -7,14 +7,17 @@
   gap: 20px;
 }
 
-.logoAcuerdo,
 .aboutTxt {
-  width: 50vw;
+  width: 60vw;
   height: auto;
+  padding-right: 2vw;
 }
 
 .logoAcuerdo{
  background-color: aqua;
+ width: 40vw;
+ height: auto;
+
 }
 
 /* 
