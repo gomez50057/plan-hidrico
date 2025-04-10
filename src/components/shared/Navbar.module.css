@@ -51,8 +51,8 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
   color: var(--vinoOsc);
   transition: color 0.3s, text-decoration 0.3s;
 }
