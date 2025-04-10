@@ -9,8 +9,8 @@ import { ejesPlanEstatal } from '../../../utils/planEstal';
 import styles from './Slider.module.css';
 const imgBasePath = "/img/";
 const statsNumber = [
-  { value: '500+', label: 'Total de algo' },
-  { value: '500+', label: 'Total de algo más' },
+  { value: '$59,576M', label: 'Inversión total estimada destinada a mejorar el acceso y gestión del agua potable' },
+  { value: '$11,849M', label: 'Programa de Tecnificación del Riego' },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -70,7 +70,7 @@ const SingleSlider = ({ items }) => {
             </div>
             <div className={styles.text}>
               <h2>¿Qué es el Plan Hídrico Metropolitano de Hidalgo ?</h2>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem.</p>
+              <p>El Plan Hídrico Metropolitano es una iniciativa estratégica diseñada para gestionar y proteger los recursos hídricos en el estado, con el objetivo central de asegurar la disponibilidad, calidad y sostenibilidad del agua para satisfacer las necesidades humanas, agrícolas, industriales y ambientales. Este plan contempla un conjunto de acciones enfocadas en garantizar un uso eficiente y sustentable del agua, protegiendo la salud pública y los ecosistemas, así como asegurando el recurso hídrico para las futuras generaciones.</p>
               <div className={styles.line}></div>
               <div className={styles.containerNumber}>
                 {statsNumber.map((item, index) => (
@@ -88,22 +88,11 @@ const SingleSlider = ({ items }) => {
               <h2 className={styles.title}>Generales</h2>
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>texto</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>texto</span>
+                  <span className={styles.textElement02}>Implementar una gestión integral y sostenible del recurso hídrico en la región metropolitana de Hidalgo, asegurando la disponibilidad y calidad del agua para consumo humano, agrícola, industrial y ambiental</span>
                 </div>
               </div>
             </div>
-            <div className={styles.imgContainer}>
+            <div className={styles.imgContainerElement02}>
               <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
             <div className={styles.fileShapeR}>
@@ -111,19 +100,41 @@ const SingleSlider = ({ items }) => {
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                  <span className={styles.textElement02}>Incrementar la productividad en los
+                    cultivos.</span>
                 </div>
                 <div className={styles.separator}></div>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>texto</span>
+                  <span className={styles.textElement02}>Reconversión de cultivos.</span>
                 </div>
                 <div className={styles.separator}></div>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>texto</span>
+                  <span className={styles.textElement02}>Concluir y consolidar la transferencia de
+                    los distritos de riego.</span>
+                </div>
+                <div className={styles.separator}></div>
+                <div className={styles.item}>
+                  <span className={styles.circle}></span>
+                  <span className={styles.textElement02}>Garantizar el acceso al agua potable mediante la construcción y modernización de infraestructura hidráulica </span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className={styles.element}>
+            {/* <div className={styles.imgContainerJustificacion}>
+              <Image src={`${imgBasePath}eje2.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+            </div> */}
+            <div className={styles.imgContainer}>
+              <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+            </div>
+            <div className={styles.textJustificacion}>
+              <h2><span className="spanVino">Justificación</span> </h2>
+              <h3><span>"Agua Segura, Futuro Seguro: Por un Hidalgo Sustentable y Próspero"</span></h3>
+              <p>En Hidalgo, el agua no solo es un recurso esencial; es la base para el bienestar social, el desarrollo económico y la protección del medio ambiente. El crecimiento poblacional, la actividad agrícola e industrial, y los efectos del cambio climático han incrementado la presión sobre nuestros recursos hídricos, poniendo en riesgo su disponibilidad y calidad a largo plazo.</p>
+              <p>El Plan Hídrico Metropolitano surge como una respuesta estratégica y urgente a estas necesidades. Este plan asegura agua potable para miles de familias, protege comunidades contra inundaciones, mejora el saneamiento y fortalece la producción agrícola mediante tecnologías innovadoras de riego.</p>
             </div>
           </div>
 
@@ -151,7 +162,7 @@ const SingleSlider = ({ items }) => {
           ))} */}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
