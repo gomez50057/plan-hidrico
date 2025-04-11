@@ -7,6 +7,7 @@ import './Dashboard.css';
 
 const DashboardCharts = dynamic(() => import('./DashboardCharts'), { loading: () => <Preloader />, ssr: false });
 const Formulario = dynamic(() => import('../forms/FormNivelacion'), { loading: () => <Preloader />, ssr: false });
+const FormularioEvaluador = dynamic(() => import('../forms/FormularioNivelacionEvaluador'), { loading: () => <Preloader />, ssr: false });
 const Acuerdos = dynamic(() => import('../CRUDTable/coordinador/CRUDTable'), { loading: () => <Preloader />, ssr: false });
 const TableEnlace = dynamic(() => import('../CRUDTable/enlace/TableEnlace'), { loading: () => <Preloader />, ssr: false });
 const Headerdashboard = dynamic(() => import('../dashboard/HeaderDashboard'), { loading: () => <Preloader />, ssr: false });
@@ -69,6 +70,8 @@ const Dashboard = () => {
     switch (activeComponent) {
       case 'formulario':
         return <Formulario />;
+        case 'formularioEvaluador':
+          return <FormularioEvaluador />;
       case 'acuerdosCoordinador':
         return <Acuerdos />;
       case 'acuerdosEnlace':
@@ -107,6 +110,18 @@ const Dashboard = () => {
                   <SvgIcon name="formulario" />
                 </div>
                 <span className="title">Formulario</span>
+              </a>
+            </li>
+          )}
+          {userRole === 'coordinador' && (
+            <li className="list-item" data-component="formularioEvaluador" onClick={() => handleMenuClick('formularioEvaluador')}>
+              <b></b>
+              <b></b>
+              <a href="#" className="list-item-link">
+                <div className="icon">
+                  <SvgIcon name="formulario" />
+                </div>
+                <span className="title">Evaluador</span>
               </a>
             </li>
           )}

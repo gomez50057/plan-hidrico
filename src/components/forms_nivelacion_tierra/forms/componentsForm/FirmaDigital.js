@@ -19,12 +19,14 @@ const FirmaDigital = ({ setFieldValue }) => {
 
   return (
     <div className={styles.signatureWrapper}>
-      <label>Firma Digital:</label>
-      <SignatureCanvas
-        penColor="black"
-        canvasProps={{ width: 400, height: 150, className: styles.signatureCanvas }}
-        ref={sigCanvas}
-      />
+      <div className={styles.containerSignatureWrapper}>
+        <label>Firma Digital:</label>
+        <SignatureCanvas
+          penColor="black"
+          canvasProps={{ className: styles.signatureCanvas }}
+          ref={sigCanvas}
+        />
+      </div>
       <div className={styles.signatureControls}>
         <button type="button" onClick={clear} className={styles.button}>Limpiar</button>
         <button type="button" onClick={save} className={styles.button}>Guardar Firma</button>

@@ -96,3 +96,24 @@ export const documentosPresentados = [
   { value: 'titulo_propiedad', label: 'Título de propiedad' },
   { value: 'constancia_posesion', label: 'Constancia de posesión' }
 ];
+
+
+export const pendientePromedio = [
+  '0 a 1%',
+  '1.1 a 2.5%',
+  '2.6 a 4%',
+  'mayor de 4',
+];
+
+export const profundidadSueloPedregosidad = [
+  'mayor a 40 cm',
+  'menor igual a 40 cm',
+];
+
+export const tipoSuelo = [
+  'leptosoles',
+  'regosoles',
+  'calcisoles',
+  'feozems',
+  'vertisoles',
+];

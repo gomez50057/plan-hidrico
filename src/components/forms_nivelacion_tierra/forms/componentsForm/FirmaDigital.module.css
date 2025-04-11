@@ -2,7 +2,21 @@
   margin-top: 1rem;
 }
 
+.containerSignatureWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerSignatureWrapper label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--grisOsc);
+}
+
 .signatureCanvas {
+  width: 80vw;
+  height: 350px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
