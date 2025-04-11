@@ -99,15 +99,22 @@ const FormNivelacion = () => {
       is: 'no',
       then: (schema) => schema.required('Especifique cuándo lo tomará'),
       otherwise: (schema) => schema.oneOf(['No aplica']),
-    }),       
+    }),
     firma_digital: Yup.string().required('Firma requerida'),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
+    console.log('🚀 Entrando a handleSubmit con valores:', values);
+
     try {
       const formData = new FormData();
       for (const key in values) {
         formData.append(key, values[key]);
+      }
+
+      console.log('📤 Enviando datos al backend:');
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}:`, value instanceof File ? value.name : value);
       }
 
       await axios.post('http://localhost:8000/api/formularios/', formData, {
@@ -119,7 +126,12 @@ const FormNivelacion = () => {
       alert('Formulario enviado con éxito');
       resetForm();
     } catch (error) {
-      console.error('Error al enviar el formulario:', error);
+      if (error.response) {
+        console.error('📛 Error del servidor:', error.response.status);
+        console.error('🧾 Detalles:', error.response.data);
+      } else {
+        console.error('⚠️ Error desconocido:', error);
+      }
     }
   };
 

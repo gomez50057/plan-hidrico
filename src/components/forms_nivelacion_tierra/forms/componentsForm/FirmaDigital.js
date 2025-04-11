@@ -13,7 +13,7 @@ const FirmaDigital = ({ setFieldValue }) => {
   };
 
   const save = () => {
-    const dataURL = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
+    const dataURL = sigCanvas.current.getCanvas().toDataURL('image/png');
     setFieldValue('firma_digital', dataURL);
   };
 
