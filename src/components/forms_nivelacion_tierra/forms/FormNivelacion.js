@@ -9,21 +9,9 @@ import './Formulario.css';
 import SectionTitle from './componentsForm/SectionTitle';
 import FirmaDigital from './componentsForm/FirmaDigital';
 import styles from './FormNivelacion.module.css';
-import AgreementSuccessModal from './AgreementSuccessModal'; // Asegúrate de que la ruta sea la correcta
+import AgreementSuccessModal from './AgreementSuccessModal';
 
-import {
-  municipiosDeHidalgo,
-  identificacionOpciones,
-  distritosPorModulos,
-  nivelesOpciones,
-  profundidadSueloOpciones,
-  tipoRevestimientoOpciones,
-  gastoCanalesOpciones,
-  tipoSeccionOpciones,
-  productoSembrados,
-  cultivosAnuales,
-  documentosPresentados
-} from '@/utils/utils';
+import { municipiosDeHidalgo, identificacionOpciones, distritosPorModulos, nivelesOpciones, profundidadSueloOpciones, tipoRevestimientoOpciones, gastoCanalesOpciones, tipoSeccionOpciones, productoSembrados, cultivosAnuales, documentosPresentados } from '@/utils/utils';
 
 const FormNivelacion = () => {
   const [modulosFiltrados, setModulosFiltrados] = useState([]);
@@ -579,14 +567,16 @@ const FormNivelacion = () => {
           );
         }}
       </Formik>
-      {/* Modal que muestra el éxito del envío y el folio generado */}
       <AgreementSuccessModal
         isOpen={isModalOpen}
         folio={generatedFolio}
         estado="Enviado"
         mensaje="Formulario enviado con éxito"
+        labelFolio="Este es tu Folio:"
+        labelGuardar="Guarda este folio para mantener un seguimiento adecuado."
         handleClose={handleCloseModal}
       />
+
     </div>
   );
 };

@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './AgreementSuccessModal.module.css';
 
-const AgreementSuccessModal = ({ isOpen, folio, estado, mensaje, handleClose }) => {
+const AgreementSuccessModal = ({ isOpen, folio, estado, mensaje, labelFolio, labelGuardar, handleClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -18,10 +18,8 @@ const AgreementSuccessModal = ({ isOpen, folio, estado, mensaje, handleClose }) 
         </IconButton>
         <h2>{estado} con éxito!</h2>
         <p>{mensaje}</p>
-        <p>
-          Este es tu Folio: <strong>{folio}</strong>
-        </p>
-        <p>Guarda este folio para mantener un seguimiento adecuado.</p>
+        <p>{labelFolio} <strong>{folio}</strong></p>
+        <p>{labelGuardar}</p>
       </div>
     </div>
   );
