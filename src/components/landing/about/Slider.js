@@ -72,14 +72,14 @@ const SingleSlider = ({ items }) => {
               <h2>¿Qué es el Plan Hídrico Metropolitano de Hidalgo ?</h2>
               <p>El Plan Hídrico Metropolitano es una iniciativa estratégica diseñada para gestionar y proteger los recursos hídricos en el estado, con el objetivo central de asegurar la disponibilidad, calidad y sostenibilidad del agua para satisfacer las necesidades humanas, agrícolas, industriales y ambientales. Este plan contempla un conjunto de acciones enfocadas en garantizar un uso eficiente y sustentable del agua, protegiendo la salud pública y los ecosistemas, así como asegurando el recurso hídrico para las futuras generaciones.</p>
               <div className={styles.line}></div>
-              <div className={styles.containerNumber}>
+              {/* <div className={styles.containerNumber}>
                 {statsNumber.map((item, index) => (
                   <div key={index} className={styles.card}>
                     <h2 className={styles.value}>{item.value}</h2>
                     <p className={styles.label}>{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 

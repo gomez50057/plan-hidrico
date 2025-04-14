@@ -13,6 +13,8 @@ const FormularioNivelacionEvaluador = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [nivelaciones, setNivelaciones] = useState([]);
   const [isModalOpenEvaluador, setIsModalOpenEvaluador] = useState(false);
+  const [preSelectedFolio, setPreSelectedFolio] = useState('');
+  const [updatedFolio, setUpdatedFolio] = useState('');
 
   useEffect(() => {
     axios.get(`${apiUrl}/api/formularios/`)
@@ -20,8 +22,18 @@ const FormularioNivelacionEvaluador = () => {
       .catch(err => console.error('Error cargando nivelaciones:', err));
   }, [apiUrl]);
 
+  // Al montar el componente, obtenemos el folio guardado en localStorage (si existe)
+  useEffect(() => {
+    const storedFolio = localStorage.getItem('selectedFolio');
+    if (storedFolio) {
+      setPreSelectedFolio(storedFolio);
+      // Opcional: removerlo si solo se quiere usar una vez
+      localStorage.removeItem('selectedFolio');
+    }
+  }, []);
+
   const initialValues = {
-    nivelacion: '',
+    nivelacion: preSelectedFolio, // Campo precargado con el folio si existe
     area_atencion_prioritaria: '',
     convenio_colaboracion_pnh: '',
     pendiente_promedio: '',
@@ -51,17 +63,20 @@ const FormularioNivelacionEvaluador = () => {
   });
 
   const handleSubmit = async (values, { resetForm }) => {
+    console.log('Valores enviados:', values); // Agrega este log para ver el payload
     try {
-      await axios.post(`${apiUrl}/api/archivos/`, values);
+      const response = await axios.post(`${apiUrl}/api/archivos/`, values);
+      const folio = response.data.folio;
+      setUpdatedFolio(folio);
       setIsModalOpenEvaluador(true);
       resetForm();
     } catch (error) {
+      F
       console.error('Error al enviar el formulario evaluador:', error);
       alert('Ocurrió un error al enviar el formulario.');
     }
   };
 
-  // Función para cerrar el modal
   const handleCloseModal = () => {
     setIsModalOpenEvaluador(false);
   };
@@ -72,6 +87,7 @@ const FormularioNivelacionEvaluador = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
+        enableReinitialize // Permite que initialValues se actualicen al cambiar preSelectedFolio
       >
         {({ setFieldValue }) => (
           <Form className={styles.formWrapper}>
@@ -80,7 +96,7 @@ const FormularioNivelacionEvaluador = () => {
               <Field as="select" name="nivelacion" className={styles.inputField}>
                 <option value="">Seleccione</option>
                 {nivelaciones.map(niv => (
-                  <option key={niv.id} value={niv.id}>
+                  <option key={niv.id} value={niv.folio}>
                     {niv.folio}
                   </option>
                 ))}
@@ -208,9 +224,9 @@ const FormularioNivelacionEvaluador = () => {
       </Formik>
       <AgreementSuccessModal
         isOpen={isModalOpenEvaluador}
-        folio=""
+        folio={updatedFolio}
         estado="Actualizado"
-        mensaje="Formulario evaluador actualizado con éxito"        
+        mensaje="Formulario evaluador actualizado con éxito"
         labelFolio=""
         labelGuardar=""
         handleClose={handleCloseModal}

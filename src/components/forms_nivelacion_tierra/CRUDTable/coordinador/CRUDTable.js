@@ -30,7 +30,6 @@ const CRUDTable = () => {
   const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(`${apiUrl}/api/formularios/`);
-
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -41,7 +40,11 @@ const CRUDTable = () => {
     fetchData();
   }, [fetchData]);
 
-  const handleAction = (mode, projectId) => {
+  // Actualizamos handleAction para recibir el folio y, si es evaluador, lo guardamos en localStorage.
+  const handleAction = (mode, projectId, projectFolio) => {
+    if (mode === 'evaluador') {
+      localStorage.setItem('selectedFolio', projectFolio);
+    }
     setSelectedProjectId(projectId);
     setModalMode(mode);
     setOpenModal(true);
@@ -67,34 +70,43 @@ const CRUDTable = () => {
       row => `${row.nombre} ${row.apellido_paterno} ${row.apellido_materno}`,
       {
         header: 'Nombre Completo',
-        id: 'nombreCompleto', // Asigna un id para identificar la columna
+        id: 'nombreCompleto',
       }
     ),
-    // Se muestra el municipio
     columnHelper.accessor('municipio', {
       header: 'Municipio',
     }),
-    // Se muestra el distrito de riego
     columnHelper.accessor('distrito_riego', {
       header: 'Distrito Riego',
     }),
-    // Se muestra el módulo de riego
     columnHelper.accessor('modulo_riego', {
       header: 'Modulo Riego',
     }),
-    // Si aún quieres conservar las acciones, inclúyelas en una columna adicional:
+
     {
       id: 'acciones',
       header: 'Acciones',
       enableSorting: false,
       enableColumnPinning: true,
       Cell: ({ row }) => {
-        const id = row.original.id;
+        const { id, folio } = row.original;
         return (
           <Box display="flex" gap={1} className="Acciones-con">
-            {/* <Button variant="outlined" className="crud-button" onClick={() => handleAction('edit', id)}>Editar</Button> */}
-            <Button variant="outlined" className="crud-button" onClick={() => handleAction('evaluador', id)}>Evaluar</Button>
-            <Button variant="outlined" className="crud-button" onClick={() => window.open('/report', '_blank')}>Reporte</Button>
+            <Button
+              variant="outlined"
+              className="crud-button"
+              // Se pasa el folio seleccionado junto con el id
+              onClick={() => handleAction('evaluador', id, folio)}
+            >
+              Evaluar
+            </Button>
+            <Button
+              variant="outlined"
+              className="crud-button"
+              onClick={() => window.open('/report', '_blank')}
+            >
+              Reporte
+            </Button>
           </Box>
         );
       },
@@ -110,7 +122,6 @@ const CRUDTable = () => {
     filename: 'acuerdos_export',
   });
 
-
   const estatusMap = {
     sin_avance: 'Sin Avance',
     en_proceso: 'En Proceso',
@@ -122,16 +133,12 @@ const CRUDTable = () => {
     const clean = {};
     for (const key in obj) {
       let value = obj[key];
-
-      // Personalizaciones
       if (key === 'estatus') {
         value = estatusMap[value] || value;
       }
-
       if (key === 'descripcion_avance') {
         value = 'Ver todos los avances';
       }
-
       if (key === 'documentos') {
         if (Array.isArray(value)) {
           value = value.map((doc) =>
@@ -170,7 +177,6 @@ const CRUDTable = () => {
     download(csvConfig)(csv);
   };
 
-
   const table = useMaterialReactTable({
     data,
     columns,
@@ -181,10 +187,7 @@ const CRUDTable = () => {
     enableColumnFilters: true,
     renderTopToolbarCustomActions: ({ table }) => (
       <Box sx={{ display: 'flex', gap: '12px', flexWrap: 'wrap', padding: '8px' }}>
-        <Button
-          onClick={handleExportAllData}
-          startIcon={<FileDownloadIcon />}
-        >
+        <Button onClick={handleExportAllData} startIcon={<FileDownloadIcon />}>
           Exportar todos los datos
         </Button>
         <Button
@@ -198,7 +201,7 @@ const CRUDTable = () => {
     ),
     initialState: {
       columnVisibility: { id: false },
-      columnPinning: { right: ['acciones'], },
+      columnPinning: { right: ['acciones'] },
     },
     muiTableBodyRowProps: {
       sx: {
@@ -228,21 +231,11 @@ const CRUDTable = () => {
   const theme = createTheme({
     components: {
       MuiPaper: {
-        styleOverrides: {
-          root: {
-            borderRadius: '40px',
-          },
-        },
+        styleOverrides: { root: { borderRadius: '40px' } },
       },
       MuiTypography: {
         styleOverrides: {
-          h3: {
-            fontWeight: 600,
-            fontSize: '2.25rem',
-            color: '#DEC9A3',
-            fontFamily: 'Montserrat',
-            padding: '10px',
-          },
+          h3: { fontWeight: 600, fontSize: '2.25rem', color: '#DEC9A3', fontFamily: 'Montserrat', padding: '10px' },
         },
       },
     },

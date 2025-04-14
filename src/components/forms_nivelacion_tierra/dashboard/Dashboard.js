@@ -109,7 +109,7 @@ const Dashboard = () => {
                 <div className="icon">
                   <SvgIcon name="formulario" />
                 </div>
-                <span className="title">Formulario</span>
+                <span className="title">Cedula</span>
               </a>
             </li>
           )}
@@ -121,7 +121,7 @@ const Dashboard = () => {
                 <div className="icon">
                   <SvgIcon name="formulario" />
                 </div>
-                <span className="title">Evaluador</span>
+                <span className="title">Dictamen</span>
               </a>
             </li>
           )}
@@ -133,7 +133,7 @@ const Dashboard = () => {
                 <div className="icon">
                   <SvgIcon name="acuerdo" />
                 </div>
-                <span className="title">Tecnificación</span>
+                <span className="title">Registro</span>
                 <span className="sub-title"></span>
               </a>
             </li>
