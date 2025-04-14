@@ -12,7 +12,7 @@
   z-index: 1000;
 }
 
-.styled-modal {
+.styledModal {
   background: rgba(255, 255, 255, 0.75); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 35px;
@@ -27,38 +27,21 @@
   z-index: 1010; 
 }
 
-.styled-modal h2 {
+.styledModal h2 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-.styled-modal p {
+.styledModal p {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.modal-botton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.styled-modal button {
-  background: linear-gradient(to right, #a02142, #92203e, #841e3b, #761d36, #691b32);  
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  margin: 10px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.styled-modal button:hover {
-  background: linear-gradient(to right, #a7193f, #7c0d2b, #5b1126, #4b0c1e, #380716);  
-  transform: scale(1.05);
-}
-
-.styled-modal button:active {
-  transform: scale(0.95);
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 4px;
 }

@@ -9,6 +9,7 @@ import './Formulario.css';
 import SectionTitle from './componentsForm/SectionTitle';
 import FirmaDigital from './componentsForm/FirmaDigital';
 import styles from './FormNivelacion.module.css';
+import AgreementSuccessModal from './AgreementSuccessModal'; // Asegúrate de que la ruta sea la correcta
 
 import {
   municipiosDeHidalgo,
@@ -26,6 +27,8 @@ import {
 
 const FormNivelacion = () => {
   const [modulosFiltrados, setModulosFiltrados] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [generatedFolio, setGeneratedFolio] = useState('');
 
   const initialValues = {
     nombre: '',
@@ -71,18 +74,20 @@ const FormNivelacion = () => {
     nombre: Yup.string().required('Campo obligatorio'),
     apellido_paterno: Yup.string().required('Campo obligatorio'),
     apellido_materno: Yup.string().required('Campo obligatorio'),
-    curp: Yup.string().length(18, 'CURP debe tener 18 caracteres').required('Campo obligatorio'),
+    curp: Yup.string()
+      .length(18, 'CURP debe tener 18 caracteres')
+      .required('Campo obligatorio'),
     cuenta_conagua: Yup.string().required('Campo obligatorio'),
     domicilio: Yup.string().required('Campo obligatorio'),
     telefono: Yup.string()
       .matches(/^\d{10}$/, 'Debe tener 10 dígitos numéricos')
-      .required('Campo obligatorio'), municipio: Yup.string().required('Campo obligatorio'),
+      .required('Campo obligatorio'),
+    municipio: Yup.string().required('Campo obligatorio'),
     superficie_parcela: Yup.number().positive('Debe ser positivo').required('Campo obligatorio'),
     tiempo_promedio_riego: Yup.number().positive().required('Campo obligatorio'),
     latitud: Yup.number()
       .typeError('Debe ser un número válido')
       .required('Campo obligatorio'),
-
     longitud: Yup.number()
       .typeError('Debe ser un número válido')
       .required('Campo obligatorio'),
@@ -92,9 +97,7 @@ const FormNivelacion = () => {
     tipo_seccion: Yup.string().required('Campo obligatorio'),
     archivo_pdf: Yup.mixed()
       .required('Debe cargar un archivo PDF')
-      .test('fileFormat', 'Solo se permite PDF', (value) => {
-        return value && value.type === 'application/pdf';
-      }),
+      .test('fileFormat', 'Solo se permite PDF', (value) => value && value.type === 'application/pdf'),
     curso_sader: Yup.string().required('Campo obligatorio'),
     cuando_toma_sader: Yup.string().when('curso_sader', {
       is: 'no',
@@ -119,14 +122,16 @@ const FormNivelacion = () => {
       }
 
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-      await axios.post(`${apiUrl}/api/formularios/`, formData, {
+      const response = await axios.post(`${apiUrl}/api/formularios/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      alert('Formulario enviado con éxito');
+      // Supongamos que el backend devuelve el folio generado en response.data.folio
+      const folio = response.data.folio;
+      setGeneratedFolio(folio);
+      setIsModalOpen(true);
       resetForm();
     } catch (error) {
       if (error.response) {
@@ -138,9 +143,14 @@ const FormNivelacion = () => {
     }
   };
 
+  // Función para cerrar el modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setGeneratedFolio('');
+  };
+
   return (
     <div className={styles.formWrapper}>
-      {/* <h2>Solicitud al Programa de Nivelación de Tierras del Estado de Hidalgo de los Distritos 003, 100 y 112</h2> */}
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -165,7 +175,7 @@ const FormNivelacion = () => {
             if (values.curso_sader === 'si') {
               setFieldValue('cuando_toma_sader', 'No aplica');
             }
-          }, [values.distrito_riego, values.ha_nivelado, values.cultivo_actual, values.curso_sader]);
+          }, [values.distrito_riego, values.ha_nivelado, values.cultivo_actual, values.curso_sader, setFieldValue]);
 
           return (
             <Form>
@@ -230,7 +240,6 @@ const FormNivelacion = () => {
 
               <SectionTitle title="Datos de la parcela" />
               <div className={styles.formRow}>
-
                 <div className={styles.formGroup}>
                   <label htmlFor="municipio">Municipio:</label>
                   <Field as="select" name="municipio" className={styles.inputField}>
@@ -249,7 +258,6 @@ const FormNivelacion = () => {
                   <ErrorMessage name="localidad" component="div" className={styles.errorMessage} />
                 </div>
               </div>
-
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
@@ -540,7 +548,6 @@ const FormNivelacion = () => {
                   <ErrorMessage name="archivo_pdf" component="div" className={styles.errorMessage} />
                 </div>
               </div>
-
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="curso_sader">¿Cuenta con curso de capacitación de SADER?</label>
@@ -554,7 +561,6 @@ const FormNivelacion = () => {
                   </Field>
                   <ErrorMessage name="curso_sader" component="div" className={styles.errorMessage} />
                 </div>
-
                 {values.curso_sader === 'no' && (
                   <div className={styles.formGroup}>
                     <label htmlFor="cuando_toma_sader">¿Cuándo lo piensa tomar?</label>
@@ -563,19 +569,24 @@ const FormNivelacion = () => {
                   </div>
                 )}
               </div>
-
               <FirmaDigital setFieldValue={setFieldValue} />
-
               <div className={styles.formGroup}>
                 <button type="submit" className={styles.submitButton}>
                   Enviar Formulario
                 </button>
               </div>
-
             </Form>
           );
         }}
       </Formik>
+      {/* Modal que muestra el éxito del envío y el folio generado */}
+      <AgreementSuccessModal
+        isOpen={isModalOpen}
+        folio={generatedFolio}
+        estado="Enviado"
+        mensaje="Formulario enviado con éxito"
+        handleClose={handleCloseModal}
+      />
     </div>
   );
 };

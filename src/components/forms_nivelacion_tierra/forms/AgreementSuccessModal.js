@@ -1,22 +1,27 @@
 import React from 'react';
-import './AgreementSuccessModal.css';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import styles from './AgreementSuccessModal.module.css';
 
-const AgreementSuccessModal = ({ isOpen, onCreateNewAgreement, onGoToHome }) => {
+const AgreementSuccessModal = ({ isOpen, folio, estado, mensaje, handleClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="overlay">
-      <div className="styled-modal">
-        <h2>¡Enviado con éxito!</h2>
-        <p>¿Qué desea hacer ahora?</p>
-        <div className="modal-botton">
-          <button onClick={onCreateNewAgreement}>
-            Repetir la acción hecha
-          </button>
-          <button onClick={onGoToHome}>
-            Cerrar
-          </button>
-        </div>
+    <div className={styles.overlay}>
+      <div className={styles.styledModal}>
+        <IconButton
+          onClick={handleClose}
+          className={styles.closeButton}
+          aria-label="close"
+        >
+          <CloseIcon />
+        </IconButton>
+        <h2>{estado} con éxito!</h2>
+        <p>{mensaje}</p>
+        <p>
+          Este es tu Folio: <strong>{folio}</strong>
+        </p>
+        <p>Guarda este folio para mantener un seguimiento adecuado.</p>
       </div>
     </div>
   );
