@@ -3,8 +3,12 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 // import EditFormulario from '../forms/EditFormulario';
 // import UpdateFormulario from '../forms/UpdateFormulario';
-// import HistoryList from '../forms/HistoryList';
+// import Report from '../forms/tools/Report';
 // import AllAdvances from '@/components/shared/AllAdvances';
+import EditFormulario from '../forms/FormularioNivelacionEvaluador';
+
+import Evaluador from '../forms/FormularioNivelacionEvaluador';
+
 import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
@@ -20,7 +24,9 @@ const style = {
   p: 4,
   display: 'flex',
   flexDirection: 'column',
-  position: 'relative', // Añadido para posicionar la "X" correctamente
+  position: 'relative',
+  overflowX: 'hidden',
+  overflowY: 'auto'
 };
 
 const ProjectModal = ({ open, handleClose, projectId, mode }) => {
@@ -35,6 +41,17 @@ const ProjectModal = ({ open, handleClose, projectId, mode }) => {
     //   return <AllAdvances projectId={projectId} onClose={handleClose} />;
     // }
     // return null;
+
+    if (mode === 'edit') {
+      return <EditFormulario projectId={projectId} onClose={handleClose} />;
+    } else if (mode === 'evaluador') {
+      return <Evaluador projectId={projectId} onClose={handleClose} />;
+    } //else if (mode === 'history') {
+    //   return <HistoryList projectId={projectId} onClose={handleClose} />;
+    // } else if (mode === 'advances') {
+    //   return <AllAdvances projectId={projectId} onClose={handleClose} />;
+    // }
+    return null;
   };
 
   return (
@@ -45,15 +62,15 @@ const ProjectModal = ({ open, handleClose, projectId, mode }) => {
       aria-describedby="modal-description"
     >
       <Box sx={style}>
-        <button 
-          onClick={handleClose} 
-          className="close-button" 
-          style={{ 
-            position: 'absolute', 
-            top: '10px', 
-            right: '10px', 
-            background: 'none', 
-            border: 'none', 
+        <button
+          onClick={handleClose}
+          className="close-button"
+          style={{
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            background: 'none',
+            border: 'none',
             cursor: 'pointer'
           }}
         >
@@ -61,7 +78,7 @@ const ProjectModal = ({ open, handleClose, projectId, mode }) => {
         </button>
 
         <h2 id="modal-title" style={{ marginBottom: '20px' }}>
-          {mode === 'edit' ? 'Editar Acuerdo' : mode === 'update' ? 'Actualizar Acuerdo' : 'Historial de Actualizaciones'}
+          {mode === 'edit' ? 'Editar Acuerdo' : mode === 'evaluador' ? 'Revisar Candidato' : 'Historial de Actualizaciones'}
         </h2>
         {renderContent()}
       </Box>

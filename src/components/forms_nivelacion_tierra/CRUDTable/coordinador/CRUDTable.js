@@ -30,7 +30,7 @@ const CRUDTable = () => {
   const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(`${apiUrl}/api/formularios/`);
-  
+
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -92,9 +92,9 @@ const CRUDTable = () => {
         const id = row.original.id;
         return (
           <Box display="flex" gap={1} className="Acciones-con">
-            <Button variant="outlined" className="crud-button" onClick={() => handleAction('edit', id)}>Editar</Button>
-            <Button variant="outlined" className="crud-button" onClick={() => handleAction('update', id)}>Actualizar</Button>
-            <Button variant="outlined" className="crud-button" onClick={() => handleAction('history', id)}>Historial</Button>
+            {/* <Button variant="outlined" className="crud-button" onClick={() => handleAction('edit', id)}>Editar</Button> */}
+            <Button variant="outlined" className="crud-button" onClick={() => handleAction('evaluador', id)}>Evaluar</Button>
+            <Button variant="outlined" className="crud-button" onClick={() => window.open('/report', '_blank')}>Reporte</Button>
           </Box>
         );
       },
