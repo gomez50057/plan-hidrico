@@ -1,13 +1,31 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import FirmaDigital from './componentsForm/FirmaDigital';
 import styles from './FormNivelacion.module.css';
-import { identificacionOpciones, nivelesOpciones, pendientePromedio, profundidadSueloPedregosidad, tipoSuelo } from '@/utils/utils';
-
-
+import {
+  identificacionOpciones,
+  nivelesOpciones,
+  pendientePromedio,
+  profundidadSueloPedregosidad,
+  tipoSuelo
+} from '@/utils/utils';
 
 const FormularioNivelacionEvaluador = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const [nivelaciones, setNivelaciones] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/api/formularios/`)
+      .then(res => setNivelaciones(res.data))
+      .catch(err => console.error('Error cargando nivelaciones:', err));
+  }, [apiUrl]);
+
   const initialValues = {
+    nivelacion: '',
     area_atencion_prioritaria: '',
     convenio_colaboracion_pnh: '',
     pendiente_promedio: '',
@@ -22,6 +40,7 @@ const FormularioNivelacionEvaluador = () => {
   };
 
   const validationSchema = Yup.object({
+    nivelacion: Yup.string().required('Campo obligatorio'),
     area_atencion_prioritaria: Yup.string().required('Campo obligatorio'),
     convenio_colaboracion_pnh: Yup.string().required('Campo obligatorio'),
     pendiente_promedio: Yup.string().required('Campo obligatorio'),
@@ -35,8 +54,15 @@ const FormularioNivelacionEvaluador = () => {
     firma_digital: Yup.string().required('Firma requerida'),
   });
 
-  const handleSubmit = (values) => {
-    console.log('Formulario enviado:', values);
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      await axios.post('http://127.0.0.1:8000/api/archivos/', values);
+      alert('Formulario evaluador enviado con éxito');
+      resetForm();
+    } catch (error) {
+      console.error('Error al enviar el formulario evaluador:', error);
+      alert('Ocurrió un error al enviar el formulario.');
+    }
   };
 
   return (
@@ -47,6 +73,17 @@ const FormularioNivelacionEvaluador = () => {
     >
       {({ setFieldValue }) => (
         <Form className={styles.formWrapper}>
+          <div className={styles.formGroup}>
+            <label>Selecciona el formulario de nivelación</label>
+            <Field as="select" name="nivelacion" className={styles.inputField}>
+              <option value="">Seleccione</option>
+              {nivelaciones.map(niv => (
+                <option key={niv.id} value={niv.id}>{niv.folio}</option>
+              ))}
+            </Field>
+            <ErrorMessage name="nivelacion" component="div" className={styles.errorMessage} />
+          </div>
+
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
               <label>¿Se localiza en área de atención prioritaria?</label>
@@ -156,6 +193,7 @@ const FormularioNivelacionEvaluador = () => {
               <ErrorMessage name="nombre_revisor" component="div" className={styles.errorMessage} />
             </div>
           </div>
+
 
           <FirmaDigital setFieldValue={setFieldValue} />
 

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import './Formulario.css';
 
 import SectionTitle from './componentsForm/SectionTitle';
 import FirmaDigital from './componentsForm/FirmaDigital';
@@ -117,7 +118,9 @@ const FormNivelacion = () => {
         console.log(`${key}:`, value instanceof File ? value.name : value);
       }
 
-      await axios.post('http://localhost:8000/api/formularios/', formData, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+      await axios.post(`${apiUrl}/api/formularios/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

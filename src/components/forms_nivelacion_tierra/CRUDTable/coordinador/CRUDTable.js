@@ -29,9 +29,8 @@ const CRUDTable = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      // const response = await axios.get(`${apiUrl}/api/formularios/`);
-      const response = await axios.get(`http://localhost:8000/api/formularios`);
-
+      const response = await axios.get(`${apiUrl}/api/formularios/`);
+  
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -63,18 +62,27 @@ const CRUDTable = () => {
     columnHelper.accessor('fecha', {
       header: 'Fecha',
     }),
-    columnHelper.accessor('nombre', {
-      header: 'Nombre',
-    }),
+    // Se crea una columna que concatena nombre, apellido_paterno y apellido_materno
+    columnHelper.accessor(
+      row => `${row.nombre} ${row.apellido_paterno} ${row.apellido_materno}`,
+      {
+        header: 'Nombre Completo',
+        id: 'nombreCompleto', // Asigna un id para identificar la columna
+      }
+    ),
+    // Se muestra el municipio
     columnHelper.accessor('municipio', {
       header: 'Municipio',
     }),
+    // Se muestra el distrito de riego
     columnHelper.accessor('distrito_riego', {
       header: 'Distrito Riego',
     }),
+    // Se muestra el módulo de riego
     columnHelper.accessor('modulo_riego', {
       header: 'Modulo Riego',
-    }),  
+    }),
+    // Si aún quieres conservar las acciones, inclúyelas en una columna adicional:
     {
       id: 'acciones',
       header: 'Acciones',
