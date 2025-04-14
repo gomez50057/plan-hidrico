@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import './Formulario.css';
@@ -11,7 +11,53 @@ import FirmaDigital from './componentsForm/FirmaDigital';
 import styles from './FormNivelacion.module.css';
 import AgreementSuccessModal from './AgreementSuccessModal';
 
-import { municipiosDeHidalgo, identificacionOpciones, distritosPorModulos, nivelesOpciones, profundidadSueloOpciones, tipoRevestimientoOpciones, gastoCanalesOpciones, tipoSeccionOpciones, productoSembrados, cultivosAnuales, documentosPresentados } from '@/utils/utils';
+import {
+  municipiosDeHidalgo,
+  identificacionOpciones,
+  distritosPorModulos,
+  nivelesOpciones,
+  profundidadSueloOpciones,
+  tipoRevestimientoOpciones,
+  gastoCanalesOpciones,
+  tipoSeccionOpciones,
+  productoSembrados,
+  cultivosAnuales,
+  documentosPresentados
+} from '@/utils/utils';
+
+// Componente auxiliar para actualizar campos y el estado de modulosFiltrados
+const FormUpdater = ({ setFieldValue, setModulosFiltrados }) => {
+  // Obtenemos los valores de Formik usando el hook useFormikContext
+  const { values } = useFormikContext();
+
+  useEffect(() => {
+    // Actualiza modulosFiltrados según el distrito seleccionado
+    setModulosFiltrados(distritosPorModulos[values.distrito_riego] || []);
+
+    // Ajustar campos según condiciones
+    if (values.ha_nivelado !== 'si') {
+      setFieldValue('anio_nivelacion', 'No aplica');
+    }
+    if (values.cultivo_actual !== 'Alfalfa') {
+      setFieldValue('perene_roturacion', 'No aplica');
+    }
+    if (!cultivosAnuales.includes(values.cultivo_actual)) {
+      setFieldValue('fecha_libre_parcela', 'No aplica');
+    }
+    if (values.curso_sader === 'si') {
+      setFieldValue('cuando_toma_sader', 'No aplica');
+    }
+  }, [
+    values.distrito_riego,
+    values.ha_nivelado,
+    values.cultivo_actual,
+    values.curso_sader,
+    setFieldValue,
+    setModulosFiltrados
+  ]);
+
+  return null; // No renderiza nada
+};
 
 const FormNivelacion = () => {
   const [modulosFiltrados, setModulosFiltrados] = useState([]);
@@ -97,26 +143,20 @@ const FormNivelacion = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     console.log('🚀 Entrando a handleSubmit con valores:', values);
-
     try {
       const formData = new FormData();
       for (const key in values) {
         formData.append(key, values[key]);
       }
-
       console.log('📤 Enviando datos al backend:');
       for (let [key, value] of formData.entries()) {
         console.log(`${key}:`, value instanceof File ? value.name : value);
       }
-
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       const response = await axios.post(`${apiUrl}/api/formularios/`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+        headers: { 'Content-Type': 'multipart/form-data' },
       });
-
-      // Supongamos que el backend devuelve el folio generado en response.data.folio
+      // Se espera que el backend devuelva el folio generado en response.data.folio
       const folio = response.data.folio;
       setGeneratedFolio(folio);
       setIsModalOpen(true);
@@ -131,7 +171,6 @@ const FormNivelacion = () => {
     }
   };
 
-  // Función para cerrar el modal
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setGeneratedFolio('');
@@ -144,28 +183,8 @@ const FormNivelacion = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values, setFieldValue }) => {
-          useEffect(() => {
-            setModulosFiltrados(distritosPorModulos[values.distrito_riego] || []);
-
-            if (values.ha_nivelado !== 'si') {
-              setFieldValue('anio_nivelacion', 'No aplica');
-            }
-
-            if (values.cultivo_actual !== 'Alfalfa') {
-              setFieldValue('perene_roturacion', 'No aplica');
-            }
-
-            if (!cultivosAnuales.includes(values.cultivo_actual)) {
-              setFieldValue('fecha_libre_parcela', 'No aplica');
-            }
-
-            if (values.curso_sader === 'si') {
-              setFieldValue('cuando_toma_sader', 'No aplica');
-            }
-          }, [values.distrito_riego, values.ha_nivelado, values.cultivo_actual, values.curso_sader, setFieldValue]);
-
-          return (
+        {({ values, setFieldValue }) => (
+          <>
             <Form>
               <SectionTitle title="Datos Personales" />
               <div className={styles.formRow}>
@@ -223,8 +242,6 @@ const FormNivelacion = () => {
                   <ErrorMessage name="telefono" component="div" className={styles.errorMessage} />
                 </div>
               </div>
-
-              {/* DATOS DE LA PARCELA */}
 
               <SectionTitle title="Datos de la parcela" />
               <div className={styles.formRow}>
@@ -291,22 +308,12 @@ const FormNivelacion = () => {
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="latitud">Latitud (Norte):</label>
-                  <Field
-                    name="latitud"
-                    type="number"
-                    step="any"
-                    className={styles.inputField}
-                  />
+                  <Field name="latitud" type="number" step="any" className={styles.inputField} />
                   <ErrorMessage name="latitud" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="longitud">Longitud (Oeste):</label>
-                  <Field
-                    name="longitud"
-                    type="number"
-                    step="any"
-                    className={styles.inputField}
-                  />
+                  <Field name="longitud" type="number" step="any" className={styles.inputField} />
                   <ErrorMessage name="longitud" component="div" className={styles.errorMessage} />
                 </div>
               </div>
@@ -400,7 +407,6 @@ const FormNivelacion = () => {
                   </Field>
                   <ErrorMessage name="tipo_seccion" component="div" className={styles.errorMessage} />
                 </div>
-
               </div>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
@@ -415,7 +421,6 @@ const FormNivelacion = () => {
                   </Field>
                   <ErrorMessage name="ha_nivelado" component="div" className={styles.errorMessage} />
                 </div>
-                {/* Campo condicional: ¿En qué año? */}
                 {values.ha_nivelado === 'si' && (
                   <div className={styles.formGroup}>
                     <label htmlFor="anio_nivelacion">¿En qué año?</label>
@@ -564,8 +569,10 @@ const FormNivelacion = () => {
                 </button>
               </div>
             </Form>
-          );
-        }}
+            {/* Inyectamos el FormUpdater para actualizar campos de forma reactiva */}
+            <FormUpdater setFieldValue={setFieldValue} setModulosFiltrados={setModulosFiltrados} />
+          </>
+        )}
       </Formik>
       <AgreementSuccessModal
         isOpen={isModalOpen}
@@ -576,7 +583,6 @@ const FormNivelacion = () => {
         labelGuardar="Guarda este folio para mantener un seguimiento adecuado."
         handleClose={handleCloseModal}
       />
-
     </div>
   );
 };
