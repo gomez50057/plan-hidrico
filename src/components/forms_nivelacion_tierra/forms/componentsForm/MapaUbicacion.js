@@ -1,7 +1,7 @@
 'use client';
 
 import { MapContainer, TileLayer, Marker, useMap, useMapEvents, GeoJSON } from 'react-leaflet';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import { Hgo_Info } from '../../../landing/maps/Hgo';
 
@@ -41,10 +41,10 @@ const SearchMunicipio = () => {
       // Buscar la feature que coincida con el nombre seleccionado
       const feature = Hgo_Info.features.find(f => f.properties.NOM_MUN === municipio);
       if (feature) {
-        // Creamos una capa temporal para obtener los límites del polígono
+        // Crear una capa temporal para obtener los límites del polígono
         const layer = L.geoJSON(feature);
         const bounds = layer.getBounds();
-        // Ajustar el mapa a los límites del polígono con zoom
+        // Ajustar el mapa a los límites del polígono con un zoom máximo especificado
         if (bounds.isValid()) {
           map.fitBounds(bounds, { maxZoom: 13 });
         }
@@ -57,7 +57,7 @@ const SearchMunicipio = () => {
         // Crear una capa con el estilo resaltado
         const highlightLayer = L.geoJSON(feature, { style: highlightStyle });
         highlightLayer.addTo(map);
-        // Remover el resaltado después de 1.5 segundos
+        // Remover el resaltado después de 3 segundos
         setTimeout(() => {
           map.removeLayer(highlightLayer);
         }, 3000);
@@ -77,6 +77,60 @@ const SearchMunicipio = () => {
   );
 };
 
+const CtrlScrollZoomMessage = () => {
+  const map = useMap();
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    let timer = null;
+    const container = map.getContainer();
+
+    const handleWheel = (e) => {
+      if (e.ctrlKey) {
+        // Si se mantiene Ctrl, se previene el comportamiento predeterminado y se realiza el zoom.
+        e.preventDefault();
+        const currentZoom = map.getZoom();
+        const delta = e.deltaY < 0 ? 1 : -1;
+        map.setZoom(currentZoom + delta);
+      } else {
+        // Si no se presiona Ctrl, se permite el scroll normal de la página y se muestra el mensaje.
+        if (!showMessage) {
+          setShowMessage(true);
+        }
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          setShowMessage(false);
+        }, 1000);
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      if (timer) clearTimeout(timer);
+    };
+  }, [map, showMessage]);
+
+  return showMessage ? (
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'rgba(0, 0, 0, 0.7)',
+      color: 'white',
+      zIndex: 2000,
+      pointerEvents: 'none'
+    }}>
+      Utiliza la tecla Ctrl junto con la rueda de desplazamiento del mouse para acercar o alejar el mapa
+    </div>
+  ) : null;
+};
+
 const MapaUbicacion = ({ setFieldValue }) => {
   return (
     <MapContainer
@@ -94,6 +148,9 @@ const MapaUbicacion = ({ setFieldValue }) => {
         subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
       />
 
+      {/* Se agrega el componente para mostrar el mensaje y el zoom con Ctrl + scroll */}
+      <CtrlScrollZoomMessage />
+      
       <SearchMunicipio />
 
       <GeoJSON
