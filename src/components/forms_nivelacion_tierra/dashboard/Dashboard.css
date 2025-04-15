@@ -226,19 +226,23 @@
   height: auto;
   position: relative;
   top: -20px;
-  scale: 0.3;
   filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
   transition: 0.7s ease-in-out;
 }
 
-.sidebar.active .sidebar-card .sidebarCardImg {
-  scale: 0.9;
+.sidebar-card .sidebarCardImg img{
+  width: 80%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.sidebar-card .sidebarCardImg:hover {
-  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.6)) translateY(-15px);
-  scale: 1;
+.sidebar-card .sidebarCardImg img:hover {
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+  transform: scale(1.05) translateY(-10px); /* Hacemos zoom y levantamos la imagen */
 }
+
+
+
 
 .sidebar-card button {
   display: flex;

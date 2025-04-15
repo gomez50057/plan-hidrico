@@ -40,6 +40,7 @@ const Navbar = () => {
             <li><Link href="/">Inicio</Link></li>
             <li><Link href="/knowledge">Conocimiento</Link></li>
             <li><Link href="/training">Capacitación</Link></li>
+            <li><Link href="/dashboard">Nivelación</Link></li>
           </ul>
           <div className={styles.NavbarCirculo}>
             <img src={`${img}estrella.webp`} alt="Estrella de Hidalgo" />

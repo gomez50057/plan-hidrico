@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import Preloader from '../shared/Preloader';
 import '../shared/Preloader.css';
 import './Dashboard.css';
+const imgIconos = "/img/forms nivelacion tierra/iconos/";
+const img = "/img/forms nivelacion tierra/";
 
 const DashboardCharts = dynamic(() => import('./DashboardCharts'), { loading: () => <Preloader />, ssr: false });
 const Formulario = dynamic(() => import('../forms/FormNivelacion'), { loading: () => <Preloader />, ssr: false });
@@ -159,10 +161,10 @@ const Dashboard = () => {
 
         <div className="sidebar-card">
           <div className="sidebarCardImg">
-            <img src="/img/sidebarRecurso.png" alt="Icono de Cerrar Sesión" />
+            <img src={`${img}sidebarRecurso.png`}  alt="Icono de Cerrar Sesión" />
           </div>
           <button onClick={handleLogoutClick}>
-            <img src="/img/iconos/exit.png" alt="Icono de Cerrar Sesión" className="icon" />
+            <img src={`${imgIconos}exit.png`} alt="Icono de Cerrar Sesión" className="icon" />
             Cerrar Sesión
           </button>
         </div>

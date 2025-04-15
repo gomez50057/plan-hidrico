@@ -18,6 +18,19 @@
   border-radius: 20px;
 }
 
+.header-left {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px
+}
+
+.header-left img {
+  height: 2.3rem;
+  width: auto;flex-wrap: wrap;
+}
+
 .header-right {
   flex: 1;
   display: flex;

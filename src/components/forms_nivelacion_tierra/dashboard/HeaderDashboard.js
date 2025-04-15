@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './HeaderDashboard.css';
-import UserOptionsModal from '../shared/UserOptionsModal'; // Asegúrate de ajustar la ruta correcta
+import UserOptionsModal from '../shared/UserOptionsModal';
 
 const imgBasePath = "https://bibliotecadigitaluplaph.hidalgo.gob.mx/img_banco/";
+const imgLogos = "/img/forms nivelacion tierra/logos/";
 
 const HeaderDashboard = () => {
   const [userName, setUserName] = useState('');
@@ -30,9 +31,12 @@ const HeaderDashboard = () => {
 
   return (
     <header className="header-dashboard">
-      {/* <div className="header-left">
-        <input type="text" placeholder="Search..." className="search-bar" />
-      </div> */}
+      <div className="header-left">
+        <img src={`${imgLogos}CONAGUA.png`} alt="img_representativa" />
+        <img src={`${imgLogos}Infraestructura.png`} alt="img_representativa" />
+        <img src={`${imgLogos}Medio Ambiente.png`} alt="img_representativa" />
+        <img src={`${imgLogos}Pllaneación.png`} alt="img_representativa" />
+      </div>
 
       <div className="header-right">
         <div className="welcome-container">
