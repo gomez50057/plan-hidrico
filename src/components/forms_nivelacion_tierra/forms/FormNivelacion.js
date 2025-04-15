@@ -10,6 +10,9 @@ import SectionTitle from './componentsForm/SectionTitle';
 import FirmaDigital from './componentsForm/FirmaDigital';
 import styles from './FormNivelacion.module.css';
 import AgreementSuccessModal from './AgreementSuccessModal';
+import MapaUbicacion from './componentsForm/MapaUbicacion';
+import 'leaflet/dist/leaflet.css';
+
 
 import {
   municipiosDeHidalgo,
@@ -307,16 +310,22 @@ const FormNivelacion = () => {
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="latitud">Latitud (Norte):</label>
-                  <Field name="latitud" type="number" step="any" className={styles.inputField} />
+                  <label>Latitud</label>
+                  <Field name="latitud" type="text" className={styles.inputField} />
                   <ErrorMessage name="latitud" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="longitud">Longitud (Oeste):</label>
-                  <Field name="longitud" type="number" step="any" className={styles.inputField} />
+                  <label>Longitud</label>
+                  <Field name="longitud" type="text" className={styles.inputField} />
                   <ErrorMessage name="longitud" component="div" className={styles.errorMessage} />
                 </div>
               </div>
+
+              <div className={styles.formGroup}>
+                <label>Selecciona la ubicación en el mapa (opcional)</label>
+                <MapaUbicacion setFieldValue={setFieldValue} />
+              </div>
+
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
