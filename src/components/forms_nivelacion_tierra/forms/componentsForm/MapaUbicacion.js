@@ -1,10 +1,10 @@
 'use client';
 
-import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMapEvents, GeoJSON } from 'react-leaflet';
 import { useState } from 'react';
 import L from 'leaflet';
+import { Hgo_Info } from '../../../landing/maps/Hgo';
 
-// Corrige el problema con los íconos de Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/leaflet/marker-icon-2x.png',
@@ -31,7 +31,7 @@ const MapaUbicacion = ({ setFieldValue }) => {
   return (
     <MapContainer
       center={[20.44819465937593, -98.41534285830343]}
-      zoom={9}
+      zoom={8}
       attributionControl={false}
       minZoom={8}
       maxZoom={20}
@@ -41,6 +41,16 @@ const MapaUbicacion = ({ setFieldValue }) => {
         url="http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
         maxZoom={20}
         subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
+      />
+
+      {/* Capa GeoJSON */}
+      <GeoJSON
+        data={Hgo_Info}
+        style={() => ({
+          color: '#3388ff',
+          weight: 2,
+          fillOpacity: 0.3,
+        })}
       />
 
       <LocationPicker setFieldValue={setFieldValue} />
