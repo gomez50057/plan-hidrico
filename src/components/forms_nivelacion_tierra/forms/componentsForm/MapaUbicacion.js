@@ -48,6 +48,19 @@ const SearchMunicipio = () => {
         if (bounds.isValid()) {
           map.fitBounds(bounds, { maxZoom: 12 });
         }
+        // Definir el estilo resaltado
+        const highlightStyle = {
+          color: 'red',
+          weight: 3,
+          fillOpacity: 0.5,
+        };
+        // Crear una capa con el estilo resaltado
+        const highlightLayer = L.geoJSON(feature, { style: highlightStyle });
+        highlightLayer.addTo(map);
+        // Remover el resaltado después de 1.5 segundos
+        setTimeout(() => {
+          map.removeLayer(highlightLayer);
+        }, 3000);
       }
     }
   };
@@ -80,10 +93,8 @@ const MapaUbicacion = ({ setFieldValue }) => {
         subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
       />
 
-      {/* Agregamos el componente de búsqueda */}
       <SearchMunicipio />
 
-      {/* Capa GeoJSON */}
       <GeoJSON
         data={Hgo_Info}
         style={() => ({
