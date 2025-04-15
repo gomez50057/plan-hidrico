@@ -44,9 +44,9 @@ const SearchMunicipio = () => {
         // Creamos una capa temporal para obtener los límites del polígono
         const layer = L.geoJSON(feature);
         const bounds = layer.getBounds();
-        // Ajustar el mapa a los límites del polígono con zoom máximo de 12
+        // Ajustar el mapa a los límites del polígono con zoom
         if (bounds.isValid()) {
-          map.fitBounds(bounds, { maxZoom: 12 });
+          map.fitBounds(bounds, { maxZoom: 13 });
         }
         // Definir el estilo resaltado
         const highlightStyle = {
@@ -66,7 +66,7 @@ const SearchMunicipio = () => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: 10, left: 10, zIndex: 1000, background: 'white', padding: '5px' }}>
+    <div style={{ position: 'absolute', top: 10, left: 55, zIndex: 1000, background: 'white', padding: '5px' }}>
       <select onChange={handleSearch} value={selectedMunicipio}>
         <option value="">Buscar municipio</option>
         {options.map((nom, index) => (
@@ -85,6 +85,7 @@ const MapaUbicacion = ({ setFieldValue }) => {
       attributionControl={false}
       minZoom={8}
       maxZoom={20}
+      scrollWheelZoom={false}
       style={{ height: '450px', width: '100%' }}
     >
       <TileLayer
