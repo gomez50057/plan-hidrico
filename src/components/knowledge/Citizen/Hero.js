@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../../styles/knowledge/Hero.module.css";
+import styles from "../../../styles/knowledge/Hero.module.css";
 const imgBasePath = "/img/knowledge/";
 
 

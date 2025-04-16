@@ -87,7 +87,8 @@ export const gastoCanalesOpciones = [
 export const tipoSeccionOpciones = [
   { value: 'trapezoidal', label: 'Trapezoidal' },
   { value: 'rectangular', label: 'Rectangular' },
-  { value: 'circular', label: 'Circular' }
+  { value: 'circular', label: 'Circular' },
+  { value: 'irregular', label: 'Irregular' }
 ];
 
 export const documentosPresentados = [

@@ -50,7 +50,7 @@ const SearchMunicipio = () => {
         }
         // Definir el estilo resaltado
         const highlightStyle = {
-          color: 'red',
+          color: '#DEC9A3',
           weight: 3,
           fillOpacity: 0.5,
         };
@@ -156,9 +156,9 @@ const MapaUbicacion = ({ setFieldValue }) => {
       <GeoJSON
         data={Hgo_Info}
         style={() => ({
-          color: '#3388ff',
+          color: '#691B32',
           weight: 2,
-          fillOpacity: 0.3,
+          fillOpacity: 0.2,
         })}
       />
 

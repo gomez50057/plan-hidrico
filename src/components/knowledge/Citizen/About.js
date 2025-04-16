@@ -1,4 +1,4 @@
-import styles from "../../styles/knowledge/About.module.css";
+import styles from "../../../styles/knowledge/About.module.css";
 const imgBasePath = "/img/knowledge/";
 
 export default function About() {

@@ -103,6 +103,7 @@ const FormNivelacion = () => {
     documento_presentado: '',
     archivo_pdf: null,
     curso_sader: '',
+    constancia_pdf: null,
     cuando_toma_sader: '',
     firma_digital: '',
   };
@@ -136,10 +137,22 @@ const FormNivelacion = () => {
       .required('Debe cargar un archivo PDF')
       .test('fileFormat', 'Solo se permite PDF', (value) => value && value.type === 'application/pdf'),
     curso_sader: Yup.string().required('Campo obligatorio'),
-    cuando_toma_sader: Yup.string().when('curso_sader', {
-      is: 'no',
-      then: (schema) => schema.required('Especifique cuándo lo tomará'),
-      otherwise: (schema) => schema.oneOf(['No aplica']),
+    cuando_toma_sader: Yup.string().when('curso_sader', (curso_sader, schema) => {
+      if (curso_sader === 'no') {
+        return schema.required('Especifique cuándo lo tomará');
+      }
+      if (curso_sader === 'si') {
+        return schema.required('Carga la constancia');
+      }
+      return schema.oneOf(['No aplica']);
+    }),
+    constancia_pdf: Yup.mixed().when('curso_sader', {
+      is: 'si',
+      then: (schema) =>
+        schema
+          .required('Debe cargar la constancia en PDF')
+          .test('fileFormat', 'Solo se permite PDF', (value) => value && value.type === 'application/pdf'),
+      otherwise: (schema) => schema.notRequired(),
     }),
     firma_digital: Yup.string().required('Firma requerida'),
   });
@@ -435,7 +448,7 @@ const FormNivelacion = () => {
                     <label htmlFor="anio_nivelacion">¿En qué año?</label>
                     <Field as="select" name="anio_nivelacion" className={styles.inputField}>
                       <option value="">Seleccione</option>
-                      {Array.from({ length: 2025 - 1920 + 1 }, (_, i) => 1920 + i).map((year) => (
+                      {Array.from({ length: 2025 - 1980 + 1 }, (_, i) => 1980 + i).map((year) => (
                         <option key={year} value={year}>
                           {year}
                         </option>
@@ -445,7 +458,7 @@ const FormNivelacion = () => {
                   </div>
                 )}
                 <div className={styles.formGroup}>
-                  <label htmlFor="problemas_drenaje">¿Su parcela presenta problemas de drenaje y/o sanidad?</label>
+                  <label htmlFor="problemas_drenaje">¿Su parcela presenta problemas de drenaje y/o salinidad?</label>
                   <Field as="select" name="problemas_drenaje" className={styles.inputField}>
                     <option value="">Seleccione</option>
                     {identificacionOpciones.map((opcion) => (
@@ -568,6 +581,23 @@ const FormNivelacion = () => {
                     <label htmlFor="cuando_toma_sader">¿Cuándo lo piensa tomar?</label>
                     <Field type="text" name="cuando_toma_sader" className={styles.inputField} />
                     <ErrorMessage name="cuando_toma_sader" component="div" className={styles.errorMessage} />
+                  </div>
+                )}
+
+                {values.curso_sader === 'si' && (
+                    <div className={styles.formGroup}>
+                    <label htmlFor="constancia_pdf">Cargar constancia(solo PDF):</label>
+                    <input
+                      id="constancia_pdf"
+                      name="constancia_pdf"
+                      type="file"
+                      accept="application/pdf"
+                      onChange={(event) => {
+                        setFieldValue('constancia_pdf', event.currentTarget.files[0]);
+                      }}
+                      className={styles.inputField}
+                    />
+                    <ErrorMessage name="constancia_pdf" component="div" className={styles.errorMessage} />
                   </div>
                 )}
               </div>
