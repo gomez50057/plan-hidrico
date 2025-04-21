@@ -85,7 +85,7 @@ const SingleSlider = ({ items }) => {
 
           <div className={styles.element}>
             <div className={styles.fileShapeL}>
-              <h2 className={styles.title}>Generales</h2>
+              <h2 className={styles.title}>Objetivos Generales</h2>
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
                   <span className={styles.textElement02}>Implementar una gestión integral y sostenible del recurso hídrico en la región metropolitana de Hidalgo, asegurando la disponibilidad y calidad del agua para consumo humano, agrícola, industrial y ambiental</span>
@@ -96,7 +96,7 @@ const SingleSlider = ({ items }) => {
               <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
             <div className={styles.fileShapeR}>
-              <h2 className={styles.title}>Específicos</h2>
+              <h2 className={styles.title}>Objetivos Específicos</h2>
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
