@@ -9,8 +9,7 @@ const img = "/img/forms nivelacion tierra/";
 
 const DashboardCharts = dynamic(() => import('./DashboardCharts'), { loading: () => <Preloader />, ssr: false });
 const Formulario = dynamic(() => import('../forms/FormNivelacion'), { loading: () => <Preloader />, ssr: false });
-const FormularioEvaluador = dynamic(() => import('../forms/FormularioNivelacionEvaluador'), { loading: () => <Preloader />, ssr: false });
-const Acuerdos = dynamic(() => import('../CRUDTable/coordinador/CRUDTable'), { loading: () => <Preloader />, ssr: false });
+const TableEvaluar = dynamic(() => import('../CRUDTable/coordinador/CRUDTable'), { loading: () => <Preloader />, ssr: false });
 const TableEnlace = dynamic(() => import('../CRUDTable/enlace/TableEnlace'), { loading: () => <Preloader />, ssr: false });
 const Headerdashboard = dynamic(() => import('../dashboard/HeaderDashboard'), { loading: () => <Preloader />, ssr: false });
 const SvgIcon = dynamic(() => import('../shared/SvgIcon'), { loading: () => <Preloader />, ssr: false });
@@ -72,16 +71,14 @@ const Dashboard = () => {
     switch (activeComponent) {
       case 'formulario':
         return <Formulario />;
-        case 'formularioEvaluador':
-          return <FormularioEvaluador />;
-      case 'acuerdosCoordinador':
-        return <Acuerdos />;
+      case 'tableEvaluar':
+        return <TableEvaluar />;
       case 'acuerdosEnlace':
         return <TableEnlace />;
       case 'dashboardCharts':
         return <DashboardCharts />;
       default:
-        return <h1>DASHBOARD <span>elige una opcion</span></h1>;
+        return <h1>DASHBOARD <span>elige una opción</span></h1>;
     }
   };
 
@@ -102,7 +99,7 @@ const Dashboard = () => {
               </a>
             </li>
           )} */}
-          
+
           {userRole === 'coordinador' && (
             <li className="list-item" data-component="formulario" onClick={() => handleMenuClick('formulario')}>
               <b></b>
@@ -116,19 +113,7 @@ const Dashboard = () => {
             </li>
           )}
           {userRole === 'coordinador' && (
-            <li className="list-item" data-component="formularioEvaluador" onClick={() => handleMenuClick('formularioEvaluador')}>
-              <b></b>
-              <b></b>
-              <a href="#" className="list-item-link">
-                <div className="icon">
-                  <SvgIcon name="formulario" />
-                </div>
-                <span className="title">Dictamen</span>
-              </a>
-            </li>
-          )}
-          {userRole === 'coordinador' && (
-            <li className="list-item" data-component="acuerdosCoordinador" onClick={() => handleMenuClick('acuerdosCoordinador')}>
+            <li className="list-item" data-component="tableEvaluar" onClick={() => handleMenuClick('tableEvaluar')}>
               <b></b>
               <b></b>
               <a href="#" className="list-item-link">
@@ -161,7 +146,7 @@ const Dashboard = () => {
 
         <div className="sidebar-card">
           <div className="sidebarCardImg">
-            <img src={`${img}sidebarRecurso.png`}  alt="Icono de Cerrar Sesión" />
+            <img src={`${img}sidebarRecurso.png`} alt="Icono de Cerrar Sesión" />
           </div>
           <button onClick={handleLogoutClick}>
             <img src={`${imgIconos}exit.png`} alt="Icono de Cerrar Sesión" className="icon" />
