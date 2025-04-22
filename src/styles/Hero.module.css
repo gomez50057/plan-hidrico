@@ -31,8 +31,6 @@
   transform: translate(0%, -50%);
   width: 40vw;
   height: auto;
-  opacity: 0;
-  transition: opacity 1s ease-in;
   z-index: 2;
 }
 

@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 // import UpdateFormulario from '../forms/UpdateFormulario';
 // import Report from '../forms/tools/Report';
 // import AllAdvances from '@/components/shared/AllAdvances';
+import styles from './ProjectModal.module.css';
 import EditFormulario from '../forms/FormularioNivelacionEvaluador';
 
 import Evaluador from '../forms/FormularioNivelacionEvaluador';
@@ -54,6 +55,21 @@ const ProjectModal = ({ open, handleClose, projectId, mode }) => {
     return null;
   };
 
+  const parseStyledText = (text) => {
+    const parts = text.split(/(\*{1,2}[^*]+\*{1,2})/g); // Captura *...* o **...**
+    return parts.map((part, index) => {
+      if (part.startsWith('*') && part.endsWith('*')) {
+        const clean = part.slice(1, -1);
+        return (
+          <span key={index} className={styles.tituloSpan}>
+            {clean}
+          </span>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   return (
     <Modal
       open={open}
@@ -77,8 +93,10 @@ const ProjectModal = ({ open, handleClose, projectId, mode }) => {
           <CloseIcon fontSize="large" style={{ color: 'var(--grisOsc)' }} />
         </button>
 
-        <h2 id="modal-title" style={{ marginBottom: '20px' }}>
-          {mode === 'edit' ? 'Editar Acuerdo' : mode === 'evaluador' ? 'Revisar Candidato' : 'Historial de Actualizaciones'}
+        <h2 id="modal-title" className={styles.titulo}>
+          {parseStyledText(
+            mode === 'edit' ? 'Editar *Acuerdo*' : mode === 'evaluador' ? 'Revisar *Candidato*' : 'Historial de Actualizaciones'
+          )}
         </h2>
         {renderContent()}
       </Box>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './Report.module.css'; // Asegúrate de crear y ajustar este módulo de estilos
+import styles from './Report.module.css';
 
 const Report = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
