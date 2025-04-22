@@ -7,6 +7,18 @@
   gap: 20px;
 }
 
+.maskOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: black;
+  width: 0%;
+  z-index: 10;
+  pointer-events: none;
+  transition: width 0.2s ease-out;
+}
+
 .aboutTxt {
   width: 60vw;
   height: auto;

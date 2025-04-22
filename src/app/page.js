@@ -1,7 +1,9 @@
 import HeroSection from "@/components/landing/Hero";
 import AboutSection from "@/components/landing/About";
 import JustificationSection from "@/components/landing/about/About";
-import MapSection from "@/components/landing/maps/ProjectMap";
+// import MapSection from "@/components/landing/maps/ProjectMap";
+import MapSection from "@/components/landing/MapSection";
+
 import PublicKnowledgeSection from "@/components/landing/PublicKnowledgeSection";
 import TrainingSection from "@/components/landing/TrainingSection";
 
