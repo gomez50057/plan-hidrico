@@ -15,16 +15,36 @@ const Headerdashboard = dynamic(() => import('../dashboard/HeaderDashboard'), { 
 const SvgIcon = dynamic(() => import('../shared/SvgIcon'), { loading: () => <Preloader />, ssr: false });
 const ConfirmationModal = dynamic(() => import('../shared/LogoutModal'), { loading: () => <Preloader />, ssr: false });
 
-
-const Dashboard = () => {
+export default function Dashboard() {
   const [activeComponent, setActiveComponent] = useState('');
-  const [userRole, setUserRole] = useState('');
+  const [userRole, setUserRole] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // Obtener el rol del usuario desde el almacenamiento local
-    const role = localStorage.getItem('userRole');
-    setUserRole(role);
+    // Consumir endpoint /api/me/ para obtener rol
+    fetch('/api/me/', {
+      method: 'GET',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((res) => {
+        if (res.status === 401) {
+          // No autenticado: redirigir a login
+          window.location.href = '/login';
+          return null;
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          // Asumir primer grupo como rol principal
+          setUserRole(data.groups[0] || 'user');
+        }
+      })
+      .catch(() => {
+        // Error de red u otro: redirigir a login
+        window.location.href = '/login';
+      });
 
     const listItems = document.querySelectorAll('.list-item');
     listItems.forEach((item) => {
@@ -33,13 +53,10 @@ const Dashboard = () => {
         item.classList.add('active');
       });
     });
-
     const toggleBtn = document.querySelector('.toggle');
     const sidebar = document.querySelector('.sidebar');
-
-    sidebar.classList.add('active');
-    toggleBtn.classList.add('active');
-
+    sidebar?.classList.add('active');
+    toggleBtn?.classList.add('active');
     toggleBtn.onclick = () => {
       toggleBtn.classList.toggle('active');
       sidebar.classList.toggle('active');
@@ -60,25 +77,23 @@ const Dashboard = () => {
 
   const handleConfirmLogout = () => {
     setIsModalOpen(false);
-    window.location.href = '/';
+    fetch('/api/logout/', {
+      method: 'POST',
+      credentials: 'include',
+    }).finally(() => {
+      window.location.href = '/login';
+    });
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const renderContent = () => {
     switch (activeComponent) {
-      case 'formulario':
-        return <Formulario />;
-      case 'tableEvaluar':
-        return <TableEvaluar />;
-      case 'acuerdosEnlace':
-        return <TableEnlace />;
-      case 'dashboardCharts':
-        return <DashboardCharts />;
-      default:
-        return <h1>DASHBOARD <span>elige una opción</span></h1>;
+      case 'formulario': return <Formulario />;
+      case 'tableEvaluar': return <TableEvaluar />;
+      case 'acuerdosEnlace': return <TableEnlace />;
+      case 'dashboardCharts': return <DashboardCharts />;
+      default: return <h1>DASHBOARD <span>elige una opción</span></h1>;
     }
   };
 
@@ -87,19 +102,6 @@ const Dashboard = () => {
       <div className="sidebar active">
         <div className="toggle active"></div>
         <ul className="list">
-          {/* {userRole === '2b' && (
-            <li className="list-item" data-component="dashboardCharts" onClick={() => handleMenuClick('dashboardCharts')}>
-              <b></b>
-              <b></b>
-              <a href="#" className="list-item-link">
-                <div className="icon">
-                  <SvgIcon name="dashboard" />
-                </div>
-                <span className="title">Dashboard</span>
-              </a>
-            </li>
-          )} */}
-
           {userRole === '2a' && (
             <li className="list-item" data-component="formulario" onClick={() => handleMenuClick('formulario')}>
               <b></b>
@@ -156,9 +158,6 @@ const Dashboard = () => {
       </div>
 
       <div className="dashboard-container">
-        {/* <header className="header">
-          <input type="text" placeholder="Search..." className="search-bar" />
-        </header> */}
         <Headerdashboard />
         <section className="content">
           {renderContent()}
@@ -168,6 +167,4 @@ const Dashboard = () => {
       <ConfirmationModal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirmLogout} />
     </div>
   );
-};
-
-export default Dashboard;
+}
