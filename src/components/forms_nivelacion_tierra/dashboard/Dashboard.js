@@ -10,7 +10,7 @@ const img = "/img/forms nivelacion tierra/";
 const DashboardCharts = dynamic(() => import('./DashboardCharts'), { loading: () => <Preloader />, ssr: false });
 const Formulario = dynamic(() => import('../forms/FormNivelacion'), { loading: () => <Preloader />, ssr: false });
 const TableEvaluar = dynamic(() => import('../CRUDTable/coordinador/CRUDTable'), { loading: () => <Preloader />, ssr: false });
-const TableEnlace = dynamic(() => import('../CRUDTable/enlace/TableEnlace'), { loading: () => <Preloader />, ssr: false });
+const TablePresidentes = dynamic(() => import('../CRUDTable/enlace/TablePresidentes'), { loading: () => <Preloader />, ssr: false });
 const Headerdashboard = dynamic(() => import('../dashboard/HeaderDashboard'), { loading: () => <Preloader />, ssr: false });
 const SvgIcon = dynamic(() => import('../shared/SvgIcon'), { loading: () => <Preloader />, ssr: false });
 const ConfirmationModal = dynamic(() => import('../shared/LogoutModal'), { loading: () => <Preloader />, ssr: false });
@@ -91,9 +91,9 @@ export default function Dashboard() {
     switch (activeComponent) {
       case 'formulario': return <Formulario />;
       case 'tableEvaluar': return <TableEvaluar />;
-      case 'acuerdosEnlace': return <TableEnlace />;
+      case 'tablePresidentes': return <TablePresidentes />;
       case 'dashboardCharts': return <DashboardCharts />;
-      default: return <h1>DASHBOARD <span>elige una opción</span></h1>;
+      default: return <h1>DASHBOARD <span> Elige una opción de la barra de navegación lateral izquierda  </span></h1>;
     }
   };
 
@@ -127,19 +127,15 @@ export default function Dashboard() {
               </a>
             </li>
           )}
-          {userRole === 'enlace' && (
-            <li
-              className="list-item"
-              data-component="acuerdosEnlace"
-              onClick={() => handleMenuClick('acuerdosEnlace')}
-            >
+          {userRole === '2a' && (
+            <li className="list-item" data-component="tablePresidentes" onClick={() => handleMenuClick('tablePresidentes')}            >
               <b></b>
               <b></b>
               <a href="#" className="list-item-link">
                 <div className="icon">
                   <SvgIcon name="acuerdo" />
                 </div>
-                <span className="title">Tecnificación</span>
+                <span className="title">Registro</span>
                 <span className="sub-title"></span>
               </a>
             </li>
