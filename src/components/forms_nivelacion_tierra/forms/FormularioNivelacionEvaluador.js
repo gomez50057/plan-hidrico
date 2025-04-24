@@ -12,17 +12,24 @@ import NivelacionDetalle from './componentsForm/NivelacionDetalle';
 
 
 const FormularioNivelacionEvaluador = () => {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [nivelaciones, setNivelaciones] = useState([]);
   const [isModalOpenEvaluador, setIsModalOpenEvaluador] = useState(false);
   const [preSelectedFolio, setPreSelectedFolio] = useState('');
   const [updatedFolio, setUpdatedFolio] = useState('');
 
   useEffect(() => {
-    axios.get(`${apiUrl}/api/formularios/`)
-      .then(res => setNivelaciones(res.data))
-      .catch(err => console.error('Error cargando nivelaciones:', err));
-  }, [apiUrl]);
+    axios.get('/api/formularios/', {
+      withCredentials: true,         // envía access_token en cookie HTTP-Only
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then(res => {
+      setNivelaciones(res.data);
+    })
+    .catch(err => {
+      console.error('Error cargando nivelaciones:', err);
+    });
+  }, []);
+  
 
   // Al montar el componente, obtenemos el folio guardado en localStorage (si existe)
   useEffect(() => {
@@ -65,19 +72,27 @@ const FormularioNivelacionEvaluador = () => {
   });
 
   const handleSubmit = async (values, { resetForm }) => {
-    console.log('Valores enviados:', values); // Agrega este log para ver el payload
+    console.log('🚀 Entrando a handleSubmit con valores:', values);
     try {
-      const response = await axios.post(`${apiUrl}/api/archivos/`, values);
+      const response = await axios.post(
+        '/api/archivos/',       // ruta interna Next.js
+        values,                 // body JSON
+        {
+          withCredentials: true,                  // envía access_token en cookie
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+  
+      // Leer folio de la respuesta
       const folio = response.data.folio;
       setUpdatedFolio(folio);
       setIsModalOpenEvaluador(true);
       resetForm();
     } catch (error) {
-      F
-      console.error('Error al enviar el formulario evaluador:', error);
+      console.error('📛 Error al enviar el formulario evaluador:', error);
       alert('Ocurrió un error al enviar el formulario.');
     }
-  };
+  };  
 
   const handleCloseModal = () => {
     setIsModalOpenEvaluador(false);

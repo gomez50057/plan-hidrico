@@ -159,33 +159,38 @@ const FormNivelacion = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     console.log('🚀 Entrando a handleSubmit con valores:', values);
+  
     try {
       const formData = new FormData();
       for (const key in values) {
         formData.append(key, values[key]);
       }
-      console.log('📤 Enviando datos al backend:');
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}:`, value instanceof File ? value.name : value);
-      }
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const response = await axios.post(`${apiUrl}/api/formularios/`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-      // Se espera que el backend devuelva el folio generado en response.data.folio
+  
+      const response = await axios.post(
+        '/api/formularios/',    // ruta interna
+        formData,
+        {
+          withCredentials: true, // envía cookies HTTP-Only
+          // ¡OJO! No pongas aquí 'Content-Type', deja que Axios lo calcule con boundary
+        }
+      );
+  
       const folio = response.data.folio;
       setGeneratedFolio(folio);
       setIsModalOpen(true);
       resetForm();
+  
     } catch (error) {
       if (error.response) {
         console.error('📛 Error del servidor:', error.response.status);
         console.error('🧾 Detalles:', error.response.data);
+        // Aquí podrías extraer errores de validación, por ejemplo:
       } else {
         console.error('⚠️ Error desconocido:', error);
       }
     }
   };
+  
 
   const handleCloseModal = () => {
     setIsModalOpen(false);

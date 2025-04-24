@@ -5,7 +5,6 @@ import axios from 'axios';
 import styles from './NivelacionDetalle.module.css';
 
 export default function NivelacionDetalle({ folio }) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [detalle, setDetalle] = useState(null);
   const [error, setError] = useState(null);
 
@@ -17,16 +16,24 @@ export default function NivelacionDetalle({ folio }) {
     }
     setError(null);
     setDetalle(null);
+  
     axios
-      .get(`${apiUrl}/api/formularios/${folio}/`)
-      .then((res) => setDetalle(res.data))
-      .catch((err) => setError(err.response?.data || err.message));
+      .get(`/api/formularios/${folio}/`, {
+        withCredentials: true,              // incluye access_token en la cookie
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then(res => setDetalle(res.data))
+      .catch(err => {
+        // Si el backend devolvió JSON con errores, lo mostramos, si no, el mensaje genérico
+        const data = err.response?.data;
+        setError(data || err.message);
+      });
   }, [folio]);
-
+  
   // Manejo de estados
-  if (!folio) return null;
-  if (error) return <div className={styles.errorMessage}>Error: {JSON.stringify(error)}</div>;
-  if (!detalle) return <div>Cargando detalles del folio <strong>{folio}</strong>...</div>;
+  if (!folio)   return null;
+  if (error)    return <div className={styles.errorMessage}>Error: {JSON.stringify(error)}</div>;
+  if (!detalle) return <div>Cargando detalles del folio <strong>{folio}</strong>...</div>;  
 
   return (
     <div className={styles.detailWrapper}>
