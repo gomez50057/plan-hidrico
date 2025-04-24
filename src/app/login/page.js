@@ -31,21 +31,33 @@ export default function LoginPage() {
           <div className={styles.imgInicio}>
             <img src={`${imgBasePath}inicio de seccion.png`} alt="inicio de seccion" />
           </div>
+          <div className={styles.inputGroup}>
           <input
+            id="username"
             className={styles.input}
-            placeholder="Usuario"
+            type="text"
+            placeholder=" "        /* <- un espacio para habilitar :placeholder-shown */
             value={user}
             onChange={e => setUser(e.target.value)}
             required
           />
+          <label htmlFor="username">Usuario</label>
+        </div>
+
+        {/* Grupo Contraseña */}
+        <div className={styles.inputGroup}>
           <input
+            id="password"
             className={styles.input}
             type="password"
-            placeholder="Contraseña"
+            placeholder=" "
             value={pass}
             onChange={e => setPass(e.target.value)}
             required
           />
+          <label htmlFor="password">Contraseña</label>
+        </div>
+
           {err && <p className={styles.error}>{err}</p>}
           <button type="submit" className={styles.button}>
             Entrar
