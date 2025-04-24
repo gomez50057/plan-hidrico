@@ -87,7 +87,7 @@ const Dashboard = () => {
       <div className="sidebar active">
         <div className="toggle active"></div>
         <ul className="list">
-          {/* {userRole === 'coordinador' && (
+          {/* {userRole === '2b' && (
             <li className="list-item" data-component="dashboardCharts" onClick={() => handleMenuClick('dashboardCharts')}>
               <b></b>
               <b></b>
@@ -100,7 +100,7 @@ const Dashboard = () => {
             </li>
           )} */}
 
-          {userRole === 'coordinador' && (
+          {userRole === '2a' && (
             <li className="list-item" data-component="formulario" onClick={() => handleMenuClick('formulario')}>
               <b></b>
               <b></b>
@@ -112,7 +112,7 @@ const Dashboard = () => {
               </a>
             </li>
           )}
-          {userRole === 'coordinador' && (
+          {userRole === '2b' && (
             <li className="list-item" data-component="tableEvaluar" onClick={() => handleMenuClick('tableEvaluar')}>
               <b></b>
               <b></b>

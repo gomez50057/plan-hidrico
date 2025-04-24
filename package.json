@@ -19,6 +19,7 @@
     "export-to-csv": "^1.4.0",
     "formik": "^2.4.6",
     "gsap": "^3.12.7",
+    "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",
     "material-react-table": "^3.2.1",
     "next": "15.2.4",
