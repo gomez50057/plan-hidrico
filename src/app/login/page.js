@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import styles from './login.module.css';
+const imgBasePath = "/img/login/";
+
 
 export default function LoginPage() {
   const router = useRouter();
@@ -21,12 +24,41 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={submit} style={{ maxWidth: 360, margin: '3rem auto', padding: 20, border: '1px solid #ccc', borderRadius: 8 }}>
-      <h2>Login</h2>
-      <input placeholder="Usuario" value={user} onChange={e => setUser(e.target.value)} required />
-      <input type="password" placeholder="Contraseña" value={pass} onChange={e => setPass(e.target.value)} required />
-      {err && <p style={{ color: 'red' }}>{err}</p>}
-      <button type="submit" style={{ marginTop: 10 }}>Entrar</button>
-    </form>
+    <section>
+      <form onSubmit={submit} className={styles.login}>
+
+        <div className={styles.containerInicioSeccion}>
+          <div className={styles.imgInicio}>
+            <img src={`${imgBasePath}inicio de seccion.png`} alt="inicio de seccion" />
+          </div>
+          <input
+            className={styles.input}
+            placeholder="Usuario"
+            value={user}
+            onChange={e => setUser(e.target.value)}
+            required
+          />
+          <input
+            className={styles.input}
+            type="password"
+            placeholder="Contraseña"
+            value={pass}
+            onChange={e => setPass(e.target.value)}
+            required
+          />
+          {err && <p className={styles.error}>{err}</p>}
+          <button type="submit" className={styles.button}>
+            Entrar
+          </button>
+
+        </div>
+
+        <div className={styles.containerLoginImg}>
+          <div className={styles.imgLogin}>
+            <img src={`${imgBasePath}imgLogin.png`} alt="Login" />
+          </div>
+        </div>
+      </form>
+    </section>
   );
 }

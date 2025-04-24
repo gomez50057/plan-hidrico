@@ -1,0 +1,97 @@
+/* login.module.css */
+
+.login {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Ambos contenedores comparten display:flex + alineaciones */
+.containerInicioSeccion,
+.containerLoginImg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Izquierda: columna de inputs */
+.containerInicioSeccion {
+  flex: 0 0 45vw;
+  flex-direction: column;
+  margin-bottom: 2.5vh;
+}
+
+/* Derecha: imagen de login */
+.containerLoginImg {
+  flex: 1; /* ocupa el resto */
+}
+
+/* Imagen de “inicio de sección” */
+.imgInicio {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+/* Imagen grande de login */
+.imgLogin {
+  width: 80%;
+  z-index: 100;
+}
+
+/* Ambas imágenes tienen misma regla para el <img> interno */
+.imgInicio img,
+.imgLogin img {
+  width: 100%;
+  height: auto;
+}
+
+/* Inputs y botón comparten ciertas reglas */
+.input,
+.button {
+  box-sizing: border-box;
+  border-radius: 50px;
+  transition: 0.2s ease;
+}
+
+/* Estilo de los inputs */
+.input {
+  width: 100%;
+  max-width: 400px;
+  margin: 12px 0;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #333;
+  background: transparent;
+  border: 2px solid #bbb;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+/* Mensaje de error */
+.error {
+  color: #d00;
+  font-size: 0.9rem;
+  margin: -0.5rem 0 0.75rem;
+}
+
+/* Botón de envío */
+.button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  background-color: var(--vinoOsc);
+  color: var(--blanco);
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--vinoClr);
+}
