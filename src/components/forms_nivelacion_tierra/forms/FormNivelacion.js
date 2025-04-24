@@ -144,7 +144,6 @@ const FormNivelacion = () => {
       if (curso_sader === 'si') {
         return schema.required('Carga la constancia');
       }
-      return schema.oneOf(['No aplica']);
     }),
     constancia_pdf: Yup.mixed().when('curso_sader', {
       is: 'si',
