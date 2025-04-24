@@ -27,7 +27,9 @@
 }
 
 .text {
-  max-width: 40%;
+  width: 80%;
+  height: auto;
+  min-width: 320px;
   padding: 0 10px;
 }
 
@@ -85,29 +87,6 @@
   width: 100%;
   border: #861a3e solid 1px;
   border-radius: 1px;
-}
-
-.containerNumber {
-  display: flex;
-  gap: 3rem;
-  padding: 15px 2rem;
-}
-
-.card {
-  display: inline-block;
-}
-
-.value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #666666;
-  margin: 0;
-}
-
-.label {
-  font-size: 1.5rem;
-  color: #999999;
-  margin: 0;
 }
 
 /*  */

@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from "../../styles/About.module.css";
+const imgBasePath = "/img/";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,8 +33,8 @@ export default function About() {
       <div className={styles.aboutContainer} style={{ position: "relative", overflow: "hidden" }}>
         <div className={styles.maskOverlay} ref={maskRef}></div>
 
-        <div className={styles.logoAcuerdo}>
-          <div style={{ height: '300px' }}></div>
+        <div className={styles.aboutImg}>
+          <img src={`${imgBasePath}aboutImg.jpg`} alt="Campo de riego" />
         </div>
 
         <div className={styles.aboutTxt}>

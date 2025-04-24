@@ -8,10 +8,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ejesPlanEstatal } from '../../../utils/planEstal';
 import styles from './Slider.module.css';
 const imgBasePath = "/img/";
-const statsNumber = [
-  { value: '$59,576M', label: 'Inversión total estimada destinada a mejorar el acceso y gestión del agua potable' },
-  { value: '$11,849M', label: 'Programa de Tecnificación del Riego' },
-];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,17 +65,9 @@ const SingleSlider = ({ items }) => {
               </div>
             </div>
             <div className={styles.text}>
-              <h2>¿Qué es el Plan Hídrico Metropolitano de Hidalgo ?</h2>
-              <p>El Plan Hídrico Metropolitano es una iniciativa estratégica diseñada para gestionar y proteger los recursos hídricos en el estado, con el objetivo central de asegurar la disponibilidad, calidad y sostenibilidad del agua para satisfacer las necesidades humanas, agrícolas, industriales y ambientales. Este plan contempla un conjunto de acciones enfocadas en garantizar un uso eficiente y sustentable del agua, protegiendo la salud pública y los ecosistemas, así como asegurando el recurso hídrico para las futuras generaciones.</p>
+              <h2>¿Qué es el Plan Hídrico Metropolitano de Hidalgo?</h2>
+              <p>Es un conjunto de estrategias, políticas y acciones destinadas gestionar , proteger y  garantizar el acceso equitativo y sustentable al agua, buscando corregir desigualdades históricas en la distribución del recurso hídrico, priorizando su uso para consumo humano, especialmente en comunidades vulnerables, a través de la modernización de la infraestructura hídrica como son los sistemas de riego, tratamiento y uso de aguas residuales, promoviendo una gestión más eficiente y transparente frente a los desafíos del cambio climático y la sobreexplotación de acuíferos.</p>
               <div className={styles.line}></div>
-              {/* <div className={styles.containerNumber}>
-                {statsNumber.map((item, index) => (
-                  <div key={index} className={styles.card}>
-                    <h2 className={styles.value}>{item.value}</h2>
-                    <p className={styles.label}>{item.label}</p>
-                  </div>
-                ))}
-              </div> */}
             </div>
           </div>
 
