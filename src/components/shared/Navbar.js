@@ -4,6 +4,8 @@ import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 const img = "/img/";
+const imgLogos = "/img/forms nivelacion tierra/logos/";
+
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
@@ -32,7 +34,8 @@ const Navbar = () => {
     <nav className={`${styles.Navbar} ${visible ? styles.active : styles.hidden} ${lastScrollPos.current > 100 ? styles.scrolled : ''}`}>
       <div className={styles.NavbarList}>
         <div className={styles.NavbarImg}>
-          <img src={`${img}Coordinación.png`} alt="Logo de Planeación" />
+          <img src={`${imgLogos}Gob Federal.png`} alt="Gobierno Federal" />
+          <img src={`${imgLogos}Gob Hgo.png`} alt="Gobierno del Estado de Hidalgo" /> 
           <img src={`${img}headertxt.png`} alt="Logo de Tenemos un Acuerdo" />
         </div>
         <div className={styles.NavbarInicio}>

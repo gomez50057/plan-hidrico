@@ -32,10 +32,8 @@ const HeaderDashboard = () => {
   return (
     <header className="header-dashboard">
       <div className="header-left">
-        <img src={`${imgLogos}Medio Ambiente.png`} alt="img_representativa" />
-        <img src={`${imgLogos}CONAGUA.png`} alt="img_representativa" />
-        <img src={`${imgLogos}Infraestructura.png`} alt="img_representativa" />
-        <img src={`${imgLogos}Pllaneación.png`} alt="img_representativa" />
+        <img src={`${imgLogos}Gob Federal.png`} alt="Gobierno Federal" />
+        <img src={`${imgLogos}Gob Hgo.png`} alt="Gobierno del Estado de Hidalgo" />        
       </div>
 
       <div className="header-right">
