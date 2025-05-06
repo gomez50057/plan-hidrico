@@ -1,0 +1,151 @@
+.container {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filtros input[type="text"],
+.filtros input[type="date"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+
+
+.card {
+  background: #eeeeee;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.cardHeader h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.cardHeader p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footerInfo {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.footerInfo hr {
+  border: none;
+  border-top: 2px solid #333;
+  width: 60%;
+  margin: 1rem 0 0.5rem;
+}
+
+.authorLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+}
+
+.authorLine hr {
+  flex: 1;
+  border: none;
+  border-top: 2px solid #111;
+  margin: 0;
+}
+
+.authorLine strong {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+
+.cardMetaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cardMetaRow > div:first-child p {
+  margin: 0;
+  font-size: 1rem;
+  color: #111;
+}
+
+.cardMetaRow small {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+
+.footerInfo strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footerInfo p {
+  margin: 0;
+  font-size: 1rem;
+  color: #111;
+}
+
+.footerInfo small {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.footerLinkBox {
+  border-radius: 8px;
+}
+
+.footerLinkBox a {
+  background-color: var(--vinoClr);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.footerLinkBox a:hover {
+  background-color: var(--vinoOsc, #800020);
+}
