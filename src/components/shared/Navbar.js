@@ -35,13 +35,19 @@ const Navbar = () => {
       <div className={styles.NavbarList}>
         <div className={styles.NavbarImg}>
           <img src={`${imgLogos}Gob Federal.png`} alt="Gobierno Federal" />
-          <img src={`${imgLogos}Gob Hgo.png`} alt="Gobierno del Estado de Hidalgo" /> 
+          <img src={`${imgLogos}Gob Hgo.png`} alt="Gobierno del Estado de Hidalgo" />
           <img src={`${img}headertxt.png`} alt="Logo de Tenemos un Acuerdo" />
         </div>
         <div className={styles.NavbarInicio}>
           <ul className={styles.navbarOpc}>
             <li><Link href="/">Inicio</Link></li>
-            <li><Link href="/ecos-del-territorio-hidrico">Materiales de apoyo</Link></li>
+            <li className={styles.dropdown}>
+              <span className={styles.dropdownToggle}>Materiales de apoyo</span>
+              <ul className={styles.dropdownMenu}>
+                <li><Link href="/ecos-del-territorio-hidrico">Ecos del territorio hídrico</Link></li>
+                <li><Link href="/planeacion-para-el-futuro-del-agua">Planeación para el futuro del agua</Link></li>
+              </ul>
+            </li>
             <li><Link href="/training">Capacitación</Link></li>
             <li><Link href="/dashboard">Nivelación</Link></li>
           </ul>
