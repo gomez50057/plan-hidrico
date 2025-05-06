@@ -5,11 +5,11 @@
   width: 100vw;
   height: 100vh;
   color: var(--blanco);
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .contentHeader .headeTitule  {
-  width: 90%;
+  width: 50%;
   will-change: transform;
 }
 
@@ -24,6 +24,9 @@
   height: auto;
 }
 
+/*  */
+/* Carrusel */
+/*  */
 
 .marqueeWrapper {
   width: 100vw;
@@ -39,55 +42,27 @@
 }
 
 .marqueeItem {
+  position: relative;
   min-width: 160px;
   min-height: 250px;
-
   width: 17vw;
-  height: 50vh;
-
-  border-radius: 5rem;
+  height: 40vh;
+  border-radius: 15px;
   overflow: hidden;
   flex-shrink: 0;
   transform: scale(0.5);
-  transition: transform 0.3s ease-in-out;
-  will-change: transform;
-}
-
-.marqueeItem:hover {
-  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+  will-change: transform, opacity, filter;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+  transform-style: preserve-3d;
 }
 
 .imageCard {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2rem;
   display: block;
 }
-
-
-.marqueeItem {
-  position: relative;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
-  transform-style: preserve-3d;
-}
-
-.marqueeItem::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background: inherit;
-  opacity: 0.15;
-  transform: scaleY(-1);
-  filter: blur(8px);
-  z-index: -1;
-  border-radius: inherit;
-}
-
-
 
 /* Tamaño para 'md' */
 @media (min-width: 576px) {}
@@ -122,6 +97,8 @@
 } */
 
 /* Tamaño para 'xxl' */
-/* @media (min-width: 1400px) {
-
-} */
+@media (min-width: 1400px) {
+  .contentHeader {
+    gap: 80px;
+  }
+}

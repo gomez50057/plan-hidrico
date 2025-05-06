@@ -30,20 +30,22 @@ export default function Hero() {
         repeat: -1,
         onUpdate: () => {
           itemsRef.current.forEach((el) => {
+            if (!el) return;
             const box = el.getBoundingClientRect();
             const centerX = window.innerWidth / 2;
             const elementCenter = box.left + box.width / 2;
             const distance = Math.abs(centerX - elementCenter);
             const ratio = Math.min(distance / centerX, 1);
-            const scale = 1 + ratio * 0.4; // ahora se hacen más grandes al alejarse
-            const opacity = 1 - ratio * 0.5;
+            const scale = 1 + ratio * 0.7; // más profundidad
+            const opacity = 1 - ratio * 0.6;
 
             const isLeft = elementCenter < centerX;
-            const angle = ratio * (isLeft ? -35 : 35);
+            const angle = ratio * (isLeft ? -50 : 50); // más inclinación
 
             el.style.transform = `scale(${scale}) rotateY(${angle}deg)`;
             el.style.opacity = opacity;
-            el.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            el.style.filter = `drop-shadow(0px 12px 20px rgba(0, 0, 0, ${0.3 + ratio * 0.2}))`;
+            el.style.transition = 'transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease';
           });
         }
       });
