@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../../../styles/knowledge/Hero.module.css";
-const imgBasePath = "/img/knowledge/";
+const imgBasePath = "/img/knowledge/Governmental/";
 
 
 export default function Hero() {

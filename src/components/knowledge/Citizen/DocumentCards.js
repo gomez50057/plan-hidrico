@@ -60,7 +60,7 @@ export default function DocumentCards() {
             <p>{doc.descripcion}</p>
             <p><strong>Autor:</strong> {doc.autor}</p>
             <p><strong>Fecha:</strong> {doc.fecha_carga}</p>
-            <p><strong>Categorías:</strong> {doc.categorias.join(', ')}</p>
+            <p>{doc.categorias.join(', ')}</p>
             <a href={doc.link} target="_blank">Ver documento</a>
           </div>
         ))}

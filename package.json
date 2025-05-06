@@ -30,6 +30,7 @@
     "react-select": "^5.10.1",
     "react-signature-canvas": "^1.1.0-alpha.2",
     "react-water-wave": "^2.0.1",
+    "swiper": "^11.2.6",
     "yup": "^1.6.1"
   },
   "devDependencies": {
