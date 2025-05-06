@@ -10,9 +10,9 @@ export default function About() {
         </div>
         <div className={styles.aboutTxt}>
           <h2><span className="spanDoarado">Ecos</span> del <span>Territorio Hídrico</span></h2>
-          <p>Una sección del sitio Plan Hídrico Metropolitano de Hidalgo donde el conocimiento ciudadano toma la palabra.</p>
-          <p>Ecos del Territorio Hídrico es un espacio dedicado a amplificar las voces, ideas y saberes de quienes viven, piensan y defienden el agua como bien común. Aquí, la ciudadanía es protagonista en la construcción colectiva de soluciones y miradas sobre el territorio hídrico metropolitano.</p>
-          <p>Creemos que toda experiencia, reflexión o propuesta tiene valor. Por eso, invitamos a todas y todos a compartir artículos de opinión, ensayos, estudios independientes, relatos comunitarios y cualquier expresión escrita que contribuya a enriquecer la visión hídrica de Hidalgo desde abajo y en plural.</p>
+          <p>Esta sección fue creada para que compartas tu conocimiento.</p>
+          {/* <p>Ecos del Territorio Hídrico es un espacio dedicado a amplificar las voces, ideas y saberes de quienes viven, piensan y defienden el agua como bien común. Aquí, la ciudadanía es protagonista en la construcción colectiva de soluciones y miradas sobre el territorio hídrico metropolitano.</p> */}
+          <p>¿Tienes artículos de opinión, ensayos, estudios independientes, relatos comunitarios y cualquier expresión escrita que contribuya a enriquecer el Plan Hídrico Metropolitano de Hidalgo? ¡¡¡Compártelo!!! Llena el siguiente formulario y sube tu documento. Porque con la voz del pueblo, se transforma a Hidalgo.</p>
           <p>Porque cuando compartimos el conocimiento, sembramos futuro. Porque en cada voz, hay un eco que transforma.</p>
         </div>
 

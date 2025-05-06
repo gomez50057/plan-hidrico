@@ -10,9 +10,8 @@ export default function About() {
         </div>
         <div className={styles.aboutTxt}>
           <h2><span className="spanDoarado">Planeación</span> para el <span>Futuro del Agua</span></h2>
-          <p>Compromiso institucional para un desarrollo hídrico justo, sostenible y con visión de futuro.</p>
-          <p>Planeación para el Futuro del Agua es el espacio donde convergen las estrategias, políticas públicas y acciones del Gobierno del Estado de Hidalgo para garantizar una gestión integral y eficiente del recurso hídrico.</p>
-          <p>Desde esta plataforma se articula el trabajo de planeación territorial, prospectiva hídrica y desarrollo sustentable, en coordinación con instancias federales, municipales y la ciudadanía. Aquí se comparten diagnósticos, líneas estratégicas, proyectos prioritarios y avances del Plan Hídrico Metropolitano, como parte del compromiso por construir un futuro donde el agua sea motor de bienestar, equidad y resiliencia.</p>
+          <p>Planeación para el Futuro del Agua es el espacio donde convergen las estrategias, políticas públicas y acciones para garantizar una gestión integral y eficiente del recurso hídrico.</p>
+          <p>En este apartado podrás consultar documentos que hemos seleccionado para que conozcas un poco sobre el tema, como parte del compromiso por construir un futuro donde el agua sea motor de bienestar, equidad y resiliencia. Si tienes un documento y quieres que la población lo lea ve a la sección Voces del pueblo y ¡Compártelo!</p>
           <p>Porque planear hoy, es asegurar el agua de mañana.</p>
         </div>
 

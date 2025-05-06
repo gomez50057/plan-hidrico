@@ -66,17 +66,17 @@ const SingleSlider = ({ items }) => {
             </div>
             <div className={styles.text}>
               <h2>¿Qué es el Plan Hídrico Metropolitano de Hidalgo?</h2>
-              <p>Es un conjunto de estrategias, políticas y acciones destinadas gestionar , proteger y  garantizar el acceso equitativo y sustentable al agua, buscando corregir desigualdades históricas en la distribución del recurso hídrico, priorizando su uso para consumo humano, especialmente en comunidades vulnerables, a través de la modernización de la infraestructura hídrica como son los sistemas de riego, tratamiento y uso de aguas residuales, promoviendo una gestión más eficiente y transparente frente a los desafíos del cambio climático y la sobreexplotación de acuíferos.</p>
+              <p>Es un conjunto de estrategias que buscan para mejorar el uso y el cuidado del agua, asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se implementará o mejorará la infraestructura hídrica como tuberías y sistemas de riego.</p>
               <div className={styles.line}></div>
             </div>
           </div>
 
           <div className={styles.element}>
             <div className={styles.fileShapeL}>
-              <h2 className={styles.title}>Objetivos Generales</h2>
+              <h2 className={styles.title}>¿Qué busca el Plan Hídrico Metropolitano de Hidalgo?</h2>
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
-                  <span className={styles.textElement02}>Implementar una gestión integral y sostenible del recurso hídrico en la región metropolitana de Hidalgo, asegurando la disponibilidad y calidad del agua para consumo humano, agrícola, industrial y ambiental</span>
+                  <span className={styles.textElement02}>Busca asegurar que todas las personas tengan agua suficiente, limpia y bien distribuida, especialmente en las zonas donde más se necesita, así como prevenir inundaciones, limpiar ríos contaminados y aprovechar mejor el agua que se usa en el campo.</span>
                 </div>
               </div>
             </div>
@@ -84,28 +84,21 @@ const SingleSlider = ({ items }) => {
               <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
             <div className={styles.fileShapeR}>
-              <h2 className={styles.title}>Objetivos Específicos</h2>
+              <h2 className={styles.title}>¿Para qué un Plan Hídrico Metropolitano de Hidalgo?</h2>
               <div className={styles.cardElement02}>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Incrementar la productividad en los
-                    cultivos.</span>
+                  <span className={styles.textElement02}>Llevar agua a quien más la necesita, de manera justa, sin desperdicios ni privilegios.</span>
                 </div>
                 <div className={styles.separator}></div>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Reconversión de cultivos.</span>
+                  <span className={styles.textElement02}>Evitar inundaciones y limpiar ríos contaminados.</span>
                 </div>
                 <div className={styles.separator}></div>
                 <div className={styles.item}>
                   <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Concluir y consolidar la transferencia de
-                    los distritos de riego.</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Garantizar el acceso al agua potable mediante la construcción y modernización de infraestructura hidráulica </span>
+                  <span className={styles.textElement02}>Aprovechar mejor el agua en los campos hidalguenses a través del uso de la tecnología e incrementar la productividad en los cultivos.</span>
                 </div>
               </div>
             </div>
@@ -119,10 +112,12 @@ const SingleSlider = ({ items }) => {
               <Image src={`${imgBasePath}justificacion.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
             <div className={styles.textJustificacion}>
-              <h2><span className="spanVino">Justificación</span> </h2>
+              <h2><span className="spanVino">¿Cuáles son sus componentes?</span> </h2>
               <h3><span>Agua Segura, Futuro Seguro: Por un Hidalgo Sustentable y Próspero</span></h3>
-              <p>En Hidalgo, el agua no solo es un recurso esencial; es la base para el bienestar social, el desarrollo económico y la protección del medio ambiente. El crecimiento poblacional, la actividad agrícola e industrial, y los efectos del cambio climático han incrementado la presión sobre nuestros recursos hídricos, poniendo en riesgo su disponibilidad y calidad a largo plazo.</p>
-              <p>El Plan Hídrico Metropolitano surge como una respuesta estratégica y urgente a estas necesidades. Este plan asegura agua potable para miles de familias, protege comunidades contra inundaciones, mejora el saneamiento y fortalece la producción agrícola mediante tecnologías innovadoras de riego.</p>
+              <p>1.	Agua Potable: Se busca mejorar el uso y el cuidado del agua.</p>
+              <p>2.	Prevención e Inundaciones: Acciones y obras enfocadas a la protección de la población contra inundaciones, incluidas las limpiezas de lodo, tierra, basura u otros materiales que se acumulan en drenajes, ríos, presas, canales o alcantarillas, y que impiden que el agua fluya correctamente.</p>
+              <p>3.	Saneamiento: Limpiar los ríos de la región cambiando el tránsito de los sistemas de drenaje municipal.</p>
+              <p>4.	Plan de Justicia: A través del Programa de Tecnificación se busca mejorar el uso del agua en el campo, apoyando a los agricultores para que usen sistemas de riego más eficientes, como el riego por goteo, aspersión o multicompuertas, revestimiento y rehabilitación de los canales, revestimiento de regaderas y nivelación de tierras.</p>
             </div>
           </div>
 
