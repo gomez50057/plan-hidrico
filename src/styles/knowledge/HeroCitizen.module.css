@@ -25,27 +25,35 @@
 }
 
 
-.carouselContainer {
-  width: 100%;
+.marqueeWrapper {
+  width: 100vw;
+  overflow: visible;
   padding: 2rem 0;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 5rem;
+}
+
+.marqueeItem {
+  min-width: 160px;
+  min-height: 250px;
+
+  width: 17vw;
+  height: 50vh;
+
+  border-radius: 5rem;
   overflow: hidden;
-}
-
-.swiperContainer {
-  padding: 1rem;
-}
-
-.slide {
-  width: 140px;
-  height: 250px;
   flex-shrink: 0;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  transform: scale(0.5);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
 }
 
-.slide:hover {
+.marqueeItem:hover {
   transform: scale(1.05);
 }
 
@@ -53,7 +61,30 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
+  display: block;
+}
+
+
+.marqueeItem {
+  position: relative;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+  transform-style: preserve-3d;
+}
+
+.marqueeItem::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: inherit;
+  opacity: 0.15;
+  transform: scaleY(-1);
+  filter: blur(8px);
+  z-index: -1;
+  border-radius: inherit;
 }
 
 
