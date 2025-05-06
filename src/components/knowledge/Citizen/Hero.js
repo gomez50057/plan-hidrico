@@ -36,11 +36,11 @@ export default function Hero() {
             const elementCenter = box.left + box.width / 2;
             const distance = Math.abs(centerX - elementCenter);
             const ratio = Math.min(distance / centerX, 1);
-            const scale = 1 + ratio * 0.7; // más profundidad
+            const scale = 1 + ratio * 0.7; // profundidad
             const opacity = 1 - ratio * 0.6;
 
             const isLeft = elementCenter < centerX;
-            const angle = ratio * (isLeft ? -50 : 50); // más inclinación
+            const angle = ratio * (isLeft ? -50 : 50); // inclinación
 
             el.style.transform = `scale(${scale}) rotateY(${angle}deg)`;
             el.style.opacity = opacity;
