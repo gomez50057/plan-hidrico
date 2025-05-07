@@ -5,7 +5,6 @@ import JustificationSection from "@/components/landing/about/About";
 import MapSection from "@/components/landing/MapSection";
 
 import PublicKnowledgeSection from "@/components/landing/PublicKnowledgeSection";
-import TrainingSection from "@/components/landing/TrainingSection";
 
 export default function HomePage() {
   return (
@@ -15,7 +14,6 @@ export default function HomePage() {
       <JustificationSection />
       <MapSection />
       <PublicKnowledgeSection />
-      <TrainingSection />
     </main>
   );
 }
