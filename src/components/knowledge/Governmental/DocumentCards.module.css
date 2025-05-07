@@ -34,6 +34,32 @@
   position: relative;
 }
 
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--vinoClr);
+  z-index: 2;
+}
+
+.card::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 15px 0 0 0;
+}
+
+.card::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 12px 0;
+}
+
 .cardHeader h3 {
   font-size: 2rem;
   font-weight: 800;
@@ -49,11 +75,7 @@
 }
 
 .cardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .footerInfo {
@@ -83,7 +105,6 @@
   color: var(--grisClr);
 }
 
-
 .cardMetaRow {
   display: flex;
   justify-content: space-between;
@@ -93,57 +114,16 @@
   gap: 1rem;
 }
 
-.cardMetaRow small {
-  font-size: 0.9rem;
-}
-
-.card::before,
-.card::after {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 3px solid var(--vinoClr);
-  z-index: 2;
-}
-
-.card::before {
-  top: 0;
-  left: 0;
-  border-right: none;
-  border-bottom: none;
-  border-radius: 15px 0 0 0;
-}
-
-.card::after {
-  bottom: 0;
-  right: 0;
-  border-left: none;
-  border-top: none;
-  border-radius: 0 0 12px 0;
-}
-
-
-.footerInfo strong {
-  font-size: 1.2rem;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.footerInfo p {
+.cardMetaRow p {
   margin: 0;
   font-size: 1rem;
   color: var(--grisClr);
 }
 
-.footerInfo small {
-  color: var(--grisClr);
+.cardMetaRow small {
   font-size: 0.9rem;
+  color: var(--grisClr);
 }
-
-color: var(--grisClr);
-  font-style: italic;
 
 .footerLinkBox {
   border-radius: 8px;
@@ -161,4 +141,26 @@ color: var(--grisClr);
 
 .footerLinkBox a:hover {
   background-color: var(--vinoOsc, #800020);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardMetaRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerLinkBox {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .footerLinkBox a {
+    width: fit-content;
+  }
 }

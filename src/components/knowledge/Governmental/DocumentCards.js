@@ -39,7 +39,7 @@ export default function DocumentCards() {
           placeholder="Filtrar por categorías"
           options={options}
           value={options.filter(opt => categoriaFiltro.includes(opt.value))}
-          onChange={(selected) => setCategoriaFiltro(selected.map(s => s.value))}
+          onChange={(selected) => setCategoriaFiltro(selected ? selected.map(s => s.value) : [])}
         />
 
         <input
@@ -75,9 +75,7 @@ export default function DocumentCards() {
                     </a>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
         ))}
