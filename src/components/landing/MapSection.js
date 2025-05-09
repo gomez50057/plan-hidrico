@@ -35,9 +35,8 @@ const MapSection = () => {
       </div>
 
       <div className="mapaTxt">
-      <h2><span>Huella Hídrica</span> <span className="spanDoarado">Dónde Estamos</span></h2>
-      <h3>Mapa: Infraestructura Hidroagrícola</h3>
-        <p>Descubre nuestro mapa interactivo, donde podrás visualizar de manera dinámica los 3 Distritos de Riego, los tipos de Módulos de Riego de tierra (sus canales están hechos de tierra compactada) y revestido (Sus canales están revestidos con concreto u otro material), así como el Bloque 1 de los Módulos de Riego que serán revestidos en el 2025.</p>
+      <h2><span>Mapa: Infraestructura</span> <span className="spanDoarado">Hidroagrícola</span></h2>
+        <p>Descubre nuestro mapa interactivo, donde podrás visualizar de manera dinámica los 3 Distritos de Riego.</p>
         <p>Esta herramienta te permite conocer los Distritos y Módulos de Riego, y cómo va avanzando el Plan Hídrico Metropolitano de Hidalgo.</p>
       </div>
     </section>
