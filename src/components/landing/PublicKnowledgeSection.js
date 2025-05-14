@@ -9,9 +9,24 @@ import Link from "next/link";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 const info = [
-  { title: "Ecos del Territorio Hídrico", subtitle: "Explora los saberes ciudadanos", href: "/ecos-del-territorio-hidrico", image: "https://source.unsplash.com/1600x900/?river,landscape" },
-  { title: "Planeación para el Futuro del Agua", subtitle: "Un enfoque estratégico", href: "/planeacion-para-el-futuro-del-agua", image: "https://source.unsplash.com/1600x900/?water,architecture" },
-  { title: "Capacitación", subtitle: "Aprende e involúcrate", href: "/capacitacion", image: "https://source.unsplash.com/1600x900/?training,workshop" },
+  {
+    title: "Ecos del Territorio Hídrico",
+    subtitle: "Descubre voces ciudadanas: artículos de opinión, ensayos y estudios independientes que inspiran tu visión del agua",
+    href: "/ecos-del-territorio-hidrico",
+    image: "https://source.unsplash.com/1600x900/?river,landscape",
+  },
+  {
+    title: "Planeación para el Futuro del Agua",
+    subtitle: "Accede a documentos oficiales y estrategias del gobierno para estar siempre informado en temas hídricos",
+    href: "/planeacion-para-el-futuro-del-agua",
+    image: "https://source.unsplash.com/1600x900/?water,architecture",
+  },
+  {
+    title: "Capacitación",
+    subtitle: "Aprende a tu ritmo y accede a recursos prácticos que impulsarán tus habilidades al siguiente nivel. ¡Haz que tu conocimiento trabaje para ti!",
+    href: "/capacitacion",
+    image: "https://source.unsplash.com/1600x900/?training,workshop",
+  },
 ];
 
 export default function ParallaxSlider() {
