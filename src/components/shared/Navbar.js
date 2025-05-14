@@ -48,8 +48,8 @@ const Navbar = () => {
                 <li><Link href="/planeacion-para-el-futuro-del-agua">Planeación para el futuro del agua</Link></li>
               </ul>
             </li>
-            <li><Link href="/training">Capacitación</Link></li>
-            <li><Link href="/dashboard">Nivelación</Link></li>
+            <li><Link href="/capacitacion">Capacitación</Link></li>
+            <li><Link href="https://bancodeproyectos.hidalgo.gob.mx/planhidrico/login/" target="_blank" rel="noopener noreferrer">Nivelación</Link></li>
           </ul>
           <div className={styles.NavbarCirculo}>
             <img src={`${img}estrella.webp`} alt="Estrella de Hidalgo" />
