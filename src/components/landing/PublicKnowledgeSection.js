@@ -25,77 +25,64 @@ export default function ParallaxSlider() {
       const heading = el.querySelector("h2");
       const paragraph = el.querySelector("p");
       const cta = el.querySelector(`.${styles.ctaLink}`);
+      const direction = i % 2 === 0 ? 1 : -1;
 
-      // Section fade with scroll-linked scrub
+            // Entry animation (faster on scroll up)
       gsap.fromTo(
         el,
-        { opacity: 0 },
-        { opacity: 1, duration: 1, scrollTrigger: { trigger: el, start: "top 90%", end: "top 50%", scrub: true } }
+        { x: 200 * direction, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom-=100",
+            end: "top center-=100",
+            scrub: false,
+          },
+        }
+      );
+
+      // Exit animation (more noticeable and slower)
+      gsap.to(
+        el,
+        {
+          x: -200 * direction,
+          opacity: 0,
+          duration: 2.5,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: el,
+            start: "bottom center",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
       );
 
       // Parallax images
-      gsap.to(bg, {
-        y: -20,
-        scale: 1.05,
-        ease: "none",
-        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
-      });
-      gsap.to(fg, {
-        y: -60,
-        scale: 1.15,
-        ease: "none",
-        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
-      });
+      gsap.to(bg, { y: -20, scale: 1.05, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
+      gsap.to(fg, { y: -60, scale: 1.15, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
 
       // Blob pulse
-      gsap.fromTo(
-        blob,
-        { scale: 0 },
-        { scale: 1, duration: 1.2, ease: "elastic.out(1, 0.4)", scrollTrigger: { trigger: el, start: "top 75%" } }
-      );
+      gsap.fromTo(blob, { scale: 0 }, { scale: 1, duration: 1.2, ease: "elastic.out(1, 0.4)", scrollTrigger: { trigger: el, start: "top 75%" } });
 
-      // Title animation
-      gsap.from(heading, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: heading, start: "top 80%", end: "top 60%", scrub: true },
-      });
+      // Title & subtitle animations
+      gsap.from(heading, { y: 50, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: heading, start: "top 80%", end: "top 60%", scrub: true } });
+      gsap.from(paragraph, { y: 30, opacity: 0, duration: 1, delay: 0.2, ease: "power3.out", scrollTrigger: { trigger: paragraph, start: "top 85%", end: "top 65%", scrub: true } });
 
-      // Subtitle animation
-      gsap.from(paragraph, {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-        scrollTrigger: { trigger: paragraph, start: "top 85%", end: "top 65%", scrub: true },
-      });
-
-      // CTA pulse on hover
+      // CTA hover
       cta.addEventListener("mouseenter", () => gsap.to(cta, { scale: 1.1, duration: 0.2 }));
       cta.addEventListener("mouseleave", () => gsap.to(cta, { scale: 1, duration: 0.2 }));
-    });
-
-    // Optional: respond to wheel events for extra smoothness
-    let scrollTween = gsap.to({}, {});
-    ScrollTrigger.create({
-      onUpdate: self => {
-        // dummy to keep ScrollTrigger active on wheel
-      },
-      toggleActions: "play reverse play reverse",
     });
   }, []);
 
   return (
     <section className={styles.parallaxStack}>
       {info.map((item, idx) => (
-        <div
-          key={idx}
-          ref={el => (sectionsRef.current[idx] = el)}
-          className={`${styles.parallaxItem} ${idx % 2 && styles.reverse}`}
-        >
+        <div key={idx} ref={el => (sectionsRef.current[idx] = el)} className={`${styles.parallaxItem} ${idx % 2 && styles.reverse}`}>
           <div className={styles.imageWrapper}>
             <img src={item.image} alt={item.title} className={styles.bgLayer} />
             <img src={item.image} alt={item.title} className={styles.fgLayer} />
@@ -105,9 +92,7 @@ export default function ParallaxSlider() {
             <div className={styles.blob} aria-hidden="true" />
             <h2>{item.title}</h2>
             <p>{item.subtitle}</p>
-            <Link href={item.href} className={styles.ctaLink}>
-              Conoce más
-            </Link>
+            <Link href={item.href} className={styles.ctaLink}>Conoce más</Link>
           </div>
         </div>
       ))}
