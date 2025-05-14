@@ -27,7 +27,7 @@ export default function ParallaxSlider() {
       const cta = el.querySelector(`.${styles.ctaLink}`);
       const direction = i % 2 === 0 ? 1 : -1;
 
-            // Entry animation (faster on scroll up)
+      // Entry animation (responsive on both scroll directions)
       gsap.fromTo(
         el,
         { x: 200 * direction, opacity: 0 },
@@ -40,7 +40,8 @@ export default function ParallaxSlider() {
             trigger: el,
             start: "top bottom-=100",
             end: "top center-=100",
-            scrub: false,
+            scrub: true,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
