@@ -13,19 +13,19 @@ const info = [
     title: "Ecos del Territorio Hídrico",
     subtitle: "Descubre voces ciudadanas: artículos de opinión, ensayos y estudios independientes que inspiran tu visión del agua",
     href: "/ecos-del-territorio-hidrico",
-    image: "https://source.unsplash.com/1600x900/?river,landscape",
+    image: "/img/training/recursos/15.jpg",
   },
   {
     title: "Planeación para el Futuro del Agua",
     subtitle: "Accede a documentos oficiales y estrategias del gobierno para estar siempre informado en temas hídricos",
     href: "/planeacion-para-el-futuro-del-agua",
-    image: "https://source.unsplash.com/1600x900/?water,architecture",
+    image: "/img/training/recursos/12.jpg",
   },
   {
     title: "Capacitación",
     subtitle: "Aprende a tu ritmo y accede a recursos prácticos que impulsarán tus habilidades al siguiente nivel. ¡Haz que tu conocimiento trabaje para ti!",
     href: "/capacitacion",
-    image: "https://source.unsplash.com/1600x900/?training,workshop",
+    image: "/img/training/recursos/11.jpg",
   },
 ];
 
