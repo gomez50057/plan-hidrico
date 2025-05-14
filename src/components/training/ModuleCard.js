@@ -1,21 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styles from "./ModuleCard.module.css";
+import { normalizeName } from "@/utils/normalize";
 
 export default function ModuleCard({
-  overlayTitle,      // texto que aparece sobre la imagen principal
-  mainImage,         // ruta de la imagen grande
-  thumbImages = [],  // array de dos rutas para las miniaturas
-  statsTitle,        // título del recuadro de descripción
-  statsText,         // texto largo del recuadro
-  quoteImage,        // ruta para el avatar (opcional)
-  quoteText,         // texto de cita (opcional)
-  quoteAuthor,       // autor de la cita (opcional)
+  overlayTitle,
+  mainImage,
+  thumbImages = [],
+  statsTitle,
+  statsText,
+  quoteImage,
+  quoteText,
+  quoteAuthor,
 }) {
+  const router = useRouter();
+
+  const handleStatsClick = () => {
+    const slug = normalizeName (statsTitle);
+    router.push(`/modules/${slug}`);
+  };
+
   return (
     <div className={styles.card}>
-      {/* IZQUIERDA: Imagen principal con overlay */}
+      {/* … IZQUIERDA … */}
       <div className={styles.left}>
         <div className={styles.overlay}>
           <h2 className={styles.overlayTitle}>{overlayTitle}</h2>
@@ -28,7 +37,7 @@ export default function ModuleCard({
         />
       </div>
 
-      {/* DERECHA: Contenido secundario */}
+      {/* DERECHA: contenido */}
       <div className={styles.right}>
         {/* Thumbnails + número */}
         <div className={styles.thumbsRow}>
@@ -50,13 +59,19 @@ export default function ModuleCard({
         </div>
 
         {/* Estadística / Descripción larga */}
-        <div className={styles.stats}>
+        <div
+          className={styles.stats}
+          onClick={handleStatsClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && handleStatsClick()}
+        >
           <h3>{statsTitle}</h3>
           <p>{statsText}</p>
           <span className={styles.statsArrow}>↗</span>
         </div>
 
-        {/* Testimonio / Cita (opcional) */}
+        {/* … cita opcional … */}
         {quoteText && (
           <div className={styles.quoteCard}>
             <div className={styles.avatarWrapper}>

@@ -5,9 +5,9 @@ const modules = [
   {
     overlayTitle:
       "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
-    mainImage: "/img/module1-main.jpg",
+    mainImage: "/img/aboutImg.jpg",
     thumbImages: ["/img/module1-thumb1.jpg", "/img/module1-thumb2.jpg"],
-    statsTitle: "Contenido",
+    statsTitle: "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
     statsText:
       "En este Módulo se revisará la definición de la nivelación de tierras, su importancia, así como el impacto en la eficiencia del riego, ahorro de agua y producción agrícola.",
     // Cita para el Módulo 1
