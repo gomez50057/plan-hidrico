@@ -105,6 +105,8 @@
 .thumb {
   border-radius: 12px;
   object-fit: cover;
+  padding: 0 0 5px 0;
+  border-bottom: 2px solid var(--grisClr);
 }
 
 /* Estadística */
@@ -133,33 +135,69 @@
 }
 
 /* Testimonio */
+
+/* Contenedor flex para solapar círculo y caja */
 .quoteCard {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background-color: #e1f0dc;
-  border-radius: 50px;
-  padding: 20px 24px;
+  margin-top: 24px; /* opcional: separa del bloque superior */
 }
-.avatar {
-  flex-shrink: 0;
-}
-.avatarImg {
+
+/* === CÍRCULO (avatar) === */
+.avatarWrapper {
+  position: relative;
+  z-index: 2;                  /* siempre por delante */
+  width: 120px;
+  height: 120px;
+  border: 4px solid #D8EDCE;
   border-radius: 50%;
+  overflow: hidden;
+  background-color: #ffffff;   /* fondo blanco */
+  margin-right: -40px;         /* solapado de la mitad del ancho */
+  box-sizing: border-box;
 }
-.quoteText {
-  display: flex;
-  flex-direction: column;
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.quoteText blockquote {
+
+/* === RECTÁNGULO (texto) === */
+.quoteBox {
+  position: relative;
+  z-index: 1;                  /* por debajo del avatar */
+  background-color: #D8EDCE;
+  border-radius: 40px;         /* pill-shape */
+  padding: 20px 24px 20px 60px;/* left-padding extra para no pisar el círculo */
+  max-width: 350px;            /* opcional */
+  box-sizing: border-box;
+}
+
+/* Comilla grande en la esquina */
+.quoteIcon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 2rem;
+  color: #ffffff;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+/* Texto de la cita */
+.quoteBody {
   margin: 0;
-  font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.4;
+  color: #333333;
 }
-.quoteText cite {
-  margin-top: 8px;
-  font-size: 0.85rem;
+
+/* Autor al pie */
+.quoteAuthor {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: #333333;
+  font-weight: 500;
   text-align: right;
-  color: #555;
 }

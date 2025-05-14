@@ -26,14 +26,14 @@ export default function ModuleCard() {
           <div className={styles.counter}>01</div>
           <div className={styles.thumbs}>
             <Image
-              src="/img/thumb1.jpg"
+              src="/img/aboutImg.jpg"
               alt="Mini vista 1"
               width={120}
               height={70}
               className={styles.thumb}
             />
             <Image
-              src="/img/thumb2.jpg"
+              src="/img/aboutImg.jpg"
               alt="Mini vista 2"
               width={120}
               height={70}
@@ -55,7 +55,8 @@ export default function ModuleCard() {
 
         {/* Testimonio */}
         <div className={styles.quoteCard}>
-          <div className={styles.avatar}>
+          {/* CÍRCULO (avatar) */}
+          <div className={styles.avatarWrapper}>
             <Image
               src="/img/avatar.jpg"
               alt="Peter Hoff"
@@ -64,14 +65,18 @@ export default function ModuleCard() {
               className={styles.avatarImg}
             />
           </div>
-          <div className={styles.quoteText}>
-            <blockquote>
-              “We are willing to build a future that sustains both the needs of
-              the present and the health of generations to come”
-            </blockquote>
-            <cite>Peter Hoff, founder</cite>
+
+          {/* RECTÁNGULO (texto) */}
+          <div className={styles.quoteBox}>
+            <span className={styles.quoteIcon}>&ldquo;</span>
+            <p className={styles.quoteBody}>
+              We are willing to build a future that sustains both the needs of the present
+              and the health of generations to come
+            </p>
+            <p className={styles.quoteAuthor}>Peter Hoff, founder</p>
           </div>
         </div>
+
       </div>
     </div>
   );
