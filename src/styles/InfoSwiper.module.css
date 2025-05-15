@@ -10,13 +10,13 @@
 .infoSwiper {
   width: 100%;
   max-width: 500px;
+  height: 400px;
 }
 
-/* --- Nuevo wrapper para slide --- */
+
 .slideItem {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: stretch;
 }
 
 /* Texto (izquierda) */
@@ -25,37 +25,41 @@
   background: #fff;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
   line-height: 1.4;
-}
-
-.card p {
-  margin: 4px 0;
 }
 
 .utm {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
   margin: 8px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
   color: #555;
 }
 
 /* Imagen (derecha) */
 .imageWrapper {
-  position: relative;
   flex: 1;
-  min-height: 200px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
-  border-radius: 0 12px 12px 0;
+  object-position: center;
 }
 
 .infoSwiperText {
   width: 40vw;
+  text-align: left;
 }
 
 .infoSwiperText p {

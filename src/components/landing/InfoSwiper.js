@@ -14,8 +14,8 @@ export default function InfoSwiper() {
     <section className={styles.infoSwiperContainer}>
 
       <div className={styles.infoSwiperText}>
-        <h2><span className="spanDoarado">Parcelas</span> de{" "}<span>Riego</span>        </h2>
-        <p>Aquí puedes ver información sobre las parcelas de riego.</p>
+        <h2><span className="spanDoarado">Parcelas</span><span> Demostrativas</span>        </h2>
+        <p>Comprueba en campo cómo una correcta nivelación del suelo y un riego bien aplicado mejoran tus cultivos. Observa resultados reales: más agua aprovechada, menos pérdidas y plantas más sanas. ¡Visita las parcelas y ve tu mismo los resultados!</p>
       </div>
       <Swiper
         effect="cards"
