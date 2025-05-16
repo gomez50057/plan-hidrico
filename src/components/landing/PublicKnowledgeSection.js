@@ -58,12 +58,14 @@ export default function ParallaxSlider() {
         }
         if (idx === 1) {
           return (
-            <div
-              key={idx}
-              className={`${styles.parallaxItem} ${styles.designB}`}
-              style={{ backgroundImage: `url(${item.image})` }}
-            >
+            <div key={idx} className={`${styles.parallaxItem} ${styles.designB}`} style={{ position: 'relative' }}>
+              <video autoPlay loop muted playsInline className={styles.backgroundVideo}>
+                <source src={`${imgBasePath}planeacion.mp4`} type="video/mp4" />
+                Tu navegador no soporta la reproducción de video.
+              </video>
+
               <div className={styles.overlayTextDesignB}>
+                <div className={styles.gradientOverlay}></div>
                 <div className={styles.imgTituleDesignB}>
                   <img src={`${imgBasePath}planeacion.png`} alt={item.title} />
                 </div>

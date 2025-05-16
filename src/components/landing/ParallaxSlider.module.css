@@ -28,7 +28,6 @@
 /* designA */
 /*  */
 
-
 .designA {
   display: flex;
   flex-direction: column;
@@ -85,10 +84,29 @@
   font-weight: 800;
 }
 
-
 /*  */
 /* designB */
 /*  */
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(26, 26, 26) 100%);
+  z-index: -1;
+}
 
 .designB {
   display: flex;
@@ -113,15 +131,15 @@
   height: auto;
 }
 
-.overlayTextDesignB p{
+.overlayTextDesignB p {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--blanco);
   padding: 0 2rem;
-  color: var(--grisOsc);
   text-align: center;
 }
 
-.buttonDesignB { 
+.buttonDesignB {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +153,6 @@
   font-weight: 800;
 }
 
-
 /*  */
 /* designC */
 /*  */
@@ -143,14 +160,13 @@
 
 .textContentDesignC {
   position: relative;
-  left: 5rem; 
+  left: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 40vw;
   gap: 1rem;
-  z-index: 100;
 }
 
 .textContentDesignC p {
@@ -166,7 +182,7 @@
   height: auto;
 }
 
-.buttonDesignC { 
+.buttonDesignC {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,4 +200,3 @@
   width: 60vw;
   height: auto;
 }
-
