@@ -10,13 +10,14 @@
 .infoSwiper {
   width: 100%;
   max-width: 500px;
-  height: 400px;
+  height: 100%;
 }
 
 
 .slideItem {
   display: flex;
   align-items: stretch;
+  border-radius: 12px;
 }
 
 /* Texto (izquierda) */
@@ -25,7 +26,6 @@
   background: #fff;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
   line-height: 1.4;
 }

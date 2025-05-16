@@ -1,14 +1,187 @@
-.parallaxStack { width: 100%; }
-.parallaxItem { display: flex; align-items: center; height: 100vh; overflow: hidden; position: relative; }
-.parallaxItem.reverse { flex-direction: row-reverse; }
-.imageWrapper { position: relative; flex: 1; height: 100%; overflow: hidden; }
-.imageWrapper img { position: absolute; width: 110%; height: 110%; top: -5%; left: -5%; object-fit: cover; }
-.bgLayer { filter: blur(12px); }
-.fgLayer { mix-blend-mode: overlay; }
-.gradientOverlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%); pointer-events: none; }
-.textContent { flex: 1; margin: 0 2rem; padding: 3rem; background: rgba(255,255,255,0.8); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
-.blob { position: absolute; width: 200px; height: 200px; background: var(--vinoClr); border-radius: 50%; top: -50px; right: -50px; opacity: 0.2; }
-.textContent h2 { font-size: 3.2rem; color: var(--vinoOsc); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-.textContent p { font-size: 1.4rem; color: var(--grisOsc); margin-bottom: 2rem; }
-.ctaLink { display: inline-block; padding: 1rem 2rem; background: var(--vinoClr); color: #fff; border-radius: 50px; font-size: 1.1rem; font-weight: 800; text-decoration: none; box-shadow: 0 12px 30px rgba(0,0,0,0.2); transform: scale(1); transition: transform 0.3s; }
-.ctaLink:hover { transform: scale(1.05); }
+.parallaxStack {
+  width: 100%;
+  padding: 2rem 2.5rem;
+}
+
+.ctaLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+.parallaxItem {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.imgeWrapperDesignA img,
+.imgTituleDesignA img,
+.imgTituleDesignB img,
+.imgDesignC img {
+  width: 100%;
+  height: auto;
+}
+
+/*  */
+/* designA */
+/*  */
+
+
+.designA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.containerDesignA {
+  display: flex;
+  gap: 1rem;
+}
+
+.imgeWrapperDesignA {
+  width: 100%;
+  height: auto;
+}
+
+.imgTituleDesignA,
+.overlayTextDesignA {
+  width: 50%;
+}
+
+.overlayTextDesignA {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayTextDesignA p {
+  font-size: 2rem;
+  padding: 0 1rem;
+  color: var(--grisOsc);
+  text-align: justify;
+}
+
+.imgeWrapperDesignA {
+  position: relative;
+}
+
+.buttonDesignA {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0.2rem;
+  right: 0px;
+  width: 35%;
+  height: 15%;
+  background: linear-gradient(-45deg, var(--vinoOsc), var(--vinoClr));
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+
+/*  */
+/* designB */
+/*  */
+
+.designB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  border-radius: 3rem;
+  gap: 1rem;
+}
+
+.overlayTextDesignB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  gap: 1rem;
+}
+
+.imgTituleDesignB {
+  width: 100%;
+  height: auto;
+}
+
+.overlayTextDesignB p{
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 0 2rem;
+  color: var(--grisOsc);
+  text-align: center;
+}
+
+.buttonDesignB { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 60px;
+  background: linear-gradient(-45deg, var(--vinoOsc), var(--vinoClr));
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+
+/*  */
+/* designC */
+/*  */
+
+
+.textContentDesignC {
+  position: relative;
+  left: 5rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.textContentDesignC p {
+  width: 120%;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--grisOsc);
+  text-align: justify;
+}
+
+.imgTituleDesignC {
+  width: 120%;
+  height: auto;
+}
+
+.buttonDesignC { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 60px;
+  background: linear-gradient(-45deg, var(--vinoOsc), var(--vinoClr));
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.imgDesignC {
+  width: 60vw;
+  height: auto;
+}
+
