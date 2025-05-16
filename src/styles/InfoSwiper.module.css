@@ -1,15 +1,29 @@
+.infoSwiperText {
+  width: 40vw;
+  height: auto;
+  text-align: left;
+}
+
+.infoSwiperText p {
+  font-size: 1.5rem;
+  color: var(--grisOsc);
+  line-height: 1.5;
+  text-align: justify;
+}
+
 .infoSwiperContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 40px;
-  gap: 40px;
+  gap: 2.5rem;
 }
 
+
 .infoSwiper {
-  width: 100%;
-  max-width: 500px;
+  width: 60vw;
+  max-width: 900px;
   height: 100%;
 }
 
@@ -25,23 +39,22 @@
   flex: 1;
   background: #fff;
   border-radius: 12px;
-  padding: 16px;
+  padding: 50px 16px;
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .utm {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   margin: 8px 0;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--grisOsc);
 }
 
 .card p {
-  margin: 4px 0;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--grisOsc);
 }
 
 /* Imagen (derecha) */
@@ -55,15 +68,4 @@
 .image {
   object-fit: cover;
   object-position: center;
-}
-
-.infoSwiperText {
-  width: 40vw;
-  text-align: left;
-}
-
-.infoSwiperText p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
 }
