@@ -1,3 +1,12 @@
+export const normalizeName = (str) => {
+  return str
+    .normalize("NFD") // Descompone los caracteres acentuados
+    .replace(/[\u0300-\u036f]/g, "") // Elimina los diacríticos
+    .replace(/[^\w\s-]/g, "") // Elimina caracteres especiales
+    .replace(/\s+/g, "-") // Reemplaza espacios con guiones
+    .toLowerCase(); // Convierte a minúsculas
+};
+
 export const municipiosDeHidalgo = [
   '001 Acatlán', '002 Acaxochitlán', '003 Actopan', '004 Agua Blanca de Iturbide', '005 Ajacuba', '006 Alfajayucan',
   '007 Almoloya', '008 Apan', '009 El Arenal', '010 Atitalaquia', '011 Atlapexco', '012 Atotonilco el Grande',
@@ -16,6 +25,11 @@ export const municipiosDeHidalgo = [
   '069 Tizayuca', '070 Tlahuelilpan', '071 Tlahuiltepa', '072 Tlanalapa', '073 Tlanchinol', '074 Tlaxcoapan',
   '075 Tolcayuca', '076 Tula de Allende', '077 Tulancingo de Bravo', '078 Xochiatipan', '079 Xochicoatlán',
   '080 Yahualica', '081 Zacualtipán de Ángeles', '082 Zapotlán de Juárez', '083 Zempoala', '084 Zimapán'
+];
+
+
+export const municipiosDeHidalgoModulos = [
+  '003 Actopan', '005 Ajacuba', '006 Alfajayucan', '009 El Arenal', '010 Atitalaquia', '013 Atotonilco de Tula', '015 Cardonal', '019 Chilcuautla', '023 Francisco I. Madero', '030 Ixmiquilpan', '041 Mixquiahuala de Juárez', '050 Progreso de Obregón', '054 San Salvador', '055 Santiago de Anaya', '058 Tasquillo', '063 Tepeji del Río de Ocampo', '064 Tepetitlán', '065 Tetepango', '067 Tezontepec de Aldama', '070 Tlahuelilpan', '074 Tlaxcoapan', '076 Tula de Allende'
 ];
 
 export const identificacionOpciones = [
