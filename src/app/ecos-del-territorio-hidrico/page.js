@@ -1,6 +1,8 @@
 import HeroSection from "@/components/knowledge/Citizen/Hero";
 import AboutSection from "@/components/knowledge/Citizen/About";
+import GoogleFormEmbed from "@/components/knowledge/Citizen/GoogleFormEmbed";
 import DocumentCards from "@/components/knowledge/Citizen/DocumentCards";
+
 
 
 export default function CitizenPage() {
@@ -8,6 +10,7 @@ export default function CitizenPage() {
     <main>
       <HeroSection />
       <AboutSection />
+      <GoogleFormEmbed />
       <DocumentCards />
     </main>
   );

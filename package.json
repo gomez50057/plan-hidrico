@@ -14,7 +14,7 @@
     "@gsap/react": "^2.1.2",
     "@mui/icons-material": "^7.0.0",
     "@mui/material": "^7.0.2",
-    "axios": "^1.8.4",
+    "axios": "^1.9.0",
     "chart.js": "^4.4.8",
     "export-to-csv": "^1.4.0",
     "formik": "^2.4.6",
