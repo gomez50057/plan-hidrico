@@ -26,12 +26,21 @@ const FormularioDocumento = () => {
 
   const validationSchema = Yup.object({
     nombre_documento: Yup.string().required('Requerido'),
-    descripcion: Yup.string().required('Requerido'),
+    descripcion: Yup.string()
+      .required('Requerido')
+      .max(255, 'No debe exceder los 255 caracteres'),
     autor: Yup.string().required('Requerido'),
+    telefono: Yup.string()
+      .required('Requerido')
+      .matches(/^\d{10}$/, 'Debe ser un número de 10 dígitos'),
+    correo: Yup.string()
+      .required('Requerido')
+      .email('Debe ser un correo válido'),
     categorias: Yup.array().min(1, 'Seleccione al menos una categoría'),
     archivo_pdf: Yup.mixed()
       .required('Requerido')
-      .test('fileType', 'Solo se acepta PDF', value => value && value.type === 'application/pdf'),
+      .test('fileType', 'Solo se acepta PDF', value => value && value.type === 'application/pdf')
+      .test('fileSize', 'El archivo no debe superar los 5 MB', value => value && value.size <= 5 * 1024 * 1024),
   });
 
   return (
@@ -39,8 +48,10 @@ const FormularioDocumento = () => {
       initialValues={{
         nombre_documento: '',
         descripcion: '',
-        autor: '',
         categorias: [],
+        autor: '',
+        telefono: '',
+        correo: '',
         archivo_pdf: null,
       }}
       validationSchema={validationSchema}
@@ -50,12 +61,14 @@ const FormularioDocumento = () => {
           formData.append('nombre_documento', values.nombre_documento);
           formData.append('descripcion', values.descripcion);
           formData.append('autor', values.autor);
+          formData.append('telefono', values.telefono);
+          formData.append('correo', values.correo);
           values.categorias.forEach(cat => {
             formData.append('categoria_ids', cat.value);
           });
           formData.append('archivo_pdf', values.archivo_pdf);
 
-          await axios.post('/api/documentos/', formData, {
+          await axios.post('/api/ecos-ciudadania/documentos/', formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
 
@@ -69,7 +82,11 @@ const FormularioDocumento = () => {
     >
       {({ setFieldValue, values }) => (
         <Form encType="multipart/form-data">
-          <h2>Subir Documento</h2>
+          <div className={styles.titulo}>
+            <h1><span>Ecos</span> del <span className="spanDoarado">Territorio Hídrico</span></h1>
+            <p>El contenido será registrado tal como se envíe. Por favor, revisa cuidadosamente la redacción y ortografía antes de enviar.</p>
+            <p className={styles.inspiracion}>Estás a unos pasos de ser parte de la transformación hídrica de Hidalgo.</p>
+          </div>
 
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
@@ -89,15 +106,8 @@ const FormularioDocumento = () => {
 
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
-              <label>Autor</label>
-              <Field name="autor" type="text" className={styles.inputField} />
-              <ErrorMessage name="autor" component="div" className={styles.error} />
-            </div>
-          </div>
-
-          <div className={styles.formRow}>
-            <div className={styles.formGroup}>
               <label>Categorías</label>
+              <p>Elige una o varias categorías según corresponda al contenido de tu documento. Asegúrate de que estén relacionadas de forma directa y precisa con el tema.</p>
               <Select
                 name="categorias"
                 options={categoriasDisponibles}
@@ -111,7 +121,31 @@ const FormularioDocumento = () => {
 
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
+              <label>Autor</label>
+              <p>Este será el nombre que se mostrará públicamente como autor. Si deseas, incluye títulos como Dr., Ing., Mtra., etc.</p>
+              <Field name="autor" type="text" className={styles.inputField} />
+              <ErrorMessage name="autor" component="div" className={styles.error} />
+            </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label>Teléfono</label>
+              <Field name="telefono" type="text" className={styles.inputField} />
+              <ErrorMessage name="telefono" component="div" className={styles.error} />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>Correo</label>
+              <Field name="correo" type="email" className={styles.inputField} />
+              <ErrorMessage name="correo" component="div" className={styles.error} />
+            </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
               <label>Archivo PDF</label>
+              <p>Solo se permite subir un archivo en formato PDF, con un tamaño máximo de 5 MB.</p>
               <input
                 type="file"
                 name="archivo_pdf"
@@ -122,14 +156,11 @@ const FormularioDocumento = () => {
             </div>
           </div>
 
-
           <div className={styles.formGroup}>
             <button type="submit" className={styles.submitButton}>
               Enviar Formulario
             </button>
           </div>
-
-
           {mensaje && <p>{mensaje}</p>}
         </Form>
       )}
