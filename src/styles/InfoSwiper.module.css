@@ -13,20 +13,18 @@
 
 .infoSwiperContainer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 40px;
   gap: 2.5rem;
 }
 
-
 .infoSwiper {
   width: 60vw;
   max-width: 900px;
   height: 100%;
+  padding: 0 30px;
 }
-
 
 .slideItem {
   display: flex;
