@@ -115,6 +115,7 @@
   height: 80vh;
   border-radius: 3rem;
   gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .overlayTextDesignB {
@@ -135,7 +136,8 @@
   font-size: 2rem;
   font-weight: 500;
   color: var(--blanco);
-  padding: 0 2rem;
+  padding: 0.8rem 1.3rem;
+  margin: 0;
   text-align: center;
 }
 
