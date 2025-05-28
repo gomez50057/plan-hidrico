@@ -21,7 +21,7 @@ export default function ModuloPage({ params }) {
 
       {modulo.quoteText && (
         <blockquote style={{ marginTop: '1rem' }}>
-          <p>"{modulo.quoteText}"</p>
+          <p>{modulo.quoteText}</p>
           <footer>- {modulo.quoteAuthor}</footer>
         </blockquote>
       )}
