@@ -38,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 /* Botón con efecto glass 3D */
