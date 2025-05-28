@@ -91,6 +91,6 @@ export default function ModuleCard({
           </div>
         )}
       </div>
-    </div>
+    </div>  
   );
 }
