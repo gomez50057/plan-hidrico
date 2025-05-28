@@ -1,12 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import styles from './Moodle.module.css';
+import { useRouter } from 'next/navigation';
+import { normalizeName } from '@/utils/utils';
 import TalleresList from './workshops/TalleresList';
+import styles from './Moodle.module.css';
 
 const Moodle = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showTalleres, setShowTalleres] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsVisible(true);
@@ -18,6 +21,11 @@ const Moodle = () => {
 
   const handleToggleTalleres = () => {
     setShowTalleres((prev) => !prev);
+  };
+
+  const handleSelectTaller = (taller) => {
+    const slug = normalizeName(taller.titulo);
+    router.push(`/capacitacion/talleres/${slug}`);
   };
 
   const talleres = [
@@ -38,7 +46,6 @@ const Moodle = () => {
       imagen: '/img/training/recursos/2.jpg'
     }
   ];
-
 
   return (
     <>
@@ -61,7 +68,7 @@ const Moodle = () => {
           </div>
         </div>
       </div>
-      {showTalleres && <TalleresList talleres={talleres} />}
+      {showTalleres && <TalleresList talleres={talleres} onSelect={handleSelectTaller} />}
     </>
   );
 };

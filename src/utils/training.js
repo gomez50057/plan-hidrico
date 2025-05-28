@@ -1,102 +1,47 @@
-export const modules = [
-  {
-    overlayTitle:
-      "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
-    mainImage: "/img/training/recursos/4.jpg",
-    thumbImages: ["/img/training/recursos/1.jpg", "/img/training/recursos/2.jpg"],
-    statsTitle: "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
-    statsText:
-      "En este Módulo se revisará la definición de la nivelación de tierras, su importancia, así como el impacto en la eficiencia del riego, ahorro de agua y producción agrícola.",
-    // Cita para el Módulo 1
-    quoteImage: "/img/training/recursos/avatar.jpg",
-    quoteText:
-      "algun texto de prueba para la cita",
-    quoteAuthor: "Peter Hoff, founder",
-  },
-  {
-    overlayTitle:
-      "Módulo 2: Diagnóstico del terreno y tecnologías aplicables",
-    mainImage: "/img/training/recursos/9.jpg",
-    thumbImages: ["/img/training/recursos/3.jpg", "/img/training/recursos/4.jpg"],
-    statsTitle: "Contenido",
-    statsText:
-      "En este Módulo se tocarán temas como el diagnóstico del terreno, levantamientos topográficos básicos, métodos tradicionales y tecnologías modernas.",
-    // sin cita
-  },
-  {
-    overlayTitle: "Módulo 3: Planeación y ejecución de la nivelación",
-    mainImage: "/img/training/recursos/8.jpg",
-    thumbImages: ["/img/training/recursos/5.jpg", "/img/training/recursos/6.jpg"],
-    statsTitle: "Contenido",
-    statsText:
-      "En este Módulo se estudiarán temas como el tipo de maquinaria necesaria y su manejo básico en la nivelación de tierras.",
-    // sin cita
-  },
-  {
-    overlayTitle:
-      "Módulo 4: Seguimiento y mantenimiento de terrenos nivelados",
-    mainImage: "/img/training/recursos/7.jpg",
-    thumbImages: ["/img/training/recursos/7.jpg", "/img/training/recursos/8.jpg"],
-    statsTitle: "Contenido",
-    statsText:
-      "En este Módulo se revisará cómo se da el mantenimiento de terrenos nivelados, así como el uso racional del agua después de la nivelación.",
-    // sin cita
-  },
-];
+import { normalizeName } from './utils';
 
-
-
-// export const modules = [
-//   {
-//     overlayTitle: 
-//       "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
-//     mainImage: "/img/training/recursos/module1-main.jpg",
-//     thumbImages: [
-//       "/img/training/recursos/module1-thumb1.jpg",
-//       "/img/training/recursos/module1-thumb2.jpg"
-//     ],
-//     statsTitle: 
-//       "Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua",
-//     statsText:
-//       "En este Módulo se revisará la definición de la nivelación de tierras, su importancia, así como el impacto en la eficiencia del riego, ahorro de agua y producción agrícola.",
-//     quoteImage: "/img/training/recursos/avatar.jpg",
-//     quoteText:
-//       "We are willing to build a future that sustains both the needs of the present and the health of generations to come",
-//     quoteAuthor: "Peter Hoff, founder",
-//   },
-//   {
-//     overlayTitle:
-//       "Módulo 2: Diagnóstico del terreno y tecnologías aplicables",
-//     mainImage: "/img/training/recursos/module2-main.jpg",
-//     thumbImages: [
-//       "/img/training/recursos/module2-thumb1.jpg",
-//       "/img/training/recursos/module2-thumb2.jpg"
-//     ],
-//     statsTitle: "Contenido",
-//     statsText:
-//       "En este Módulo se tocarán temas como el diagnóstico del terreno, levantamientos topográficos básicos, métodos tradicionales y tecnologías modernas.",
-//   },
-//   {
-//     overlayTitle: "Módulo 3: Planeación y ejecución de la nivelación",
-//     mainImage: "/img/training/recursos/module3-main.jpg",
-//     thumbImages: [
-//       "/img/training/recursos/module3-thumb1.jpg",
-//       "/img/training/recursos/module3-thumb2.jpg"
-//     ],
-//     statsTitle: "Contenido",
-//     statsText:
-//       "En este Módulo se estudiarán temas como el tipo de maquinaria necesaria y su manejo básico en la nivelación de tierras.",
-//   },
-//   {
-//     overlayTitle:
-//       "Módulo 4: Seguimiento y mantenimiento de terrenos nivelados",
-//     mainImage: "/img/training/recursos/module4-main.jpg",
-//     thumbImages: [
-//       "/img/training/recursos/module4-thumb1.jpg",
-//       "/img/training/recursos/module4-thumb2.jpg"
-//     ],
-//     statsTitle: "Contenido",
-//     statsText:
-//       "En este Módulo se revisará cómo se da el mantenimiento de terrenos nivelados, así como el uso racional del agua después de la nivelación.",
-//   },
-// ];
+export const trainingContent = {
+  [normalizeName('Nivelación de tierras para la eficiencia hídrica')]: {
+    titulo: 'Nivelación de tierras para la eficiencia hídrica',
+    descripcion:
+      'Aprende técnicas de nivelación para optimizar el usoaaaaaaaaaa del agua en cultivos.',
+    imagen: '/img/training/recursos/1.jpg',
+    modulos: [
+      {
+        titulo: 'Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua',
+        slug: normalizeName('Módulo 1: Introducción a la nivelación de tierras y su papel en la gestión del agua'),
+        mainImage: '/img/training/recursos/4.jpg',
+        thumbImages: ['/img/training/recursos/1.jpg', '/img/training/recursos/2.jpg'],
+        statsTitle: 'subtitulo',
+        statsText: 'En este Módulo se revisará la definición de la nivelación de tierras, su importancia, así como el impacto en la eficiencia del riego, ahorro de agua y producción agrícola.',
+        quoteImage: '/img/training/recursos/avatar.jpg',
+        quoteText: 'algun texto de prueba para la cita',
+        quoteAuthor: 'Peter Hoff, founder'
+      },
+      {
+        titulo: 'Módulo 2: Diagnóstico del terreno y tecnologías aplicables',
+        slug: normalizeName('Módulo 2: Diagnóstico del terreno y tecnologías aplicables'),
+        mainImage: '/img/training/recursos/9.jpg',
+        thumbImages: ['/img/training/recursos/3.jpg', '/img/training/recursos/4.jpg'],
+        statsTitle: 'subtitulo',
+        statsText: 'En este Módulo se tocarán temas como el diagnóstico del terreno, levantamientos topográficos básicos, métodos tradicionales y tecnologías modernas.'
+      },
+      {
+        titulo: 'Módulo 3: Planeación y ejecución de la nivelación',
+        slug: normalizeName('Módulo 3: Planeación y ejecución de la nivelación'),
+        mainImage: '/img/training/recursos/8.jpg',
+        thumbImages: ['/img/training/recursos/5.jpg', '/img/training/recursos/6.jpg'],
+        statsTitle: 'subtitulo',
+        statsText: 'En este Módulo se estudiarán temas como el tipo de maquinaria necesaria y su manejo básico en la nivelación de tierras.'
+      },
+      {
+        titulo: 'Módulo 4: Seguimiento y mantenimiento de terrenos nivelados',
+        slug: normalizeName('Módulo 4: Seguimiento y mantenimiento de terrenos nivelados'),
+        mainImage: '/img/training/recursos/7.jpg',
+        thumbImages: ['/img/training/recursos/7.jpg', '/img/training/recursos/8.jpg'],
+        statsTitle: 'subtitulo',
+        statsText: 'En este Módulo se revisará cómo se da el mantenimiento de terrenos nivelados, así como el uso racional del agua después de la nivelación.'
+      }
+    ]
+  }
+};

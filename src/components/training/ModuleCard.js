@@ -6,7 +6,7 @@ import styles from "./ModuleCard.module.css";
 import { normalizeName } from "@/utils/normalize";
 
 export default function ModuleCard({
-  overlayTitle,
+  titulo,
   mainImage,
   thumbImages = [],
   statsTitle,
@@ -27,11 +27,11 @@ export default function ModuleCard({
       {/* … IZQUIERDA … */}
       <div className={styles.left}>
         <div className={styles.overlay}>
-          <h2 className={styles.overlayTitle}>{overlayTitle}</h2>
+          <h2 className={styles.overlayTitle}>{titulo}</h2>
         </div>
         <Image
           src={mainImage}
-          alt={overlayTitle}
+          alt={titulo}
           fill
           className={styles.mainImage}
         />
@@ -42,7 +42,7 @@ export default function ModuleCard({
         {/* Thumbnails + número */}
         <div className={styles.thumbsRow}>
           <div className={styles.counter}>
-            {overlayTitle.split(":")[0]}{/* p.ej. "Módulo 1" */}
+            {titulo.split(":")[0]}{/* p.ej. "Módulo 1" */}
           </div>
           <div className={styles.thumbs}>
             {thumbImages.map((src, i) => (
