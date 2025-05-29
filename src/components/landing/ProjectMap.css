@@ -110,7 +110,6 @@
   position: relative;
   width: 100vw;
   height: 90vh;
-  background-color: #007BFF;
 }
 
 .sidebar-title {
@@ -128,7 +127,6 @@
     padding: 10px;
   }
 }
-
 
 /* Estilo general para el popup */
 .leaflet-popup-content-wrapper {

@@ -1,4 +1,4 @@
-.parallaxStack {
+.sectionStack {
   width: 100%;
   padding: 2rem 2.5rem;
 }
@@ -8,7 +8,7 @@
   z-index: 2;
 }
 
-.parallaxItem {
+.sectionItem {
   display: flex;
   align-items: center;
   height: 100vh;
