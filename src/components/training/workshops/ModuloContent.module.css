@@ -1,3 +1,14 @@
+.containerDiv {
+  display: flex;
+}
+
+.containerOtherModules {
+  width: 30vw;
+  height: auto;
+  padding: 0 2rem;
+  border-left: 3px solid var(--vinoOsc);
+}
+
 .container {
   padding: 100px 2rem;
   max-width: 900px;

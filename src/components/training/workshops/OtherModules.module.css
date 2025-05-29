@@ -1,0 +1,43 @@
+.otherModules {
+  margin-top: 3rem;
+  border-top: 2px solid #eee;
+  padding-top: 2rem;
+}
+
+.otherModules h3 {
+  color: var(--doradoOsc);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 1.5rem;
+}
+
+.moduleCard {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-3px);
+}
+
+.moduleCard strong {
+  color: var(--vinoOsc);
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
