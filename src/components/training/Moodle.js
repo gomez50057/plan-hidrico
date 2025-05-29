@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { normalizeName } from '@/utils/utils';
+import { trainingContent } from '@/utils/training';
 import TalleresList from './workshops/TalleresList';
 import styles from './Moodle.module.css';
 
@@ -20,39 +20,25 @@ const Moodle = () => {
     window.open('https://moodle.org/?lang=es', '_blank');
   };
 
-const handleToggleTalleres = () => {
-  setShowTalleres((prev) => !prev);
-  setTimeout(() => {
-    if (talleresRef.current) {
-      const top = talleresRef.current.getBoundingClientRect().top + window.scrollY - 40;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  }, 300); // esperar un poco más para una transición suave
-};
-
-  const handleSelectTaller = (taller) => {
-    const slug = normalizeName(taller.titulo);
-    router.push(`/capacitacion/talleres/${slug}`);
+  const handleToggleTalleres = () => {
+    setShowTalleres((prev) => !prev);
+    setTimeout(() => {
+      if (talleresRef.current) {
+        const top = talleresRef.current.getBoundingClientRect().top + window.scrollY - 40;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }, 300);
   };
 
-  const talleres = [
-    {
-      titulo: 'Nivelación de tierras para la eficiencia hídrica',
-      imagen: '/img/training/recursos/1.jpg'
-    },
-    {
-      titulo: 'Tecnologías de riego por goteo',
-      imagen: '/img/training/recursos/6.jpg'
-    },
-    {
-      titulo: 'Manejo y conservación del agua',
-      imagen: '/img/training/recursos/5.jpg'
-    },
-    {
-      titulo: 'Optimización de canales y drenajes agrícolas',
-      imagen: '/img/training/recursos/2.jpg'
-    }
-  ];
+  const handleSelectTaller = (taller) => {
+    router.push(`/capacitacion/talleres/${taller.slug}`);
+  };
+
+  const talleres = Object.entries(trainingContent).map(([slug, data]) => ({
+    slug,
+    titulo: data.titulo,
+    imagen: data.imagen,
+  }));
 
   return (
     <>
