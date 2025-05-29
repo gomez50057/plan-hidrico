@@ -46,11 +46,11 @@ export default function ParallaxSlider() {
                 </div>
               </div>
               <div className={styles.imgeWrapperDesignA}>
-                <div className={styles.buttonDesignA}>
-                  <Link href={item.href} className={styles.ctaLink}>
+                <Link href={item.href} className={styles.buttonDesignA}>
+                  <div className={styles.ctaLink}>
                     Conoce más ↗
-                  </Link>
-                </div>
+                  </div>
+                </Link>
                 <img src={`${imgBasePath}ecos01.png`} alt={item.title} />
               </div>
             </div>
@@ -70,11 +70,11 @@ export default function ParallaxSlider() {
                   <img src={`${imgBasePath}planeacion.png`} alt={item.title} />
                 </div>
                 <p>{item.subtitle}</p>
-                <div className={styles.buttonDesignB}>
-                  <Link href={item.href} className={styles.ctaLink}>
+                <Link href={item.href} className={styles.buttonDesignB}>
+                  <div className={styles.ctaLink}>
                     Conoce más ↗
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </div>
             </div>
           );
@@ -89,11 +89,11 @@ export default function ParallaxSlider() {
                 <img src={`${imgBasePath}capacitacion.png`} alt={item.title} />
               </div>
               <p>{item.subtitle}</p>
-              <div className={styles.buttonDesignC}>
-                <Link href={item.href} className={styles.ctaLink}>
+              <Link href={item.href} className={styles.buttonDesignC}>
+                <div className={styles.ctaLink}>
                   Conoce más ↗
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
             <div className={styles.imgDesignC}>
               <img src={`${imgBasePath}capacitacion01.png`} alt={item.title} />

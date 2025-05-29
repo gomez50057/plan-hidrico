@@ -4,8 +4,8 @@
 }
 
 .ctaLink {
-  text-decoration: none;
   color: #fff;
+  z-index: 2;
 }
 
 .parallaxItem {
@@ -23,6 +23,41 @@
   width: 100%;
   height: auto;
 }
+
+.buttonDesignA,
+.buttonDesignB,
+.buttonDesignC {
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buttonDesignA::before,
+.buttonDesignB::before,
+.buttonDesignc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  z-index: -1;
+  transform: scale(0.75);
+  transition: transform 0.4s ease;
+  filter: blur(10px);
+}
+
+.buttonDesignA:hover,
+.buttonDesignB:hover,
+.buttonDesignC:hover {
+  box-shadow: 0 0 25px var(--vinoClr), 0 0 15px var(--doradoClr);
+}
+
+.buttonDesignA:hover::before,
+.buttonDesignB:hover::before,
+.buttonDesignC:hover::before {
+  transform: scale(1.2);
+}
+
 
 /*  */
 /* designA */
@@ -82,6 +117,10 @@
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+.buttonDesignA:hover {
+  transform: translateX(-50px) scale(1.05);
 }
 
 /*  */
@@ -155,6 +194,10 @@
   font-weight: 800;
 }
 
+.buttonDesignB:hover {
+  transform: translateY(-20px) scale(1.05);
+}
+
 /*  */
 /* designC */
 /*  */
@@ -195,6 +238,10 @@
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+.buttonDesignC:hover {
+  transform: translateX(20px) scale(1.05);
 }
 
 .imgDesignC {
