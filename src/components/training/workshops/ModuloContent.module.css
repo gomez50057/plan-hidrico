@@ -1,9 +1,7 @@
-
 .container {
   padding: 100px 2rem;
   max-width: 900px;
   margin: 0 auto;
-  font-family: sans-serif;
 }
 
 .breadcrumbs {
@@ -59,10 +57,12 @@
   font-size: 1rem;
   color: var(--grisOsc);
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .temaMedia {
   max-width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -71,7 +71,7 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  margin-top: 1rem;
+  border-radius: 15px;
 }
 
 .temaVideoWrapper iframe {
@@ -80,4 +80,5 @@
   left: 0;
   width: 100%;
   height: 100%;
+  border: 0;
 }

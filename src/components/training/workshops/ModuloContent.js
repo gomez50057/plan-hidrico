@@ -19,7 +19,8 @@ export default function ModuloContent({ params }) {
       <nav className={styles.breadcrumbs}>
         <span className={styles.prefix}>Hídrico</span> &raquo;{' '}
         <span className={styles.taller}>{taller.titulo}</span> &raquo;{' '}
-        <strong className={styles.modulo}>{modulo.titulo}</strong>
+        <strong className={styles.modulo}>{modulo.titulo}</strong> &raquo;{' '}
+        <span className={styles.statsTitle}>{modulo.statsTitle}</span>
       </nav>
 
       <h1 className={styles.title}>{modulo.titulo}</h1>
