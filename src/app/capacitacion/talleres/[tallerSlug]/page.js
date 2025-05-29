@@ -1,7 +1,7 @@
 import { use } from 'react';
 import { notFound } from 'next/navigation';
 import { trainingContent } from '@/utils/training';
-import ModuleCard from '@/components/training/ModuleCard';
+import ModuleCard from '@/components/training/workshops/ModuleCard';
 
 export default function TallerPage({ params }) {
   const { tallerSlug } = use(params);

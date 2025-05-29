@@ -4,9 +4,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { trainingContent } from '@/utils/training';
 import TalleresList from './workshops/TalleresList';
-import styles from './Moodle.module.css';
+import styles from '@/styles/training/TrainingIntro.module.css';
 
-const Moodle = () => {
+const TrainingIntro = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showTalleres, setShowTalleres] = useState(false);
   const talleresRef = useRef(null);
@@ -71,4 +71,4 @@ const Moodle = () => {
   );
 };
 
-export default Moodle;
+export default TrainingIntro;
