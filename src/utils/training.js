@@ -16,7 +16,19 @@ export const trainingContent = {
         statsText: 'Explora qué es la nivelación de tierras, su relevancia en la agricultura y cómo contribuye al uso eficiente del agua y aumento de rendimiento.',
         quoteImage: '/img/training/recursos/avatar.jpg',
         quoteText: 'La base de una buena cosecha empieza con un terreno bien nivelado.',
-        quoteAuthor: 'José Ramírez, especialista en mecanización agrícola'
+        quoteAuthor: 'José Ramírez, especialista en mecanización agrícola',
+        temas: [
+          {
+            titulo: '¿Qué es la nivelación de tierras?',
+            contenido: 'La nivelación de tierras es una técnica agrícola que permite distribuir de manera uniforme el agua de riego sobre una superficie, mejorando su aprovechamiento.',
+            media: { tipo: 'imagen', src: '/img/training/recursos/12.jpg' }
+          },
+          {
+            titulo: 'Beneficios principales',
+            contenido: 'Los terrenos bien nivelados permiten un uso más eficiente del agua, reducen la erosión y mejoran el rendimiento de los cultivos.',
+            media: { tipo: 'video', src: 'https://youtu.be/sD3Z5Tj_b4w?si=v-TLBrmp8L3_j4WK' }
+          }
+        ]
       },
       {
         titulo: 'Módulo 2: Diagnóstico del terreno y tecnologías aplicables',
@@ -24,7 +36,19 @@ export const trainingContent = {
         mainImage: '/img/training/recursos/9.jpg',
         thumbImages: ['/img/training/recursos/3.jpg', '/img/training/recursos/4.jpg'],
         statsTitle: 'Evaluación inicial del terreno',
-        statsText: 'Aprende cómo identificar irregularidades en el terreno, realizar levantamientos topográficos básicos y seleccionar la tecnología adecuada.'
+        statsText: 'Aprende cómo identificar irregularidades en el terreno, realizar levantamientos topográficos básicos y seleccionar la tecnología adecuada.',
+        temas: [
+          {
+            titulo: 'Evaluación del terreno',
+            contenido: 'Este tema aborda cómo realizar un diagnóstico inicial del campo, identificando puntos altos y bajos.',
+            media: { tipo: 'imagen', src: '/img/temas/diagnostico1.jpg' }
+          },
+          {
+            titulo: 'Tecnologías aplicables',
+            contenido: 'Se presentan las tecnologías modernas disponibles para facilitar la nivelación y el análisis del terreno.',
+            media: { tipo: 'video', src: 'https://www.youtube.com/embed/efgh5678' }
+          }
+        ]
       },
       {
         titulo: 'Módulo 3: Planeación y ejecución de la nivelación',
@@ -32,7 +56,19 @@ export const trainingContent = {
         mainImage: '/img/training/recursos/8.jpg',
         thumbImages: ['/img/training/recursos/5.jpg', '/img/training/recursos/6.jpg'],
         statsTitle: 'Proceso técnico y maquinaria',
-        statsText: 'Conoce las etapas para planificar y ejecutar la nivelación, el uso de maquinaria especializada y técnicas de calibración del terreno.'
+        statsText: 'Conoce las etapas para planificar y ejecutar la nivelación, el uso de maquinaria especializada y técnicas de calibración del terreno.',
+        temas: [
+          {
+            titulo: 'Planeación estratégica',
+            contenido: 'Cómo diseñar el plan de nivelación, identificando recursos, tiempos y equipos necesarios.',
+            media: { tipo: 'imagen', src: '/img/temas/planeacion1.jpg' }
+          },
+          {
+            titulo: 'Ejecución con maquinaria',
+            contenido: 'Uso de tractores y niveladoras láser para realizar cortes y rellenos precisos.',
+            media: { tipo: 'video', src: 'https://www.youtube.com/embed/ijkl9012' }
+          }
+        ]
       },
       {
         titulo: 'Módulo 4: Seguimiento y mantenimiento de terrenos nivelados',
@@ -40,7 +76,19 @@ export const trainingContent = {
         mainImage: '/img/training/recursos/7.jpg',
         thumbImages: ['/img/training/recursos/7.jpg', '/img/training/recursos/8.jpg'],
         statsTitle: 'Manejo post-nivelación',
-        statsText: 'Implementa prácticas de mantenimiento continuo para conservar la nivelación lograda y garantizar un uso sostenible del recurso hídrico.'
+        statsText: 'Implementa prácticas de mantenimiento continuo para conservar la nivelación lograda y garantizar un uso sostenible del recurso hídrico.',
+        temas: [
+          {
+            titulo: 'Monitoreo del terreno',
+            contenido: 'Cómo realizar inspecciones regulares para detectar desajustes y corregirlos a tiempo.',
+            media: { tipo: 'imagen', src: '/img/temas/seguimiento1.jpg' }
+          },
+          {
+            titulo: 'Mantenimiento preventivo',
+            contenido: 'Técnicas para evitar la degradación de la nivelación lograda por lluvias o mal manejo.',
+            media: { tipo: 'video', src: 'https://www.youtube.com/embed/mnop3456' }
+          }
+        ]
       }
     ]
   },
