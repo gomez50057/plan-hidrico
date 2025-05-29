@@ -4,9 +4,9 @@ import { trainingContent } from '@/utils/training';
 import ModuleCard from '@/components/training/ModuleCard';
 
 export default function TallerPage({ params }) {
-  const { slug } = use(params);
+  const { tallerSlug } = use(params);
 
-  const taller = trainingContent[slug];
+  const taller = trainingContent[tallerSlug];
   if (!taller) return notFound();
 
   return (
@@ -18,7 +18,7 @@ export default function TallerPage({ params }) {
         <ModuleCard
           key={modulo.slug}
           {...modulo}
-          tallerSlug={slug}
+          tallerSlug={tallerSlug}
         />
       ))}
     </div>

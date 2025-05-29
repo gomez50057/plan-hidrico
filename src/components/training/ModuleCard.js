@@ -1,12 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import styles from "./ModuleCard.module.css";
-import { normalizeName } from "@/utils/normalize";
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import styles from './ModuleCard.module.css';
 
 export default function ModuleCard({
   titulo,
+  slug: moduloSlug,
+  tallerSlug,
   mainImage,
   thumbImages = [],
   statsTitle,
@@ -18,13 +19,12 @@ export default function ModuleCard({
   const router = useRouter();
 
   const handleStatsClick = () => {
-    const slug = normalizeName (statsTitle);
-    router.push(`/modules/${slug}`);
+    router.push(`/capacitacion/talleres/${tallerSlug}/${moduloSlug}`);
   };
 
   return (
     <div className={styles.card}>
-      {/* … IZQUIERDA … */}
+      {/* IZQUIERDA: Imagen principal con overlay */}
       <div className={styles.left}>
         <div className={styles.overlay}>
           <h2 className={styles.overlayTitle}>{titulo}</h2>
@@ -37,12 +37,12 @@ export default function ModuleCard({
         />
       </div>
 
-      {/* DERECHA: contenido */}
+      {/* DERECHA: Contenido textual */}
       <div className={styles.right}>
-        {/* Thumbnails + número */}
+        {/* Títulos y miniaturas */}
         <div className={styles.thumbsRow}>
           <div className={styles.counter}>
-            {titulo.split(":")[0]}{/* p.ej. "Módulo 1" */}
+            {titulo?.split?.(':')[0] || 'Módulo'}
           </div>
           <div className={styles.thumbs}>
             {thumbImages.map((src, i) => (
@@ -58,20 +58,20 @@ export default function ModuleCard({
           </div>
         </div>
 
-        {/* Estadística / Descripción larga */}
+        {/* Descripción */}
         <div
           className={styles.stats}
           onClick={handleStatsClick}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && handleStatsClick()}
+          onKeyDown={(e) => e.key === 'Enter' && handleStatsClick()}
         >
           <h3>{statsTitle}</h3>
           <p>{statsText}</p>
           <span className={styles.statsArrow}>↗</span>
         </div>
 
-        {/* … cita opcional … */}
+        {/* Cita (opcional) */}
         {quoteText && (
           <div className={styles.quoteCard}>
             <div className={styles.avatarWrapper}>
@@ -91,6 +91,6 @@ export default function ModuleCard({
           </div>
         )}
       </div>
-    </div>  
+    </div>
   );
 }
