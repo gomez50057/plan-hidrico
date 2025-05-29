@@ -25,6 +25,8 @@
 
 .title {
   font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
   margin-bottom: 1rem;
   color: var(--vinoOsc);
 }
@@ -49,6 +51,7 @@
 
 .temaTitulo {
   font-size: 1.5rem;
+  font-weight: 600;
   color: var(--vinoClr);
   margin-bottom: 0.5rem;
 }

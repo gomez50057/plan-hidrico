@@ -2,6 +2,7 @@
 
 import { use } from 'react';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { trainingContent } from '@/utils/training';
 import styles from './ModuloContent.module.css';
 
@@ -17,8 +18,14 @@ export default function ModuloContent({ params }) {
   return (
     <div className={styles.container}>
       <nav className={styles.breadcrumbs}>
-        <span className={styles.prefix}>Hídrico</span> &raquo;{' '}
-        <span className={styles.taller}>{taller.titulo}</span> &raquo;{' '}
+        <Link href="/capacitacion">
+          <span className={styles.prefix}>Hídrico</span>
+        </Link>{' '}
+        &raquo;{' '}
+        <Link href={`/capacitacion/talleres/${tallerSlug}`}>
+          <span className={styles.taller}>{taller.titulo}</span>
+        </Link>{' '}
+        &raquo;{' '}
         <strong className={styles.modulo}>{modulo.titulo}</strong> &raquo;{' '}
         <span className={styles.statsTitle}>{modulo.statsTitle}</span>
       </nav>
@@ -53,6 +60,7 @@ export default function ModuloContent({ params }) {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 referrerPolicy="strict-origin-when-cross-origin"
+                scrolling="no"
                 allowFullScreen
               ></iframe>
             </div>

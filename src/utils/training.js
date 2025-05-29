@@ -41,12 +41,12 @@ export const trainingContent = {
           {
             titulo: 'Evaluación del terreno',
             contenido: 'Este tema aborda cómo realizar un diagnóstico inicial del campo, identificando puntos altos y bajos.',
-            media: { tipo: 'imagen', src: '/img/temas/diagnostico1.jpg' }
+            media: { tipo: 'imagen', src: '/img/training/recursos/15.jpg' }
           },
           {
             titulo: 'Tecnologías aplicables',
             contenido: 'Se presentan las tecnologías modernas disponibles para facilitar la nivelación y el análisis del terreno.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/efgh5678' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -61,12 +61,12 @@ export const trainingContent = {
           {
             titulo: 'Planeación estratégica',
             contenido: 'Cómo diseñar el plan de nivelación, identificando recursos, tiempos y equipos necesarios.',
-            media: { tipo: 'imagen', src: '/img/temas/planeacion1.jpg' }
+            media: { tipo: 'imagen', src: '/img/training/recursos/1.jpgg' }
           },
           {
             titulo: 'Ejecución con maquinaria',
             contenido: 'Uso de tractores y niveladoras láser para realizar cortes y rellenos precisos.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/ijkl9012' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -81,12 +81,12 @@ export const trainingContent = {
           {
             titulo: 'Monitoreo del terreno',
             contenido: 'Cómo realizar inspecciones regulares para detectar desajustes y corregirlos a tiempo.',
-            media: { tipo: 'imagen', src: '/img/temas/seguimiento1.jpg' }
+            media: { tipo: 'imagen', src: '/img/training/recursos/7.jpg' }
           },
           {
             titulo: 'Mantenimiento preventivo',
             contenido: 'Técnicas para evitar la degradación de la nivelación lograda por lluvias o mal manejo.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/mnop3456' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       }
@@ -111,12 +111,12 @@ export const trainingContent = {
           {
             titulo: '¿Qué es el riego por goteo?',
             contenido: 'El riego por goteo es un método que aplica agua directamente a la raíz de las plantas, minimizando pérdidas por evaporación.',
-            media: { tipo: 'imagen', src: '/img/training/recursos/13.jpg' }
+            media: { tipo: 'imagen', src: '/img/training/recursos/8.jpg' }
           },
           {
             titulo: 'Beneficios sobre otros métodos',
             contenido: 'Permite un uso más eficiente del agua, reduce enfermedades foliares y mejora la absorción de nutrientes.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/abcd1234' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -131,12 +131,12 @@ export const trainingContent = {
           {
             titulo: 'Tipos de emisores',
             contenido: 'Existen goteros compensados y no compensados, cada uno adecuado para distintas topografías.',
-            media: { tipo: 'imagen', src: '/img/training/recursos/14.jpg' }
+            media: { tipo: 'imagen', src: '/img/training/recursos/6.jpg' }
           },
           {
             titulo: 'Uso de filtros y válvulas',
             contenido: 'Evitan obstrucciones y controlan la presión del sistema, fundamentales para su funcionamiento adecuado.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/efgh5678' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -156,7 +156,7 @@ export const trainingContent = {
           {
             titulo: 'Mantenimiento preventivo',
             contenido: 'Inspección regular, limpieza de filtros y detección de fugas son prácticas esenciales.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/ijkl9101' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -171,7 +171,7 @@ export const trainingContent = {
           {
             titulo: 'Uso de sensores de humedad',
             contenido: 'Permite determinar cuándo y cuánto regar, mejorando la eficiencia del sistema.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/mnop3456' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           },
           {
             titulo: 'Adaptación al clima y suelo',
@@ -206,7 +206,7 @@ export const trainingContent = {
           {
             titulo: 'Factores que afectan la disponibilidad',
             contenido: 'Explora el impacto del cambio climático, deforestación y urbanización sobre la disponibilidad de agua.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/agua1234' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -226,7 +226,7 @@ export const trainingContent = {
           {
             titulo: 'Construcción de reservorios rurales',
             contenido: 'Pasos para implementar soluciones sostenibles con participación comunitaria.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/captacion5678' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -246,7 +246,7 @@ export const trainingContent = {
           {
             titulo: 'Programación del riego según el cultivo',
             contenido: 'Cómo determinar la frecuencia y cantidad según el tipo de planta y etapa de desarrollo.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/eficienciaagua9012' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -261,12 +261,12 @@ export const trainingContent = {
           {
             titulo: 'Iniciativas educativas en zonas rurales',
             contenido: 'Estrategias para capacitar a comunidades en el cuidado del agua desde edad temprana.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/educacionhidrica' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           },
           {
             titulo: 'Normativas y participación comunitaria',
             contenido: 'Cómo las leyes locales y la organización social pueden fomentar el uso responsable del agua.',
-            media: { tipo: 'imagen', src: '/img/training/recursos/14.jpg' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       }
@@ -297,7 +297,7 @@ export const trainingContent = {
           {
             titulo: 'Medición y análisis de caudal',
             contenido: 'Instrumentos y técnicas para determinar el caudal en canales de riego, incluyendo métodos volumétricos y de velocidad.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/VIDEO_ID1' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -317,7 +317,7 @@ export const trainingContent = {
           {
             titulo: 'Software y herramientas CAD',
             contenido: 'Introducción al uso de AutoCAD Civil 3D para modelar canales agrícolas y generar planos técnicos.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/VIDEO_ID2' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -337,7 +337,7 @@ export const trainingContent = {
           {
             titulo: 'Técnicas de instalación',
             contenido: 'Pasos prácticos para implementar zanjas, tubos perforados y pozos de inspección.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/VIDEO_ID3' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       },
@@ -357,7 +357,7 @@ export const trainingContent = {
           {
             titulo: 'Rehabilitación de canales deteriorados',
             contenido: 'Evaluación de daños estructurales y técnicas de reparación con materiales locales.',
-            media: { tipo: 'video', src: 'https://www.youtube.com/embed/VIDEO_ID4' }
+            media: { tipo: 'video', src: 'https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMiguelATelloV%2Fvideos%2F713860344396308%2F&show_text=false&width=560&t=0' }
           }
         ]
       }
