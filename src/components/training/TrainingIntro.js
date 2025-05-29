@@ -51,12 +51,12 @@ const TrainingIntro = () => {
         <div className={styles.content}>
           <div className={styles.leftContent}>
             <button className={styles.button} onClick={handleToggleTalleres}>
-              conoce nuestro sistema de curso de talleres
+              Conoce nuestros tutoriales
             </button>
           </div>
           <div className={styles.rightContent}>
             <button className={styles.button} onClick={handleRedirect}>
-              conoce nuestro sistema de curso de moodle
+              Conoce nuestros cursos (moodle)
             </button>
           </div>
         </div>
