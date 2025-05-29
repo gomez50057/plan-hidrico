@@ -11,6 +11,7 @@ const TalleresList = ({ talleres, onSelect }) => {
           className={styles.card}
           key={index}
           onClick={() => onSelect?.(taller)}
+          style={{ animationDelay: `${index * 100}ms` }}
         >
           <img
             src={taller.imagen}
