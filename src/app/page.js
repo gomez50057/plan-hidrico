@@ -1,6 +1,6 @@
 import HeroSection from "@/components/landing/Hero";
 import AboutSection from "@/components/landing/About";
-import JustificationSection from "@/components/landing/about/About";
+import JustificationSection from "@/components/landing/Justification";
 // import MapSection from "@/components/landing/maps/ProjectMap";
 import MapSection from "@/components/landing/MapSection";
 import InfoSwiper from "@/components/landing/InfoSwiper";

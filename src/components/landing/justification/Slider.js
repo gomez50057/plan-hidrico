@@ -5,7 +5,6 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { ejesPlanEstatal } from '../../../utils/planEstal';
 import styles from './Slider.module.css';
 const imgBasePath = "/img/";
 
@@ -123,7 +122,7 @@ SingleSlider.propTypes = {
 };
 
 const Slider = () => {
-  return <SingleSlider items={ejesPlanEstatal} />;
+  return <SingleSlider items={SingleSlider} />;
 };
 
 export default Slider;
