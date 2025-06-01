@@ -1,11 +1,11 @@
 .infoSwiperText {
-  width: 40vw;
+  width: 45vw;
   height: auto;
   text-align: left;
 }
 
 .infoSwiperText p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--grisOsc);
   line-height: 1.5;
   text-align: justify;
@@ -20,7 +20,7 @@
 }
 
 .infoSwiper {
-  width: 60vw;
+  width: 55vw;
   max-width: 900px;
   height: 100%;
   padding: 0 30px;
@@ -42,13 +42,13 @@
   line-height: 1.4;
 }
 
-.utm {
+/* .utm {
   display: flex;
   gap: 1rem;
   margin: 8px 0;
   font-size: 0.9rem;
   color: var(--grisOsc);
-}
+} */
 
 .card p {
   font-size: 0.9rem;

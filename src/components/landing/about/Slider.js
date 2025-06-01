@@ -48,71 +48,59 @@ const SingleSlider = ({ items }) => {
 
   return (
     <div className={styles.sliderContainer} ref={containerRef}>
-      <div className={styles.row}>
-        <div className={styles.wrapper} ref={wrapperRef}>
+      <div className={styles.wrapper} ref={wrapperRef}>
 
-          <div className={styles.logoAcuerdo}></div>
-          <div className={styles.titule}>
-            <h2>Un <span>Plan</span> para el <span className="spanDoarado">Futuro de Hidalgo</span></h2>
-            <p>Construido Contigo</p>
-          </div>
+        <div className={styles.logoAcuerdo}></div>
+        <div className={styles.titule}>
+          <h2>Un <span>Plan</span> para el <span className="spanDoarado">Futuro de Hidalgo</span></h2>
+          <p>Construido Contigo</p>
+        </div>
 
-          <div className={styles.element}>
-            <div className={styles.imgBackContainer}>
-              <div className={styles.backgroundShape}></div>
-              <div className={styles.imgContainer}>
-                <Image src={`${imgBasePath}eje2.png`} alt="prueba" width={600} height={100} objectFit="contain" />
-              </div>
-            </div>
-            <div className={styles.text}>
-              <h2>¿Qué es el Plan Hídrico Metropolitano</h2>
-              <p>Es un conjunto de estrategias que buscan mejorar el uso y el cuidado del agua, asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se implementará o mejorará la infraestructura hídrica y la tecnificación del riego.</p>
-              <div className={styles.line}></div>
-            </div>
-          </div>
-
-          <div className={styles.element}>
-            {/* <div className={styles.fileShapeL}>
-              <h2 className={styles.title}>¿Qué busca el Plan Hídrico Metropolitano en Hidalgo?</h2>
-              <div className={styles.cardElement02}>
-                <div className={styles.item}>
-                  <span className={styles.textElement02}>Busca asegurar que todas las personas tengan agua suficiente, limpia y bien distribuida, especialmente en las zonas donde más se necesita, así como prevenir inundaciones, limpiar ríos contaminados y aprovechar mejor el agua que se usa en el campo.</span>
-                </div>
-              </div>
-            </div> */}
-            <div className={styles.imgContainerElement02}>
-              <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
-            </div>
-            <div className={styles.fileShapeR}>
-              <h2 className={styles.title}>¿Qué busca el Plan Hídrico Metropolitano en Hidalgo?</h2>
-              <div className={styles.cardElement02}>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Garantizar el derecho humano al agua para todas y todos, sin excepción.</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Prevenir inundaciones que afecten a las familias y comunidades.</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Sanear los ríos contaminados para proteger la salud y el medio ambiente.</span>
-                </div>
-                <div className={styles.separator}></div>
-                <div className={styles.item}>
-                  <span className={styles.circle}></span>
-                  <span className={styles.textElement02}>Aprovechar de mejor manera el agua de uso agrícola, mejorando la productividad de la tierra.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.element}>
-            {/* <div className={styles.imgContainerJustificacion}>
+        <div className={styles.element}>
+          <div className={styles.imgBackContainer}>
+            <div className={styles.backgroundShape}></div>
+            <div className={styles.imgContainer}>
               <Image src={`${imgBasePath}eje2.png`} alt="prueba" width={600} height={100} objectFit="contain" />
-            </div> */}
+            </div>
+          </div>
+          <div className={styles.textElement01}>
+            <h2>¿Qué es el Plan Hídrico del Valle del Mezquital?</h2>
+            <p>Es un conjunto de estrategias que buscan mejorar el uso y el cuidado del agua, asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se modernizará la infraestructura hídrica y se hará más eficiente el riego agrícola, a través de su tecnificación.</p>
+            <div className={styles.line}></div>
+          </div>
+        </div>
+
+        <div className={styles.element}>
+          <div className={styles.imgContainerElement02}>
+            <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+          </div>
+          <div className={styles.fileShapeR}>
+            <h2 className={styles.title}>¿Qué busca el Plan Hídrico en Hidalgo?</h2>
+            <div className={styles.cardElement02}>
+              <div className={styles.item}>
+                <span className={styles.circle}></span>
+                <span className={styles.textElement02}>Garantizar el derecho humano al agua para todas y todos, sin excepción.</span>
+              </div>
+              <div className={styles.separator}></div>
+              <div className={styles.item}>
+                <span className={styles.circle}></span>
+                <span className={styles.textElement02}>Prevenir inundaciones que afecten a las familias y a su patrimonio.</span>
+              </div>
+              <div className={styles.separator}></div>
+              <div className={styles.item}>
+                <span className={styles.circle}></span>
+                <span className={styles.textElement02}>Sanear los ríos contaminados para proteger la salud y el medio ambiente.</span>
+              </div>
+              <div className={styles.separator}></div>
+              <div className={styles.item}>
+                <span className={styles.circle}></span>
+                <span className={styles.textElement02}>Aprovechar de mejor manera el agua de uso agrícola, mejorando la productividad de la tierra.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className={styles.element}>
             <div className={styles.imgContainerElement03}>
               <Image src={`${imgBasePath}justificacion.png`} alt="prueba" width={600} height={100} objectFit="contain" />
             </div>
@@ -124,31 +112,7 @@ const SingleSlider = ({ items }) => {
               <p><span className={styles.vinoColor}>3.</span><span>Saneamiento:</span> Limpiar los ríos de la región cambiando el tránsito de los sistemas de drenaje municipales para su tratamiento.</p>
               <p><span className={styles.vinoColor}>4.</span><span>Plan de Justicia:</span> A través del Programa de Tecnificación se busca mejorar el uso del agua en el campo, apoyando a los agricultores para que usen sistemas de riego más eficientes, como el riego por goteo, aspersión o multicompuertas, revestimiento y rehabilitación de los canales, regaderas y nivelación de tierras, además de mejorar la productividad de sus parcelas.</p>
             </div>
-          </div>
-
-
-          {/* {items.map((item, index) => (
-            <div
-              key={item.id || index}
-              className={styles.slide}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className={styles.text}>
-                <h2>{formatText(item.name)}</h2>
-                <p>{formatText(item.description)}</p>
-              </div>
-              <div className={styles.imgContainer}>
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={600}
-                  height={100}
-                  objectFit="contain"
-                />
-              </div>
-            </div>
-          ))} */}
-        </div>
+          </div> */}
       </div>
     </div >
   );

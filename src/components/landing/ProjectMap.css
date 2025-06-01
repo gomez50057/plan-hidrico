@@ -5,6 +5,11 @@
   height: 90vh;
 }
 
+.mapaTxt p span {
+  font-weight: 700;
+  color: var(--vinoClr);
+}
+
 .mapaTxt {
   background: none;
   justify-content: center;

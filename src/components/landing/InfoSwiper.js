@@ -14,8 +14,8 @@ export default function InfoSwiper() {
     <section className={styles.infoSwiperContainer}>
 
       <div className={styles.infoSwiperText}>
-        <h2><span className="spanDoarado">Parcelas</span><span> Demostrativas</span>        </h2>
-        <p>Comprueba en campo cómo una correcta nivelación del suelo y un riego bien aplicado mejoran tus cultivos. Observa resultados reales: más agua aprovechada, menos pérdidas y plantas más sanas. ¡Visita las parcelas y ve tu mismo los resultados!</p>
+        <h2><span className="spanDoarado">Estrategia</span> de <span>Parcelas Demostrativas</span></h2>
+        <p>Comprueba en campo cómo una correcta nivelación del suelo y un riego bien aplicado, mediante un sistema tecnificado mejoran tus cultivos. Veras resultados reales: Mayor eficiencia en el riego; plantas más sanas y vigorosas; mejores rendimientos en tus cultivos y más ganancia económica para tu familia. ¡Visita las parcelas y observa tú mismo los resultados!</p>
       </div>
       <Swiper
         effect="cards"
@@ -28,18 +28,13 @@ export default function InfoSwiper() {
             <div className={styles.slideItem}>
               {/* TEXTO A LA IZQUIERDA */}
               <div className={styles.card}>
-                <p><strong>Módulo:</strong> {item.modulo}</p>
+                <p><strong>Módulo de riego:</strong> {item.modulo}</p>
                 <p><strong>Municipio:</strong> {item.municipio}</p>
                 <p><strong>Localidad:</strong> {item.localidad}</p>
-                <p><strong>Productor:</strong> {item.productor}</p>
-                <div className={styles.utm}>
-                  <span><strong>UTM Este:</strong> {item.utmEste}</span>
-                  <span><strong>UTM Norte:</strong> {item.utmNorte}</span>
-                </div>
+                <p><strong>Ubicación:</strong> {item.localidad}</p>
+                <p><strong>Comó llegar por tierra:</strong> {item.localidad}</p>
                 <p><strong>Cultivo:</strong> {item.cultivo}</p>
                 <p><strong>Sistema:</strong> {item.sistema}</p>
-                <p><strong>Canaleta:</strong> {item.canaleta}</p>
-                <p><strong>Dimensiones:</strong> {item.dimensiones}</p>
               </div>
 
               {/* IMAGEN A LA DERECHA */}

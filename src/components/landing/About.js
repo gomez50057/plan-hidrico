@@ -39,10 +39,10 @@ export default function About() {
 
         <div className={styles.aboutTxt}>
           <h2>
-            <span>Transformando</span> el <span>Futuro</span> con <span>Agua:</span> Una <span className="spanDoarado">Visión Hídrica</span> para <span className="spanDoarado">Hidalgo</span>
+            <span>Transformando</span> el <span>Futuro</span> con <span>Agua:</span> Una <span className="spanDoarado">Visión Hídrica</span> para <span className="spanDoarado">Valle del Mezquital</span>
           </h2>
-          <h3>Compromiso con el bienestar, desarrollo y sustentabilidad de nuestras Entidad</h3>
-          <p>El Gobierno del Estado de Hidalgo, con una visión integral, participativa y centrada en el bienestar de las y los hidalguenses, impulsa el Plan Hídrico Metropolitano, una estrategia transformadora que forma parte de la estrategia nacional para mejorar la gestión hídrica.</p>
+          <h3>Compromiso con el bienestar, desarrollo y sustentabilidad de nuestras comunidades</h3>
+          <p>El Gobierno del Estado de Hidalgo, con el <span>respaldo del Gobierno de México,</span> a través de una visión integral, participativa y centrada en el bienestar de las y los hidalguenses, impulsa el Plan Hídrico del Valle del Mezquital, una estrategia transformadora que forma parte de la Plan Nacional Hídrico para mejorar la gestión del agua.</p>
           <p>Este proyecto se articula en torno a cuatro ejes fundamentales: acceso universal al agua potable, saneamiento responsable, prevención de riesgos por inundaciones y modernización del riego agrícola. Cada eje está diseñado para detonar el desarrollo sostenible, fortalecer la justicia social y asegurar un futuro resiliente.</p>
         </div>
       </div>

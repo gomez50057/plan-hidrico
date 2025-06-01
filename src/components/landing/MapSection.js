@@ -36,8 +36,8 @@ const MapSection = () => {
 
       <div className="mapaTxt">
       <h2><span>Mapa: Infraestructura</span> <span className="spanDoarado">Hidroagrícola</span></h2>
-        <p>Descubre nuestro mapa interactivo, donde podrás visualizar de manera dinámica los 3 Distritos de Riego.</p>
-        <p>Esta herramienta te permite conocer los Distritos y Módulos de Riego, y cómo va avanzando el Plan Hídrico Metropolitano de Hidalgo.</p>
+        <p>Descubre nuestro mapa interactivo, donde podrás visualizar de manera dinámica los 3 Distritos de Riego del Valle del Mezquital.</p>
+        <p>Esta herramienta te permite conocer <span>la infraestructura</span> de los Distritos y Módulos de Riego, y cómo avanza va avanzando el Plan Hídrico del Valle del Mezquital.</p>
       </div>
     </section>
   );
