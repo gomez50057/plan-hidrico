@@ -1,0 +1,77 @@
+.carouselWrapper {
+  overflow: visible;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: fit-content;
+  animation: scroll 20s linear infinite;
+  animation-play-state: running;
+}
+
+.carouselWrapper:hover .carousel {
+  animation-play-state: paused;
+}
+
+.logoLink {
+  display: inline-block;
+  position: relative;
+  margin: 0 2rem;
+  text-decoration: none;
+  flex-shrink: 0; /* evita que el logo se encoja */
+}
+
+.logoContainer {
+  width: 400px; /* Ajusta el ancho fijo que quieres */
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.logoLink:hover .logoImage {
+  filter: grayscale(0%);
+  transform: scale(1.2) translateY(-5px);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.logoLink:hover .tooltip {
+  opacity: 1;
+}
+
+/* Infinite scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
