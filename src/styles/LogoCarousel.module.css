@@ -23,11 +23,12 @@
   position: relative;
   margin: 0 2rem;
   text-decoration: none;
-  flex-shrink: 0; /* evita que el logo se encoja */
+  /* evita que el logo se encoja */
+  flex-shrink: 0;
 }
 
 .logoContainer {
-  width: 400px; /* Ajusta el ancho fijo que quieres */
+  width: 400px;
   position: relative;
   transition: transform 0.3s ease-in-out;
 }
@@ -71,6 +72,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
