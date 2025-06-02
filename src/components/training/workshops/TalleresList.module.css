@@ -4,8 +4,9 @@
   gap: 1rem;
   margin: 2rem auto;
   padding: 1rem;
-  width: 90%;
-  max-width: 1200px;
+  width: calc(100vw - 4rem);
+  max-width: 1900px;
+  position: relative;
 }
 
 .card {
