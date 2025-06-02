@@ -61,6 +61,13 @@ h2 .spanDoarado {
   font-style: italic;
 }
 
+
+h1 .spanDoaradoClr,
+h2 .spanDoaradoClr {
+  color: var(--doradoClr);
+  font-style: italic;
+}
+
 h1 .spanVino,
 h2 .spanvino {
   color: var(--vinoOsc);

@@ -48,51 +48,46 @@ const SingleSlider = ({ items }) => {
   return (
     <div className={styles.sliderContainer} ref={containerRef}>
       <div className={styles.wrapper} ref={wrapperRef}>
-
         <div className={styles.logoAcuerdo}></div>
-        <div className={styles.titule}>
-          <h2>Un <span>Plan</span> para el <span className="spanDoarado">Futuro de Hidalgo</span></h2>
-          <p>Construido Contigo</p>
-        </div>
-
         <div className={styles.element}>
           <div className={styles.imgBackContainer}>
-            <div className={styles.backgroundShape}></div>
+            {/* <div className={styles.backgroundShape}></div> */}
             <div className={styles.imgContainer}>
-              <Image src={`${imgBasePath}eje2.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+              <Image src={`${imgBasePath}img01Justificacion.png`} alt="imagen Futuro de Hidalgo" width={1200} height={100} objectFit="contain" />
             </div>
           </div>
           <div className={styles.textElement01}>
-            <h2>¿Qué es el Plan Hídrico del Valle del Mezquital?</h2>
-            <p>Es un conjunto de estrategias que buscan mejorar el uso y el cuidado del agua, asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se modernizará la infraestructura hídrica y se hará más eficiente el riego agrícola, a través de su tecnificación.</p>
+            <h2>¿Qué es el <span className='spanDoarado'>Plan Hídrico del Valle del Mezquital?</span></h2>
             <div className={styles.line}></div>
+            <p>Es un conjunto de <span>estrategias que buscan mejorar el uso y el cuidado del agua,</span> asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se modernizará la infraestructura hídrica y se hará más eficiente el riego agrícola, a través de su tecnificación.</p>
           </div>
         </div>
 
         <div className={styles.element}>
           <div className={styles.imgContainerElement02}>
-            <Image src={`${imgBasePath}objetivos.png`} alt="prueba" width={600} height={100} objectFit="contain" />
+            <Image className={styles.imgContainerElement02img01} src={`${imgBasePath}img02BJustificacion.png`} alt="prueba" width={130} height={100} objectFit="contain" />
+            <Image src={`${imgBasePath}img02Justificacion.png`} alt="prueba" width={600} height={100} objectFit="contain" />
           </div>
           <div className={styles.fileShapeR}>
-            <h2 className={styles.title}>¿Qué busca el Plan Hídrico en Hidalgo?</h2>
+            <h2 className={styles.title}>¿Qué busca el <span className='spanDoaradoClr'>Plan Hídrico</span> del <span className='spanDoaradoClr'>Valle del Mezquital?</span></h2>
             <div className={styles.cardElement02}>
               <div className={styles.item}>
-                <span className={styles.circle}></span>
+                <Image className={styles.circle} src={`${imgBasePath}agua icono.png`} alt="Gota de agua" width={30} height={20} />
                 <span className={styles.textElement02}>Garantizar el derecho humano al agua para todas y todos, sin excepción.</span>
               </div>
-              <div className={styles.separator}></div>
+              {/* <div className={styles.separator}></div> */}
               <div className={styles.item}>
-                <span className={styles.circle}></span>
+                <Image className={styles.circle} src={`${imgBasePath}agua icono.png`} alt="Gota de agua" width={30} height={20} />
                 <span className={styles.textElement02}>Prevenir inundaciones que afecten a las familias y a su patrimonio.</span>
               </div>
-              <div className={styles.separator}></div>
+              {/* <div className={styles.separator}></div> */}
               <div className={styles.item}>
-                <span className={styles.circle}></span>
+                <Image className={styles.circle} src={`${imgBasePath}agua icono.png`} alt="Gota de agua" width={30} height={20} />
                 <span className={styles.textElement02}>Sanear los ríos contaminados para proteger la salud y el medio ambiente.</span>
               </div>
-              <div className={styles.separator}></div>
+              {/* <div className={styles.separator}></div> */}
               <div className={styles.item}>
-                <span className={styles.circle}></span>
+                <Image className={styles.circle} src={`${imgBasePath}agua icono.png`} alt="Gota de agua" width={30} height={20} />
                 <span className={styles.textElement02}>Aprovechar de mejor manera el agua de uso agrícola, mejorando la productividad de la tierra.</span>
               </div>
             </div>
