@@ -26,26 +26,68 @@ export default function InfoSwiper() {
         {dataParcelas.map((item, index) => (
           <SwiperSlide key={index}>
             <div className={styles.slideItem}>
-              {/* TEXTO A LA IZQUIERDA */}
-              <div className={styles.card}>
-                <p><strong>Módulo de riego:</strong> {item.modulo}</p>
-                <p><strong>Municipio:</strong> {item.municipio}</p>
-                <p><strong>Localidad:</strong> {item.localidad}</p>
-                <p><strong>Ubicación:</strong> {item.localidad}</p>
-                <p><strong>Comó llegar por tierra:</strong> {item.localidad}</p>
-                <p><strong>Cultivo:</strong> {item.cultivo}</p>
-                <p><strong>Sistema:</strong> {item.sistema}</p>
+              <div className={styles.cardD}>
+                <div className={styles.imageWrapper}>
+                  <Image src={item.image} alt={item.localidad} fill className={styles.image} />
+                </div>
+                <div>
+                  <div className={styles.cardDText}>
+                    <Image src="/img/icono40x40.png" alt="Icono de información" width={40} height={40} />
+                    <p>Módulo de riego:</p>
+                    <p>{item.modulo}</p>
+                  </div>
+
+
+                </div>
+
+
               </div>
 
-              {/* IMAGEN A LA DERECHA */}
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={item.image}
-                  alt={item.localidad}
-                  fill
-                  className={styles.image}
-                />
+
+
+              <div className={styles.card}>
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Municipio:</p>
+                </div>
+                <p>{item.municipio}</p>
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Localidad:</p>
+                </div>
+                <p>{item.localidad}</p>
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Localidad:</p>
+                </div>
+                <p>{item.municipio}</p>
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Ubicación:</p>
+                </div>
+                <p>{item.ubicacion}</p>
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Comó llegar por tierra:</p>
+                </div>
+                <p>{item.referencias}</p>
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Cultivo:</p>
+                </div>
+                <p>{item.cultivo}</p>
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Sistema:</p>
+                </div>
+                <p>{item.sistema}</p>
               </div>
+
             </div>
           </SwiperSlide>
         ))}
