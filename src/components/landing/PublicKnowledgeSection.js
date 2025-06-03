@@ -84,6 +84,9 @@ export default function PublicKnowledgeSection() {
             key={idx}
             className={`${styles.sectionItem} ${styles.designC}`}
           >
+            <div className={styles.imgDesignC}>
+              <img src={`${imgBasePath}capacitacion01.png`} alt={item.title} />
+            </div>
             <div className={styles.textContentDesignC}>
               <div className={styles.imgTituleDesignC}>
                 <img src={`${imgBasePath}capacitacion.png`} alt={item.title} />
@@ -95,9 +98,7 @@ export default function PublicKnowledgeSection() {
                 </div>
               </Link>
             </div>
-            <div className={styles.imgDesignC}>
-              <img src={`${imgBasePath}capacitacion01.png`} alt={item.title} />
-            </div>
+
           </div>
         );
       })}
