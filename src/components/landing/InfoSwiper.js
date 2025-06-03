@@ -12,82 +12,69 @@ import { dataParcelas } from "@/utils/parcelas";
 export default function InfoSwiper() {
   return (
     <section className={styles.infoSwiperContainer}>
-
+      {/* Texto introductorio */}
       <div className={styles.infoSwiperText}>
-        <h2><span className="spanDoarado">Estrategia</span> de <span>Parcelas Demostrativas</span></h2>
-        <p>Comprueba en campo cómo una correcta nivelación del suelo y un riego bien aplicado, mediante un sistema tecnificado mejoran tus cultivos. Veras resultados reales: Mayor eficiencia en el riego; plantas más sanas y vigorosas; mejores rendimientos en tus cultivos y más ganancia económica para tu familia. ¡Visita las parcelas y observa tú mismo los resultados!</p>
+        <h2>
+          <span className="spanDoarado">Estrategia</span> de{" "}
+          <span>Parcelas Demostrativas</span>
+        </h2>
+        <p>
+          Comprueba en campo cómo una correcta nivelación del suelo y un riego
+          bien aplicado, mediante un sistema tecnificado, mejoran tus cultivos.
+          Verás resultados reales: mayor eficiencia en el riego, plantas más
+          sanas y vigorosas, mejores rendimientos y más ganancia económica para
+          tu familia. ¡Visita las parcelas y observa tú mismo los resultados!
+        </p>
       </div>
+
+      {/* Swiper */}
       <Swiper
         effect="cards"
-        grabCursor={true}
+        grabCursor
         modules={[EffectCards]}
         className={styles.infoSwiper}
       >
         {dataParcelas.map((item, index) => (
           <SwiperSlide key={index}>
             <div className={styles.slideItem}>
+              {/* Imagen y módulo */}
               <div className={styles.cardD}>
                 <div className={styles.imageWrapper}>
-                  <Image src={item.image} alt={item.localidad} fill className={styles.image} />
+                  <Image
+                    src={item.image}
+                    alt={item.localidad}
+                    fill
+                    className={styles.image}
+                  />
                 </div>
-                <div>
+                <div className={styles.containerCardDText}>
+                  <div className={styles.imgParcelaWrapper}>
+                    <Image
+                      src={item.imgParcela}
+                      alt={`Imagen de parcela: ${item.localidad}`}
+                      width={40}
+                      height={40}
+                      className={styles.imgParcela}
+                    />
+                  </div>
                   <div className={styles.cardDText}>
-                    <Image src="/img/icono40x40.png" alt="Icono de información" width={40} height={40} />
                     <p>Módulo de riego:</p>
                     <p>{item.modulo}</p>
-                  </div>
-
-
+                  </div>                  
                 </div>
 
 
               </div>
 
-
-
+              {/* Información adicional */}
               <div className={styles.card}>
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Municipio:</p>
-                </div>
-                <p>{item.municipio}</p>
-
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Localidad:</p>
-                </div>
-                <p>{item.localidad}</p>
-
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Localidad:</p>
-                </div>
-                <p>{item.municipio}</p>
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Ubicación:</p>
-                </div>
-                <p>{item.ubicacion}</p>
-
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Comó llegar por tierra:</p>
-                </div>
-                <p>{item.referencias}</p>
-
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Cultivo:</p>
-                </div>
-                <p>{item.cultivo}</p>
-
-                <div className={styles.titule}>
-                  <div className={styles.circule}></div>
-                  <p>Sistema:</p>
-                </div>
-                <p>{item.sistema}</p>
+                {renderInfoBlock("Municipio", item.municipio)}
+                {renderInfoBlock("Localidad", item.localidad)}
+                {renderInfoBlock("Ubicación", item.ubicacion)}
+                {renderInfoBlock("Cómo llegar por tierra", item.referencias)}
+                {renderInfoBlock("Cultivo", item.cultivo)}
+                {renderInfoBlock("Sistema", item.sistema)}
               </div>
-
             </div>
           </SwiperSlide>
         ))}
@@ -95,3 +82,16 @@ export default function InfoSwiper() {
     </section>
   );
 }
+
+/**
+ * Componente auxiliar para renderizar cada bloque de info con título y contenido
+ */
+const renderInfoBlock = (label, value) => (
+  <React.Fragment key={label}>
+    <div className={styles.titule}>
+      <div className={styles.circule}></div>
+      <p>{label}:</p>
+    </div>
+    <p>{value}</p>
+  </React.Fragment>
+);
