@@ -49,18 +49,22 @@ export default function InfoSwiper() {
                 </div>
                 <div className={styles.containerCardDText}>
                   <div className={styles.imgParcelaWrapper}>
-                    <Image
-                      src={item.imgParcela}
-                      alt={`Imagen de parcela: ${item.localidad}`}
-                      width={40}
-                      height={40}
-                      className={styles.imgParcela}
-                    />
+                    {item.imgParcela && (
+                      <div className={styles.imgParcelaWrapper}>
+                        <Image
+                          src={item.imgParcela}
+                          alt={`Imagen de parcela: ${item.localidad}`}
+                          width={40}
+                          height={40}
+                          className={styles.imgParcela}
+                        />
+                      </div>
+                    )}
                   </div>
                   <div className={styles.cardDText}>
                     <p>Módulo de riego:</p>
                     <p>{item.modulo}</p>
-                  </div>                  
+                  </div>
                 </div>
 
 

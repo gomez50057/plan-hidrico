@@ -1,6 +1,14 @@
+/* Info Swiper Container */
+.infoSwiperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 40px;
+}
+
 .infoSwiperText {
   width: 45vw;
-  height: auto;
   text-align: left;
 }
 
@@ -11,14 +19,6 @@
   text-align: justify;
 }
 
-.infoSwiperContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  gap: 2.5rem;
-}
-
 .infoSwiper {
   width: 55vw;
   max-width: 900px;
@@ -26,14 +26,15 @@
   padding: 0 30px;
 }
 
+/* Slide Item */
 .slideItem {
   display: flex;
   align-items: stretch;
   border-radius: 12px 0 0 12px;
-  height: 600px
+  height: 600px;
 }
 
-/* Texto (izquierda) */
+/* Card (Right Panel) */
 .card {
   flex: 1;
   background: #fff;
@@ -43,14 +44,6 @@
   line-height: 1.4;
 }
 
-/* .utm {
-  display: flex;
-  gap: 1rem;
-  margin: 8px 0;
-  font-size: 0.9rem;
-  color: var(--grisOsc);
-} */
-
 .card p {
   font-size: 1rem;
   font-weight: 500;
@@ -58,6 +51,7 @@
   margin: 0 0 8px 0;
 }
 
+/* Title Section */
 .titule {
   display: flex;
   align-items: center;
@@ -74,30 +68,26 @@
 .titule p {
   font-size: 1.3rem;
   font-weight: 700;
-  border: 3px solid var(--vinoOsc);
   color: var(--vinoClr);
+  border: 3px solid var(--vinoOsc);
   padding: 2px;
   margin: 0;
 }
 
-
-
-
+/* CardD (Left Panel) */
 .cardD {
   display: flex;
   flex-direction: column;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  height: 100%;
   width: 55%;
+  height: 100%;
 }
-
 
 .imageWrapper {
   position: relative;
   flex-grow: 1;
-  /* Ocupa el espacio restante */
   width: 100%;
   overflow: hidden;
 }
@@ -108,14 +98,11 @@
 
 .cardDText {
   padding: 1rem;
-  /* NO definir height fijo, ocupa solo el alto que necesita */
 }
-
 
 .cardDText p:first-of-type {
   font-weight: 700;
-    font-size: 1.3rem;
-
+  font-size: 1.3rem;
   color: var(--vinoClr);
   margin: 0;
 }
@@ -126,8 +113,7 @@
   margin: 0;
 }
 
-
-
+/* Container CardDText */
 .containerCardDText {
   margin-left: 30px;
   display: flex;
@@ -135,6 +121,7 @@
   gap: 0.5rem;
 }
 
+/* Dynamic Parcela Image */
 .imgParcelaWrapper {
   width: 40px;
   height: 40px;
