@@ -30,13 +30,6 @@
   margin: 0 5px;
 }
 
-.dropdownToggle {
-  cursor: pointer;
-  font-weight: 600;
-  padding: 10px;
-  color: var(--vinoOsc);
-}
-
 /* */
 /* Botón Circulo */
 /* */
@@ -97,34 +90,80 @@
 }
 
 /* */
-/* Dropdown Desktop */
+/* Dropdown Toggle Base */
+/* */
+.dropdownToggle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vinoOsc);
+  cursor: pointer;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* */
+/* Dropdown Menu Base */
 /* */
 .dropdownMenu {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: hsla(240, 33%, 96%, 0.95);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 0.5rem;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 2000;
-  min-width: 200px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
 }
 
-.navbarOpcDesktop .dropdownToggle {
-  font-size: 1.2rem;
+/* */
+/* Dropdown Hover Desktop */
+/* */
+@media (min-width: 1024px) {
+  .dropdown:hover .dropdownMenu {
+    display: flex;
+    max-height: 500px;
+    background-color: hsla(240, 33%, 96%, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+  }
+
+  .dropdownMenu li a {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--vinoOsc);
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .dropdownMenu li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }
 
-.dropdown:hover .dropdownMenu {
-  display: block;
+/* */
+/* Dropdown Toggle Mobile */
+/* */
+.dropdownOpen .dropdownMenu {
+  display: flex;
+  max-height: 500px;
+  background-color: hsla(240, 33%, 96%, 0.95);
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* */
+/* Dropdown Links Mobile */
+/* */
 .dropdownMenu li a {
   display: block;
-  text-align: left;
   padding: 10px 16px;
   font-size: 1rem;
   color: var(--vinoOsc);
@@ -186,24 +225,6 @@
 .navbarOpcMobile li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-}
-
-/* */
-/* Dropdown Mobile */
-/* */
-.dropdownToggle {
-  font-size: 1rem;
-}
-
-.dropdownMenu {
-  display: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown:hover .dropdownMenu {
-  display: block;
 }
 
 /* */

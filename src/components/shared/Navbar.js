@@ -1,86 +1,120 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
-const img = "/img/";
-const imgLogos = "/img/forms nivelacion tierra/logos/";
+const LOGOS = [
+  { src: "/img/forms nivelacion tierra/logos/Gob Federal.png", alt: "Gobierno Federal" },
+  { src: "/img/forms nivelacion tierra/logos/Gob Hgo.png", alt: "Gobierno del Estado de Hidalgo" },
+  { src: "/img/headertxt.png", alt: "Logo de Tenemos un Acuerdo" },
+];
+
+const NAV_ITEMS = [
+  { label: "Inicio", href: "/" },
+  {
+    label: "Materiales de apoyo",
+    submenu: [
+      { label: "Ecos del territorio hídrico", href: "/ecos-del-territorio-hidrico" },
+      { label: "Planeación para el futuro del agua", href: "/planeacion-para-el-futuro-del-agua" },
+    ],
+  },
+  { label: "Capacitación", href: "/capacitacion" },
+  {
+    label: "Tecnificación y nivelación parcelaria",
+    href: "https://bancodeproyectos.hidalgo.gob.mx/planhidrico/login/",
+    external: true,
+  },
+];
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
   const lastScrollPos = useRef(0);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setVisible(currentScrollPos < lastScrollPos.current || currentScrollPos < 10);
-          lastScrollPos.current = currentScrollPos;
-          ticking = false;
-        });
-        ticking = true;
-      }
+      setIsVisible(currentScrollPos < lastScrollPos.current || currentScrollPos < 10);
+      lastScrollPos.current = currentScrollPos;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
+  const toggleSubmenu = useCallback(() => setSubmenuOpen(prev => !prev), []);
+
+  const renderNavItems = (isMobile = false) => (
+    <ul className={isMobile ? styles.navbarOpcMobile : styles.navbarOpcDesktop}>
+      {NAV_ITEMS.map((item, index) => (
+        <li
+          key={index}
+          className={`${item.submenu ? styles.dropdown : ""} ${
+            isMobile && item.label === "Materiales de apoyo" && submenuOpen ? styles.dropdownOpen : ""
+          }`}
+        >
+          {item.submenu ? (
+            <>
+              <span
+                className={styles.dropdownToggle}
+                onClick={isMobile ? toggleSubmenu : undefined}
+              >
+                {item.label}
+              </span>
+              <ul
+                className={`${styles.dropdownMenu} ${
+                  isMobile && submenuOpen ? styles.menuOpen : ""
+                }`}
+              >
+                {item.submenu.map((subItem, subIndex) => (
+                  <li key={subIndex}>
+                    <Link href={subItem.href}>{subItem.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <Link
+              href={item.href}
+              target={item.external ? "_blank" : "_self"}
+              rel={item.external ? "noopener noreferrer" : undefined}
+            >
+              {item.label}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <>
-      <nav className={`${styles.Navbar} ${visible ? styles.active : styles.hidden} ${lastScrollPos.current > 100 ? styles.scrolled : ''}`}>
+      <nav
+        className={`${styles.Navbar} ${isVisible ? styles.active : styles.hidden} ${
+          lastScrollPos.current > 100 ? styles.scrolled : ''
+        }`}
+      >
         <div className={styles.NavbarList}>
           <div className={styles.NavbarImg}>
-            <img src={`${imgLogos}Gob Federal.png`} alt="Gobierno Federal" />
-            <img src={`${imgLogos}Gob Hgo.png`} alt="Gobierno del Estado de Hidalgo" />
-            <img src={`${img}headertxt.png`} alt="Logo de Tenemos un Acuerdo" />
+            {LOGOS.map((logo, index) => (
+              <img key={index} src={logo.src} alt={logo.alt} />
+            ))}
           </div>
 
           <div className={styles.NavbarInicio}>
-            {/* Botón hamburguesa solo para tablets y móviles */}
             <div className={styles.NavbarCirculo} onClick={toggleMenu}>
-              <img src={`${img}estrella.webp`} alt="Menú" />
+              <img src="/img/estrella.webp" alt="Menú" />
             </div>
-
-            {/* Menú siempre visible en PC */}
-            <ul className={styles.navbarOpcDesktop}>
-              <li><Link href="/">Inicio</Link></li>
-              <li className={styles.dropdown}>
-                <span className={styles.dropdownToggle}>Materiales de apoyo</span>
-                <ul className={styles.dropdownMenu}>
-                  <li><Link href="/ecos-del-territorio-hidrico">Ecos del territorio hídrico</Link></li>
-                  <li><Link href="/planeacion-para-el-futuro-del-agua">Planeación para el futuro del agua</Link></li>
-                </ul>
-              </li>
-              <li><Link href="/capacitacion">Capacitación</Link></li>
-              <li><Link href="https://bancodeproyectos.hidalgo.gob.mx/planhidrico/login/" target="_blank" rel="noopener noreferrer">Tecnificación y nivelación parcelaria</Link></li>
-            </ul>
+            {renderNavItems(false)}
           </div>
         </div>
       </nav>
 
-      {/* Contenedor desplegable solo para tablets y móviles */}
+      {/* Mobile Menu */}
       <div className={`${styles.NavbarMenuContainer} ${menuOpen ? styles.menuOpen : ''}`}>
-        <ul className={styles.navbarOpcMobile}>
-          <li><Link href="/">Inicio</Link></li>
-          <li className={styles.dropdown}>
-            <span className={styles.dropdownToggle}>Materiales de apoyo</span>
-            <ul className={styles.dropdownMenu}>
-              <li><Link href="/ecos-del-territorio-hidrico">Ecos del territorio hídrico</Link></li>
-              <li><Link href="/planeacion-para-el-futuro-del-agua">Planeación para el futuro del agua</Link></li>
-            </ul>
-          </li>
-          <li><Link href="/capacitacion">Capacitación</Link></li>
-          <li><Link href="https://bancodeproyectos.hidalgo.gob.mx/planhidrico/login/" target="_blank" rel="noopener noreferrer">Tecnificación y nivelación parcelaria</Link></li>
-        </ul>
+        {renderNavItems(true)}
       </div>
     </>
   );
