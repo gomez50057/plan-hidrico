@@ -38,11 +38,9 @@
   height: auto;
   display: block;
   transform-style: preserve-3d;
-
   transform: rotateX(8deg) rotateY(-12deg) translateZ(0);
-  transition: transform 0.6s cubic-bezier(.17, .67, .83, .67),
-    box-shadow 0.6s ease,
-    filter 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67),
+    box-shadow 0.6s ease, filter 0.6s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   filter: brightness(0.95);
 }
@@ -53,21 +51,14 @@
   filter: brightness(1.05);
 }
 
-/* 
-.aboutTxt {
-  width: 60vw;
-  height: auto;
-  padding-right: 2.5vw;
-} */
-
 .aboutContainer p {
   text-align: justify;
-  font-weight: 1rem;
+  font-size: 1rem;
 }
 
 .aboutContainer p span {
   font-weight: 700;
-  font-weight: 1.5rem;
+  font-size: 1.5rem;
   color: var(--vinoClr);
 }
 
@@ -80,19 +71,15 @@
   color: var(--grisClr);
 }
 
-.tren {
-  width: 100vw;
-  height: 150px;
-  background: url('/img/vias.png') no-repeat bottom;
-  background-size: 100% auto;
-  position: relative;
-}
 
-/* Tamaño para 'lg' */
-@media (max-width: 768px) {
+/* Tablets y móviles (<=1024px) */
+@media (max-width: 1024px) {
   .aboutContainer {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
+
   }
 
   .aboutImg,
@@ -101,37 +88,29 @@
   }
 
   .aboutImg {
-    height: 100px;
+    /* Remueve la perspectiva */
+    perspective: none;
+  }
+
+  .aboutImg img {
+    /* Desactiva el 3D */
+    transform-style: flat;
+    /* Elimina la rotación y la traslación */
+    transform: none;
   }
 }
 
-/* Tamaño para 'md' */
-/* @media (min-width: 576px) {
-  .aboutContainer {
-    background-color: lightblue;
-    flex-direction: column;
-
-  }
-} */
-
-/* Tamaño para 'lg' */
-/* @media (min-width: 768px) {
-  .aboutContainer {
-    background-color: lightgreen;
-
-  }
-} */
-
-/* Tamaño para 'xl' */
-/* @media (min-width: 1024px) {
-  .dualContainer {
-    background-color: lightcoral;
-  }
-} */
-
-/* Tamaño para 'xxl' */
+/* Monitores grandes (>=1400px) */
 @media (min-width: 1400px) {
-  /* .dualContainer {
-    background-color: lightgoldenrodyellow;
-  } */
+  .aboutContainer {
+    padding: 60px 80px;
+  }
+
+  .aboutTxt {
+    width: 55vw;
+  }
+
+  .aboutImg {
+    width: 40vw;
+  }
 }

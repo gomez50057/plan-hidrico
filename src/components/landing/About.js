@@ -1,8 +1,9 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import styles from "../../styles/About.module.css";
+import styles from "@/styles/About.module.css";
 const imgBasePath = "/img/";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,19 +13,39 @@ export default function About() {
 
   useEffect(() => {
     if (maskRef.current) {
-      gsap.set(maskRef.current, { width: "0%" });
+      const isTabletOrMobile = window.innerWidth <= 1024;
 
-      gsap.to(maskRef.current, {
-        scrollTrigger: {
-          trigger: "." + styles.aboutContainer,
-          start: "center center",
-          end: "top+=500 top",
-          scrub: true,
-          markers: false,
-        },
-        width: "100%",
-        ease: "none",
-      });
+      if (isTabletOrMobile) {
+        // Efecto para tablets y móviles
+        gsap.set(maskRef.current, { height: "0%", width: "100%" });
+
+        gsap.to(maskRef.current, {
+          scrollTrigger: {
+            trigger: "." + styles.aboutContainer,
+            start: "center center",
+            end: "top+=500 top",
+            scrub: true,
+            markers: false,
+          },
+          height: "100%",
+          ease: "none",
+        });
+      } else {
+        // Efecto original para escritorio
+        gsap.set(maskRef.current, { width: "0%", height: "100%" });
+
+        gsap.to(maskRef.current, {
+          scrollTrigger: {
+            trigger: "." + styles.aboutContainer,
+            start: "center center",
+            end: "top+=500 top",
+            scrub: true,
+            markers: false,
+          },
+          width: "100%",
+          ease: "none",
+        });
+      }
     }
   }, []);
 
