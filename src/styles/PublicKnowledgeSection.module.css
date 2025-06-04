@@ -367,7 +367,7 @@
     flex-direction: column;
     height: auto;
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .overlayTextDesignA p,

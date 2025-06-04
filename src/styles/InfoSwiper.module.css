@@ -143,3 +143,144 @@
 .imgMunicipio {
   object-fit: contain;
 }
+
+
+/* ==========================
+   💻 Laptops medianos (1024px - 1199px)
+   ========================== */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .infoSwiperContainer {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 30px;
+  }
+
+  .infoSwiperText {
+    width: 40vw;
+  }
+
+  .infoSwiperText p {
+    font-size: 1.1rem;
+  }
+
+  .infoSwiper {
+    width: 55vw;
+    padding: 0 20px;
+  }
+
+  .slideItem {
+    height: 550px;
+  }
+
+  .cardDText p:first-of-type {
+    font-size: 1.2rem;
+  }
+
+  .cardDText p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================
+   📱 Tablets (768px - 1023px)
+   ========================== */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .infoSwiperContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .infoSwiperText {
+    width: 90vw;
+    text-align: center;
+  }
+
+  .infoSwiperText p {
+    font-size: 1rem;
+  }
+
+  .infoSwiper {
+    width: 90vw;
+    padding: 0 10px;
+  }
+
+  .slideItem {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cardD {
+    width: 100%;
+    height: auto;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .cardDText p:first-of-type {
+    font-size: 1.1rem;
+  }
+
+  .cardDText p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================
+   📱 Celulares (<=767px)
+   ========================== */
+@media (max-width: 767px) {
+  .infoSwiperContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .infoSwiperText {
+    width: 100%;
+    text-align: left;
+  }
+
+  .infoSwiperText h2 {
+    margin: 0;
+  }
+
+  .infoSwiperText p {
+    font-size: 0.95rem;
+  }
+
+  .infoSwiper {
+    width: 95%;
+    padding: 0 5px;
+  }
+
+  .slideItem {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cardD {
+    width: 100%;
+    height: auto;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px 10px;
+  }
+
+  .cardDText p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .cardDText p:nth-of-type(2) {
+    font-size: 0.9rem;
+  }
+}
+
+
+
