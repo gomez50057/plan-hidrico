@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 const LOGOS = [
@@ -31,6 +32,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const lastScrollPos = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,17 +45,26 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setSubmenuOpen(false);
+  }, [pathname]);
+
   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
   const toggleSubmenu = useCallback(() => setSubmenuOpen(prev => !prev), []);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setSubmenuOpen(false);
+  };
 
   const renderNavItems = (isMobile = false) => (
     <ul className={isMobile ? styles.navbarOpcMobile : styles.navbarOpcDesktop}>
       {NAV_ITEMS.map((item, index) => (
         <li
           key={index}
-          className={`${item.submenu ? styles.dropdown : ""} ${
-            isMobile && item.label === "Materiales de apoyo" && submenuOpen ? styles.dropdownOpen : ""
-          }`}
+          className={`${item.submenu ? styles.dropdown : ""} ${isMobile && item.label === "Materiales de apoyo" && submenuOpen ? styles.dropdownOpen : ""
+            }`}
         >
           {item.submenu ? (
             <>
@@ -64,13 +75,14 @@ const Navbar = () => {
                 {item.label}
               </span>
               <ul
-                className={`${styles.dropdownMenu} ${
-                  isMobile && submenuOpen ? styles.menuOpen : ""
-                }`}
+                className={`${styles.dropdownMenu} ${isMobile && submenuOpen ? styles.menuOpen : ""
+                  }`}
               >
                 {item.submenu.map((subItem, subIndex) => (
                   <li key={subIndex}>
-                    <Link href={subItem.href}>{subItem.label}</Link>
+                    <Link href={subItem.href} onClick={isMobile ? handleLinkClick : undefined}>
+                      {subItem.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -78,6 +90,7 @@ const Navbar = () => {
           ) : (
             <Link
               href={item.href}
+              onClick={isMobile ? handleLinkClick : undefined}
               target={item.external ? "_blank" : "_self"}
               rel={item.external ? "noopener noreferrer" : undefined}
             >
@@ -92,9 +105,8 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`${styles.Navbar} ${isVisible ? styles.active : styles.hidden} ${
-          lastScrollPos.current > 100 ? styles.scrolled : ''
-        }`}
+        className={`${styles.Navbar} ${isVisible ? styles.active : styles.hidden} ${lastScrollPos.current > 100 ? styles.scrolled : ''
+          }`}
       >
         <div className={styles.NavbarList}>
           <div className={styles.NavbarImg}>
@@ -112,7 +124,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <div className={`${styles.NavbarMenuContainer} ${menuOpen ? styles.menuOpen : ''}`}>
         {renderNavItems(true)}
       </div>
