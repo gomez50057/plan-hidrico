@@ -41,22 +41,21 @@ export default function InfoSwiper() {
               <div className={styles.cardD}>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src={item.image}
+                    src={item.imgParcela}
                     alt={item.localidad}
                     fill
                     className={styles.image}
                   />
                 </div>
                 <div className={styles.containerCardDText}>
-                  <div className={styles.imgParcelaWrapper}>
-                    {item.imgParcela && (
-                      <div className={styles.imgParcelaWrapper}>
+                  <div className={styles.imgMunicipioWrapper}>
+                    {item.imgMunicipio && (
+                      <div className={styles.imgMunicipioWrapper}>
                         <Image
-                          src={item.imgParcela}
+                          src={item.imgMunicipio}
                           alt={`Imagen de parcela: ${item.localidad}`}
-                          width={40}
-                          height={40}
-                          className={styles.imgParcela}
+                          fill
+                          className={styles.imgMunicipio}
                         />
                       </div>
                     )}
@@ -66,18 +65,31 @@ export default function InfoSwiper() {
                     <p>{item.modulo}</p>
                   </div>
                 </div>
-
-
               </div>
 
               {/* Información adicional */}
               <div className={styles.card}>
                 {renderInfoBlock("Municipio", item.municipio)}
                 {renderInfoBlock("Localidad", item.localidad)}
-                {renderInfoBlock("Ubicación", item.ubicacion)}
-                {renderInfoBlock("Cómo llegar por tierra", item.referencias)}
                 {renderInfoBlock("Cultivo", item.cultivo)}
-                {renderInfoBlock("Sistema", item.sistema)}
+
+                <div className={styles.titule}>
+                  <div className={styles.circule}></div>
+                  <p>Ubicación:</p>
+                </div>
+                <p>
+                  <a
+                    href={`https://www.google.com/maps?q=${item.latitud},${item.longitud}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkMaps}
+                  >
+                    ¡Haz clic aquí para ver la parcela en el mapa y planificar tu visita! 
+                  </a>
+                </p>
+
+                {renderInfoBlock("Modalidad", item.modalidad)}
+                {renderInfoBlock("Cómo llegar por tierra", item.llegarTierra)}
               </div>
             </div>
           </SwiperSlide>

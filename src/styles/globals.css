@@ -89,3 +89,13 @@ html, body {
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+
+.swiper-cards .swiper-slide {
+  transform-origin: center bottom;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 50px;
+  border: 2px solid var(--vinoOsc);
+}
