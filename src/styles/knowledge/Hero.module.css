@@ -1,4 +1,3 @@
-
 .contentHeader {
   display: flex;
   text-align: center;
@@ -31,7 +30,7 @@
   }
 
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
 }
 
@@ -53,22 +52,12 @@
 
   .contentHeader {
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
     width: 100vw;
-    height: 80vh;
-    margin: 0;
-    gap: 80px;
-  }
-
-  .contentHeader .headerImg {
-    position: relative;
-    display: flex;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-    width: 150vw;
-    height: 50%;
+    height: auto;
+    color: var(--blanco);
+    margin-top: 95px;
   }
 }
 

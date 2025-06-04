@@ -8,7 +8,7 @@
   margin-top: 100px;
 }
 
-.contentHeader .headeTitule  {
+.contentHeader .headeTitule {
   width: 50%;
   will-change: transform;
 }
@@ -88,6 +88,18 @@
     left: 0;
     width: 150vw;
     height: 50%;
+  }
+
+  .contentHeader .headeTitule {
+    width: 65%;
+    will-change: transform;
+    position: relative;
+    top: 80px;
+    z-index: 100;
+  }
+
+  .contentHeader .headerTxt {
+    width: 45%;
   }
 }
 

@@ -63,7 +63,7 @@
   width: 100%;
   height: auto;
   max-height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .aboutContainer p {
@@ -77,13 +77,32 @@
 /* Tamaño para 'lg' */
 @media (max-width: 768px) {
   .aboutContainer {
+    position: relative;
     flex-direction: column;
-    gap: 20px;
+    padding-bottom: 0;
+  }
+
+  .rectangulo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   .aboutTxt {
+    padding: 10vh 11vw 10vh 2.5vw;
     width: 90vw;
+    height: 100vh;
   }
+
+  .aboutImg {
+  width: 80vw;
+  height: auto;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
 }
 
