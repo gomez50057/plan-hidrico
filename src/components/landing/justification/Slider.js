@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useLayoutEffect, useRef } from 'react';
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -54,22 +53,18 @@ const Slider = ({ items }) => {
     <div className={styles.sliderContainer} ref={containerRef}>
       <div className={styles.wrapper} ref={wrapperRef}>
         {/* Elemento 1 */}
-        <div className={styles.element}>
+        <div className={styles.element01}>
           <div className={styles.imgBackContainer}>
             <div className={styles.imgContainer}>
-              <Image
+              <img
                 src={`${imgBasePath}img01Justificacion.png`}
                 alt="imagen Futuro de Hidalgo"
-                width={1200}
-                height={100}
-                objectFit="contain"
+                className={styles.img}
               />
             </div>
           </div>
           <div className={styles.textElement01}>
-            <h2>
-              ¿Qué es el <span className='spanDoarado'>Plan Hídrico del Valle del Mezquital?</span>
-            </h2>
+            <h2>¿Qué es el <span className='spanDoarado'>Plan Hídrico del Valle del Mezquital?</span></h2>
             <div className={styles.line}></div>
             <p>
               Es un conjunto de <span>estrategias que buscan mejorar el uso y el cuidado del agua,</span> asegurando que todas las personas tengan acceso a este vital líquido de manera más eficiente y justa, especialmente las comunidades vulnerables. Para lograrlo se modernizará la infraestructura hídrica y se hará más eficiente el riego agrícola, a través de su tecnificación.
@@ -78,22 +73,15 @@ const Slider = ({ items }) => {
         </div>
 
         {/* Elemento 2 */}
-        <div className={styles.element}>
+        <div className={styles.element02}>
           <div className={styles.imgContainerElement02}>
-            <Image
-              className={styles.imgContainerElement02img01}
+            <img className={styles.imgContainerElement02img01}
               src={`${imgBasePath}img02BJustificacion.png`}
               alt="prueba"
-              width={130}
-              height={100}
-              objectFit="contain"
             />
-            <Image
+            <img
               src={`${imgBasePath}img02Justificacion.png`}
               alt="prueba"
-              width={600}
-              height={100}
-              objectFit="contain"
             />
           </div>
           <div className={styles.fileShapeR}>
@@ -108,12 +96,10 @@ const Slider = ({ items }) => {
                 "Aprovechar de mejor manera el agua de uso agrícola, mejorando la productividad de la tierra."
               ].map((text, index) => (
                 <div key={index} className={styles.item}>
-                  <Image
+                  <img
                     className={styles.circle}
                     src={`${imgBasePath}agua icono.png`}
                     alt="Gota de agua"
-                    width={30}
-                    height={20}
                   />
                   <span className={styles.textElement02}>{text}</span>
                 </div>
