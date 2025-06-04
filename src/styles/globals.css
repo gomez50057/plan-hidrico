@@ -10,6 +10,12 @@
   --blanco: #F5F3F5;
 }
 
+/* Root para swiper */
+:root {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 1.5rem; 
+}
+
 
 * {
   box-sizing: border-box;
@@ -98,4 +104,10 @@ html, body {
   overflow: hidden;
   border-radius: 50px;
   border: 2px solid var(--vinoOsc);
+}
+
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #800020; /* Color vino al hacer hover */
 }
