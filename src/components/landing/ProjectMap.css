@@ -126,6 +126,8 @@
 
   .mapaConte {
     flex-direction: column-reverse;
+    height: auto;
+    max-height: 90vh;
   }
 
   .mapaTxt {

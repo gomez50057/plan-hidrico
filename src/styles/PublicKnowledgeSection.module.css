@@ -259,3 +259,151 @@
 }
 
 
+/* ==========================
+   💻 Laptops medianos (1024px - 1199px)
+   ========================== */
+@media (max-width: 1199px) and (min-width: 1024px) {
+
+  .overlayTextDesignA p,
+  .overlayTextDesignB p,
+  .textContentDesignC p {
+    font-size: 1.8rem;
+  }
+
+  .buttonDesignA,
+  .buttonDesignB,
+  .buttonDesignC {
+    width: 35%;
+    font-size: 1rem;
+  }
+
+  .textContentDesignC {
+    width: 60vw;
+  }
+
+  .imgDesignC {
+    width: 50vw;
+  }
+}
+
+/* ==========================
+   📱 Tablets (768px)
+   ========================== */
+@media (max-width: 1023px) {
+  .sectionStack {
+    padding: 1rem 1.2rem;
+  }
+
+  .sectionItem {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .overlayTextDesignA p,
+  .overlayTextDesignB p,
+  .textContentDesignC p {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .textContentDesignC p {
+    font-size: 1.2rem;
+    padding: 1rem 3.2rem;
+    margin: 0;
+  }
+
+  .overlayTextDesignA {
+    width: 100%;
+  }
+
+  .buttonDesignB,
+  .buttonDesignC {
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  .imgTituleDesignA,
+  .imgTituleDesignB,
+  .imgTituleDesignC,
+  .imgDesignC {
+    width: 80vw;
+  }
+
+  .containerDesignA {
+    flex-direction: column;
+  }
+
+  .overlayTextDesignB {
+    width: 100%;
+  }
+
+  .buttonDesignA {
+    position: static;
+    top: 0;
+    right: 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 20px;
+  }
+
+  .textContentDesignC {
+    width: 70vw;
+  }
+}
+
+/* ==========================
+   📱 Celulares (<=767px)
+   ========================== */
+@media (max-width: 767px) {
+
+  .sectionStack {
+    padding: 1rem 1.2rem;
+  }
+
+  .sectionItem {
+    flex-direction: column;
+    height: auto;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .overlayTextDesignA p,
+  .overlayTextDesignB p,
+  .textContentDesignC p {
+    font-size: 1.2rem;
+    padding: 0rem;
+    margin: 0;
+  }
+
+  .textContentDesignC p {
+    padding: 1rem 3.2rem;
+  }
+
+  .buttonDesignB,
+  .buttonDesignC {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .buttonDesignA {
+    font-size: 0.9rem;
+  }
+
+  .imgTituleDesignA,
+  .imgTituleDesignB {
+    width: 70vw;
+  }
+
+  .imgTituleDesignC,
+  .imgDesignC {
+    width: 90vw;
+  }
+
+  .containerDesignA {
+    flex-direction: column;
+  }
+
+}
