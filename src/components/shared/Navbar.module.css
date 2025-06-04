@@ -89,6 +89,10 @@
   text-decoration: underline;
 }
 
+.navbarOpcDesktop .dropdownToggle {
+  font-size: 1.2rem;
+}
+
 /* */
 /* Dropdown Toggle Base */
 /* */
@@ -180,8 +184,8 @@
 /* Menu Desplegable (Mobile) */
 /* */
 .NavbarMenuContainer {
-  position: absolute;
-  top: 70px;
+  position: fixed;
+  top: 60px;
   left: 0;
   width: 100%;
   background-color: hsla(240, 33%, 96%, 0.95);
