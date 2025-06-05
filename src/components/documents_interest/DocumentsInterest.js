@@ -19,13 +19,14 @@ const DocumentsInterest = () => {
   return (
     <div className={styles.container}>
       {rows.map((rowItems, rowIndex) => {
-        // Solo las filas índice 0 y 1 llevan clase sticky
-        const stickyClass =
-          rowIndex === 0
-            ? styles.stickyFirstRow
-            : rowIndex === 1
-            ? styles.stickySecondRow
-            : "";
+        // Solo la fila 0 y la fila 1 serán “sticky”
+        const isFirst = rowIndex === 0;
+        const isSecond = rowIndex === 1;
+        const stickyClass = isFirst
+          ? styles.stickyFirstRow
+          : isSecond
+          ? styles.stickySecondRow
+          : "";
 
         return (
           <div

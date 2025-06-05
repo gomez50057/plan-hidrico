@@ -6,66 +6,68 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
-  /* Sin overflow oculto para que sticky funcione */
+  /* ¡NO pongas overflow: hidden ni overflow: auto! */
 }
 
 /* ------------------------------------------
    Cada fila (hasta 3 tarjetas en escritorio)
-   - Altura fija para controlar el comportamiento sticky
-   - Gap vertical de 0.5rem entre filas
+   - Dejar que la altura la marque el contenido.
+   - Gap horizontal entre tarjetas = 1rem
+   - Gap vertical entre filas = 1rem (margin-bottom)
 ------------------------------------------- */
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;             /* Espacio horizontal entre tarjetas */
-  margin-bottom: 0.5rem; /* Espacio vertical entre filas */
+  gap: 1rem;             /* Espacio entre tarjetas */
+  margin-bottom: 1rem;   /* Espacio vertical entre filas */
   background-color: white;
   box-sizing: border-box;
-
-  /* Altura mínima fija para que el sticky tenga dónde “pegarse” */
-  min-height: 260px;
-  padding: 1rem;         /* Espacio interno en cada fila */
 }
 
 /* ------------------------------------------
    Sticky para la primera fila
-   - Se pega con 1rem desde el tope de la ventana
+   - Se pega al llegar a 1rem del borde superior
 ------------------------------------------- */
 .stickyFirstRow {
   position: sticky;
   top: 1rem;
   z-index: 10;
+  /* Fondo blanco para que no se vea el contenido de atrás */
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ------------------------------------------
    Sticky para la segunda fila
-   - Se pega justo debajo de la primera fila
-     top = 1rem (espacio inicial) + 260px (altura mínima fila 1) + 0.5rem (gap vertical)
-     = calc(260px + 1.5rem)
+   - Debe “pegarse” justo debajo de la primera
+     top = 1rem (espacio superior) + altura real de la fila 0 + 1rem (gap vertical)
+   - Si asumimos que la primera fila mide ~260px de alto (contenido + padding),
+     entonces top ≈ calc(260px + 2rem)
+   - Ajusta “260px” si tus tarjetas ocupan más o menos espacio.
 ------------------------------------------- */
 .stickySecondRow {
   position: sticky;
-  top: calc(260px + 1.5rem);
+  top: calc(260px + 2rem);
   z-index: 9;
+  background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* ------------------------------------------
-   Estilos para cada tarjeta (cards más grandes)
+   Estilos para cada tarjeta (card más grande)
 ------------------------------------------- */
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;        /* Más espacio interior */
+  padding: 1.5rem;       /* Más espacio interior */
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fafafa;
   text-align: center;
   box-sizing: border-box;
-  min-height: 200px;      /* Altura mínima uniforme */
+  /* Se puede ajustar min-height si quieres uniformar altura */
 }
 
 /* Imagen dentro de la tarjeta (más grande) */
@@ -92,7 +94,7 @@
 
 /* Título en español (nombre del PDF) */
 .cardTitle {
-  font-size: 1.25rem;     /* Texto más grande */
+  font-size: 1.25rem;    /* Texto más grande */
   font-weight: 600;
   margin-bottom: 1rem;
   color: #333;
@@ -117,15 +119,15 @@
 /* ------------------------------------------
    BREAKPOINT: Pantallas medianas (≤ 1024px)
    - 2 columnas por fila
-   - Mantener altura mínima de fila para sticky
+   - Asumimos que la altura de la primera fila sigue siendo ~260px
 ------------------------------------------- */
 @media (max-width: 1024px) {
   .row {
     grid-template-columns: repeat(2, 1fr);
-    min-height: 260px;   /* Mantiene el mismo alto mínimo */
   }
   .stickySecondRow {
-    top: calc(260px + 1.5rem);
+    /* Mismo cálculo de top, ya que el alto de la fila 0 no cambia por el grid */
+    top: calc(260px + 2rem);
   }
 }
 
@@ -133,22 +135,20 @@
    BREAKPOINT: Pantallas pequeñas (≤ 768px)
    - 1 columna por fila
    - Desactivar sticky para no saturar espacio
-   - Altura automática en filas
+   - Altura de filas ajustable según contenido
 ------------------------------------------- */
 @media (max-width: 768px) {
   .row {
     grid-template-columns: 1fr;
-    min-height: auto;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;  /* Ajuste de padding para filas en móvil */
+    margin-bottom: 1rem;  /* Gap vertical entre filas */
   }
   .stickyFirstRow,
   .stickySecondRow {
-    position: relative; /* Ya no sticky en móvil */
+    position: relative;   /* Ya no es sticky en móvil */
     top: auto;
     box-shadow: none;
   }
   .card {
-    padding: 1rem;      /* Menos padding en tarjetas móviles */
+    padding: 1rem;        /* Menos padding en tarjetas para móvil */
   }
 }
