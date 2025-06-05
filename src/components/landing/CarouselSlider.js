@@ -14,21 +14,21 @@ const slides = [
     title: "Documentos de interés",
     description:
       "Explora información relevante sobre el agua: reportes técnicos, investigaciones y normativas vigentes.",
-    image: "/img/parcelas demostrativas/1.jpg",
+    image: "/img/parcelasDemostrativas/1.jpg",
     href: "/documentos-interes"
   },
   {
     title: "Parcelas demostrativas",
     description:
       "Conoce nuestras parcelas demostrativas y su impacto en la gestión hídrica sostenible.",
-    image: "/img/parcelas demostrativas/1.jpg",
+    image: "/img/parcelasDemostrativas/1.jpg",
     href: "/parcelarios"
   },
   {
     title: "Programas y proyectos",
     description:
       "Descubre iniciativas que promueven el manejo responsable del agua en diferentes regiones.",
-    image: "/img/parcelas demostrativas/1.jpg",
+    image: "/img/parcelasDemostrativas/1.jpg",
     href: "/programas-proyectos"
   },
 ];
