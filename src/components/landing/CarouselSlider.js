@@ -1,9 +1,9 @@
 "use client";
 
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,22 +11,25 @@ import styles from "@/styles/CarouselSlider.module.css";
 
 const slides = [
   {
-    title: "Doctor Strange",
+    title: "Documentos de interés",
     description:
-      "America Chavez and a version of Stephen Strange are chased by a demon in the space between universes while searching for the Book of Vishanti.",
+      "Explora información relevante sobre el agua: reportes técnicos, investigaciones y normativas vigentes.",
     image: "/img/parcelas demostrativas/1.jpg",
+    href: "/documentos-interes"
   },
   {
-    title: "Thor: Ragnarok",
+    title: "Parcelas demostrativas",
     description:
-      "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarok.",
+      "Conoce nuestras parcelas demostrativas y su impacto en la gestión hídrica sostenible.",
     image: "/img/parcelas demostrativas/1.jpg",
+    href: "/parcelas-demostrativas"
   },
   {
-    title: "Eternals",
+    title: "Programas y proyectos",
     description:
-      "Ajak, Sersi, Ikaris, Kingo, Sprite, and Thena—are sent by the Celestials to protect humanity from the Deviants.",
+      "Descubre iniciativas que promueven el manejo responsable del agua en diferentes regiones.",
     image: "/img/parcelas demostrativas/1.jpg",
+    href: "/programas-proyectos"
   },
 ];
 
@@ -56,6 +59,9 @@ const CarouselSlider = () => {
               <div className={styles.slideOverlay}>
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
+                <Link href={slide.href} passHref>
+                  <button className={styles.slideButton}>Ver más</button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

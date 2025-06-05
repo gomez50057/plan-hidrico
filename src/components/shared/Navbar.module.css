@@ -79,7 +79,7 @@
   padding: 10px 14px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: var(--size_Fonts_M);
   color: var(--vinoOsc);
   transition: color 0.3s, text-decoration 0.3s;
 }
@@ -90,7 +90,7 @@
 }
 
 .navbarOpcDesktop .dropdownToggle {
-  font-size: 1.2rem;
+  font-size: var(--size_Fonts_M);
 }
 
 /* */

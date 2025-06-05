@@ -247,7 +247,6 @@
 
   .element01 {
     width: 100vw;
-    background-color: #861a3e;
   }
 
   .element02 {
@@ -380,12 +379,10 @@
 
   .element01 {
     width: 400vw;
-    background-color: aqua;
   }
 
   .element02 {
     width: 200vw;
-    background-color: brown;
   }
 
   .textElement01 h2 {
