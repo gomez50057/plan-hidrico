@@ -4,6 +4,7 @@
   background: #f9f9f9;
   padding: 1rem 0;
   position: relative;
+  margin-top: 65px;
 }
 
 .carousel {
@@ -28,7 +29,7 @@
 }
 
 .logoContainer {
-  width: 400px;
+  width: 200px;
   position: relative;
   transition: transform 0.3s ease-in-out;
 }

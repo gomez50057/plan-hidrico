@@ -22,7 +22,7 @@ const slides = [
     description:
       "Conoce nuestras parcelas demostrativas y su impacto en la gestión hídrica sostenible.",
     image: "/img/parcelas demostrativas/1.jpg",
-    href: "/parcelas-demostrativas"
+    href: "/parcelarios"
   },
   {
     title: "Programas y proyectos",

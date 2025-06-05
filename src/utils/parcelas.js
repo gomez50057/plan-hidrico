@@ -11,6 +11,11 @@ export const dataParcelas = [
     longitud: "-98.9500265941018",
     modalidad: "Por goteo",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Actopan - El Huaxtho",
+    description: "Cultivo: Frijol. Modalidad: Por goteo",
+    bg: "/img/parcelas demostrativas/1.jpg",
+    link: "/parcelas/actopan-el-huaxtho",
   },
   {
     imgParcela: "/img/parcelas demostrativas/2.jpg",
@@ -24,6 +29,11 @@ export const dataParcelas = [
     longitud: "-99.1601430964357",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Mixquiahuala de Juárez - El Llano",
+    description: "Cultivo: Por definir. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/2.jpg",
+    link: "/parcelas/mixquiahuala-de-juárez-el-llano",
   },
   {
     imgParcela: "/img/parcelas demostrativas/3.jpg",
@@ -37,6 +47,11 @@ export const dataParcelas = [
     longitud: "-99.149867019836",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Progreso de Obregón - Bombeo Ejido Progreso",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/3.jpg",
+    link: "/parcelas/progreso-de-obregón-bombeo-ejido-progreso",
   },
   {
     imgParcela: "/img/parcelas demostrativas/4.jpg",
@@ -50,6 +65,11 @@ export const dataParcelas = [
     longitud: "-99.1497320590921",
     modalidad: "Multicompuertas",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Progreso de Obregón - Colonia Veracruz",
+    description: "Cultivo: Chile. Modalidad: Multicompuertas",
+    bg: "/img/parcelas demostrativas/4.jpg",
+    link: "/parcelas/progreso-de-obregón-colonia-veracruz",
   },
   {
     imgParcela: "/img/parcelas demostrativas/5.jpg",
@@ -63,6 +83,11 @@ export const dataParcelas = [
     longitud: "-99.1629672034536",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Progreso de Obregón - Palma Gorda",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/5.jpg",
+    link: "/parcelas/progreso-de-obregón-palma-gorda",
   },
   {
     imgParcela: "/img/parcelas demostrativas/6.jpg",
@@ -76,6 +101,11 @@ export const dataParcelas = [
     longitud: "-99.1736590623628",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Progreso de Obregón - Xamu",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/6.jpg",
+    link: "/parcelas/progreso-de-obregón-xamu",
   },
   {
     imgParcela: "/img/parcelas demostrativas/7.jpg",
@@ -89,6 +119,11 @@ export const dataParcelas = [
     longitud: "-98.9982757180456",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "San Salvador - Cañada Grande",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/7.jpg",
+    link: "/parcelas/san-salvador-cañada-grande",
   },
   {
     imgParcela: "/img/parcelas demostrativas/8.jpg",
@@ -102,6 +137,11 @@ export const dataParcelas = [
     longitud: "-99.0033392416719",
     modalidad: "Multicompuertas",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "San Salvador - Carr San Salvador-Caxuxi",
+    description: "Cultivo: Alfalfa. Modalidad: Multicompuertas",
+    bg: "/img/parcelas demostrativas/8.jpg",
+    link: "/parcelas/san-salvador-carr-san-salvador-caxuxi",
   },
   {
     imgParcela: "/img/parcelas demostrativas/9.jpg",
@@ -115,6 +155,11 @@ export const dataParcelas = [
     longitud: "-99.0126232110193",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "San Salvador - Tothie La 23",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/9.jpg",
+    link: "/parcelas/san-salvador-tothie-la-23",
   },
   {
     imgParcela: "/img/parcelas demostrativas/10.jpg",
@@ -128,6 +173,11 @@ export const dataParcelas = [
     longitud: "-99.0120535630165",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "San Salvador - Tothie La 23",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/10.jpg",
+    link: "/parcelas/san-salvador-tothie-la-23-2",
   },
   {
     imgParcela: "/img/parcelas demostrativas/11.jpg",
@@ -141,6 +191,11 @@ export const dataParcelas = [
     longitud: "-99.2767045482768",
     modalidad: "Multicompuertas",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tezontepec de Aldama - El Solis",
+    description: "Cultivo: Maíz. Modalidad: Multicompuertas",
+    bg: "/img/parcelas demostrativas/11.jpg",
+    link: "/parcelas/tezontepec-de-aldama-el-solis",
   },
   {
     imgParcela: "/img/parcelas demostrativas/12.jpg",
@@ -154,6 +209,11 @@ export const dataParcelas = [
     longitud: "-99.221737932254",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tlahuelilpan - San Primitivo",
+    description: "Cultivo: Por definir. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/12.jpg",
+    link: "/parcelas/tlahuelilpan-san-primitivo",
   },
   {
     imgParcela: "/img/parcelas demostrativas/13.jpg",
@@ -167,6 +227,11 @@ export const dataParcelas = [
     longitud: "-99.1791989820785",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tlaxcoapan - Ejido Teltipan de Juárez",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/13.jpg",
+    link: "/parcelas/tlaxcoapan-ejido-teltipan-de-juárez",
   },
   {
     imgParcela: "/img/parcelas demostrativas/14.jpg",
@@ -180,6 +245,11 @@ export const dataParcelas = [
     longitud: "-99.1888665562093",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tlaxcoapan - Ejido Teltipan de Juárez",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/14.jpg",
+    link: "/parcelas/tlaxcoapan-ejido-teltipan-de-juárez-2",
   },
   {
     imgParcela: "/img/parcelas demostrativas/15.jpg",
@@ -193,6 +263,11 @@ export const dataParcelas = [
     longitud: "-99.1791811986663",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tlaxcoapan - Teltipán de Juárez",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/15.jpg",
+    link: "/parcelas/tlaxcoapan-teltipán-de-juárez",
   },
   {
     imgParcela: "/img/parcelas demostrativas/1.jpg",
@@ -206,6 +281,11 @@ export const dataParcelas = [
     longitud: "-99.3809455810311",
     modalidad: "Trituración",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Alfajayucan - Ejido Zozea",
+    description: "Cultivo: Maíz. Modalidad: Trituración",
+    bg: "/img/parcelas demostrativas/1.jpg",
+    link: "/parcelas/alfajayucan-ejido-zozea",
   },
   {
     imgParcela: "/img/parcelas demostrativas/2.jpg",
@@ -219,6 +299,11 @@ export const dataParcelas = [
     longitud: "-99.3300862476415",
     modalidad: "Trituración",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Alfajayucan - Naxthéy",
+    description: "Cultivo: Maíz. Modalidad: Trituración",
+    bg: "/img/parcelas demostrativas/2.jpg",
+    link: "/parcelas/alfajayucan-naxthéy",
   },
   {
     imgParcela: "/img/parcelas demostrativas/3.jpg",
@@ -232,6 +317,11 @@ export const dataParcelas = [
     longitud: "-99.3346198851891",
     modalidad: "Por goteo",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Alfajayucan - Santa María Xingui",
+    description: "Cultivo: Maíz. Modalidad: Por goteo",
+    bg: "/img/parcelas demostrativas/3.jpg",
+    link: "/parcelas/alfajayucan-santa-maría-xingui",
   },
   {
     imgParcela: "/img/parcelas demostrativas/4.jpg",
@@ -245,6 +335,11 @@ export const dataParcelas = [
     longitud: "-99.3221374688268",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Alfajayucan - Taxhie",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/4.jpg",
+    link: "/parcelas/alfajayucan-taxhie",
   },
   {
     imgParcela: "/img/parcelas demostrativas/5.jpg",
@@ -258,6 +353,11 @@ export const dataParcelas = [
     longitud: "-99.3704461684247",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Alfajayucan - Yonthe Grande \"La Mina\"",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/5.jpg",
+    link: "/parcelas/alfajayucan-yonthe-grande-la-mina",
   },
   {
     imgParcela: "/img/parcelas demostrativas/6.jpg",
@@ -271,6 +371,11 @@ export const dataParcelas = [
     longitud: "-99.2333562633961",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Chilcuautla - El Cerrito",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/6.jpg",
+    link: "/parcelas/chilcuautla-el-cerrito",
   },
   {
     imgParcela: "/img/parcelas demostrativas/7.jpg",
@@ -284,6 +389,11 @@ export const dataParcelas = [
     longitud: "-99.2348960615482",
     modalidad: "Multicompuertas",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Chilcuautla - Zacualoya",
+    description: "Cultivo: Maíz. Modalidad: Multicompuertas",
+    bg: "/img/parcelas demostrativas/7.jpg",
+    link: "/parcelas/chilcuautla-zacualoya",
   },
   {
     imgParcela: "/img/parcelas demostrativas/8.jpg",
@@ -297,6 +407,11 @@ export const dataParcelas = [
     longitud: "-99.2603247479562",
     modalidad: "Multicompuertas",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Ixmiquilpan - Loma López Rayón",
+    description: "Cultivo: Maíz. Modalidad: Multicompuertas",
+    bg: "/img/parcelas demostrativas/8.jpg",
+    link: "/parcelas/ixmiquilpan-loma-lópez-rayón",
   },
   {
     imgParcela: "/img/parcelas demostrativas/9.jpg",
@@ -310,6 +425,11 @@ export const dataParcelas = [
     longitud: "-99.2668626603747",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Tasquillo - López Rayón",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/9.jpg",
+    link: "/parcelas/tasquillo-lópez-rayón",
   },
   {
     imgParcela: "/img/parcelas demostrativas/10.jpg",
@@ -323,6 +443,11 @@ export const dataParcelas = [
     longitud: "-99.0397333798128",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Ajacuba - San Nicolás Tecomatlán",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/10.jpg",
+    link: "/parcelas/ajacuba-san-nicolás-tecomatlán",
   },
   {
     imgParcela: "/img/parcelas demostrativas/11.jpg",
@@ -336,6 +461,11 @@ export const dataParcelas = [
     longitud: "-99.035092824194",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Ajacuba - San Nicolás Tecomatlán",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/11.jpg",
+    link: "/parcelas/ajacuba-san-nicolás-tecomatlán-2",
   },
   {
     imgParcela: "/img/parcelas demostrativas/12.jpg",
@@ -349,5 +479,10 @@ export const dataParcelas = [
     longitud: "-99.0401627713677",
     modalidad: "Nivelación",
     llegarTierra: "Por definir",
+    // parcelas
+    name: "Ajacuba - Santiago Tezontlale",
+    description: "Cultivo: Maíz. Modalidad: Nivelación",
+    bg: "/img/parcelas demostrativas/12.jpg",
+    link: "/parcelas/ajacuba-santiago-tezontlale",
   },
 ];
