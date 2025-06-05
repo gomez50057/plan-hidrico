@@ -259,9 +259,7 @@
 }
 
 
-/* ==========================
-   💻 Laptops medianos (1024px - 1199px)
-   ========================== */
+/* Laptops medianos (1024px - 1199px) */
 @media (max-width: 1199px) and (min-width: 1024px) {
 
   .overlayTextDesignA p,
@@ -286,9 +284,7 @@
   }
 }
 
-/* ==========================
-   📱 Tablets (768px)
-   ========================== */
+/* Tablets (768px) */
 @media (max-width: 1023px) {
   .sectionStack {
     padding: 1rem 1.2rem;
@@ -354,9 +350,7 @@
   }
 }
 
-/* ==========================
-   📱 Celulares (<=767px)
-   ========================== */
+/* Celulares (<=767px) */
 @media (max-width: 767px) {
 
   .sectionStack {
