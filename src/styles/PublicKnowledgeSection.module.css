@@ -211,12 +211,11 @@
   align-items: center;
   width: 40vw;
   gap: 1rem;
-  z-index: -20;
 }
 
 .textContentDesignC p {
   width: 150%;
-  padding: 2% 30% 2% 25%;
+  padding: 2% 30% 2% 26%;
   font-size: 2rem;
   font-weight: 400;
   color: var(--grisOsc);
@@ -250,12 +249,13 @@
 }
 
 .buttonDesignC:hover {
-  transform: translateX(20px) scale(1.05);
+  transform: translateX(20px) translateY(-10px) scale(1.05);
 }
 
 .imgDesignC {
   width: 60vw;
   height: auto;
+  z-index: 100;
 }
 
 
