@@ -11,25 +11,18 @@ import styles from "@/styles/CarouselSlider.module.css";
 
 const slides = [
   {
-    title: "Documentos de interés",
+    title: "Planes Directores de los Distritos de Riego",
     description:
-      "Explora información relevante sobre el agua: reportes técnicos, investigaciones y normativas vigentes.",
-    image: "/img/parcelasDemostrativas/1.jpg",
-    href: "/documentos-interes"
+      "Accede al conjunto de Planes Directores de los Distritos de Riego del Valle del Mezquital.",
+    image: "/img/advertisements/planes-directores-dr.jpg",
+    href: "/planes-directores-dr"
   },
   {
-    title: "Parcelas demostrativas",
+    title: "Proveedores Cooperantes en Parcelas Demostrativas",
     description:
-      "Conoce nuestras parcelas demostrativas y su impacto en la gestión hídrica sostenible.",
-    image: "/img/parcelasDemostrativas/1.jpg",
-    href: "/parcelarios"
-  },
-  {
-    title: "Programas y proyectos",
-    description:
-      "Descubre iniciativas que promueven el manejo responsable del agua en diferentes regiones.",
-    image: "/img/parcelasDemostrativas/1.jpg",
-    href: "/programas-proyectos"
+      "Descubre a los Proveedores Cooperantes en Parcelas Demostrativas: accede al listado completo de todos los participantes.",
+    image: "/img/advertisements/proveedores-cooperantes.jpg",
+    href: "/proveedores-cooperantes"
   },
 ];
 

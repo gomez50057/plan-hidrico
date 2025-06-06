@@ -1,6 +1,6 @@
 import HeroSection from "@/components/knowledge/Governmental/Hero";
 import AboutSection from "@/components/knowledge/Governmental/About";
-import DocumentCards from "@/components/documents_interest/DocumentsInterest";
+import DocumentCards from "@/components/planes-directores-dr/DocumentsInterest";
 
 export default function GovernmentalPage() {
   return (
