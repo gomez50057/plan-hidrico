@@ -96,31 +96,13 @@
   max-width: 40vw;
   max-height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+
 }
 
-.imgContainerElement02 img:nth-of-type(1) {
-  height: auto;
-  width: 40%;
-  object-fit: contain;
-}
-
-.imgContainerElement02 img:nth-of-type(2) {
+.imgContainerElement02 img {
   height: auto;
   width: 100%;
-  object-fit: cover;
-}
-
-.imgContainerElement02img01 {
-  position: relative;
-  left: 70%;
-  transform: translateX(-50%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.imgContainerElement02:hover .imgContainerElement02img01 {
-  transform: scale(1.1) translateX(-50%) translateY(-20px);
+  object-fit: contain;
 }
 
 .fileShapeL,
@@ -218,7 +200,7 @@
   }
 
   .imgContainerElement02 {
-    max-width: 35vw;
+    max-width: 90vw;
   }
 
   .title {
@@ -262,7 +244,7 @@
   }
 
   .imgContainerElement02 {
-    max-width: 35vw;
+    max-width: 90vw;
   }
 
   .title {
@@ -394,7 +376,7 @@
   }
 
   .imgContainerElement02 {
-    max-width: 35vw;
+    max-width: 90vw;
   }
 
   .title {

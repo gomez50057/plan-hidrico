@@ -75,14 +75,7 @@ const Slider = ({ items }) => {
         {/* Elemento 2 */}
         <div className={styles.element02}>
           <div className={styles.imgContainerElement02}>
-            <img className={styles.imgContainerElement02img01}
-              src={`${imgBasePath}img02BJustificacion.png`}
-              alt="prueba"
-            />
-            <img
-              src={`${imgBasePath}img02Justificacion.png`}
-              alt="prueba"
-            />
+            <img src={`${imgBasePath}img02Justificacion.png`} alt="Polígono del valle del mezquital" />
           </div>
           <div className={styles.fileShapeR}>
             <h2 className={styles.title}>

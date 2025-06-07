@@ -52,9 +52,11 @@ const CarouselSlider = () => {
               <div className={styles.slideOverlay}>
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
-                <Link href={slide.href} passHref>
-                  <button className={styles.slideButton}>Ver más</button>
-                </Link>
+                <div className={styles.buttonWrapper}>
+                  <Link href={slide.href} passHref>
+                    <button className={styles.slideButton}>Ver más</button>
+                  </Link>
+                </div>
               </div>
             </div>
           </SwiperSlide>

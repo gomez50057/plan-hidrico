@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "@/styles/plot/PlotHero.module.css";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import Link from "next/link";
-import { dataParcelas } from "@/utils/parcelas";
+import { dataSuppliers } from "@/utils/suppliers";
 
 const PlotHero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +17,7 @@ const PlotHero = () => {
   useEffect(() => {
     if (!manualChange) {
       const interval = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % dataParcelas.length);
+        setActiveIndex((prev) => (prev + 1) % dataSuppliers.length);
       }, 6000);
       return () => clearInterval(interval);
     }
@@ -25,13 +25,13 @@ const PlotHero = () => {
 
   const handleNext = () => {
     setManualChange(true);
-    setActiveIndex((prev) => (prev + 1) % dataParcelas.length);
+    setActiveIndex((prev) => (prev + 1) % dataSuppliers.length);
     restartAutoAdvance();
   };
 
   const handlePrev = () => {
     setManualChange(true);
-    setActiveIndex((prev) => (prev - 1 + dataParcelas.length) % dataParcelas.length);
+    setActiveIndex((prev) => (prev - 1 + dataSuppliers.length) % dataSuppliers.length);
     restartAutoAdvance();
   };
 
@@ -40,7 +40,7 @@ const PlotHero = () => {
   };
 
   const getNextIndex = (index, offset) => {
-    return (index + offset) % dataParcelas.length;
+    return (index + offset) % dataSuppliers.length;
   };
 
   const handlePreviewClick = (index) => {
@@ -49,7 +49,7 @@ const PlotHero = () => {
     restartAutoAdvance();
   };
 
-  const { name, description, bg, modalidad, link } = dataParcelas[activeIndex];
+  const { Empresa, Giro, bg, Contacto, NumParcelas } = dataSuppliers[activeIndex];
 
   return (
     <div
@@ -64,31 +64,38 @@ const PlotHero = () => {
           key={`${animationKey}-name`}
           className={`${styles.name} ${styles.textAnimation} delay-1`}
         >
-          {name}
+          <h2>{Empresa}</h2>
         </div>
 
         <div
           key={`${animationKey}-description`}
           className={`${styles.description} ${styles.textAnimation} delay-2`}
         >
-          {description}
+          <p>Giro: {Giro}</p>
         </div>
 
         <div
           key={`${animationKey}-method`}
           className={`${styles.method} ${styles.textAnimation} delay-2`}
         >
-          {modalidad}
+          <p>Contacto: {Contacto}</p>
         </div>
 
-        <Link href={`${link}`} target="_blank" rel="noopener noreferrer" >
+
+        <div
+          key={`${animationKey}-numParcelas`}
+          className={`${styles.method} ${styles.textAnimation} delay-2`}
+        >
+          <p>Número de parcelas: {NumParcelas}</p>
+        </div>
+        {/* <Link href={`${link}`} target="_blank" rel="noopener noreferrer" >
           <button
             key={`${animationKey}-button`}
             className={`${styles.textAnimation} delay-3`}
           >
             Leer más
           </button>
-        </Link>
+        </Link> */}
 
       </div>
 
@@ -98,7 +105,7 @@ const PlotHero = () => {
           .fill(null)
           .map((_, offset) => {
             const nextIndex = getNextIndex(activeIndex, offset + 1);
-            const { bg: nextBg } = dataParcelas[nextIndex];
+            const { bg: nextBg } = dataSuppliers[nextIndex];
             return (
               <div
                 key={nextIndex}
