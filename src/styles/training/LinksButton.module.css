@@ -1,16 +1,31 @@
+.overlayContainer {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  width: 66vw;
+  height: 25vh;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .slider {
-  width: 97%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 95%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   gap: 1rem;
-  position: absolute;
-  top: 300px;
   padding: 1rem;
   box-sizing: border-box;
   overflow: hidden;
-  z-index: 1000;
 }
 
 /* Botón con efecto glass 3D */
@@ -30,6 +45,7 @@
   border: 1.5px solid rgba(245, 245, 245, 0.911);
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 
 .slider .button:hover {
@@ -44,10 +60,78 @@
 
 @keyframes slideDown {
   from {
-    transform: translateY(-150px);
+    transform: translate(-50%, -150px);
   }
 
   to {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1300px) {
+  .overlayContainer {
+    position: absolute;
+    bottom: 5vh;
+    left: 0;
+    width: 66vw;
+    height: 25vh;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    padding: 1rem 0.5rem;
+  }
+
+  .slider .button {
+    width: 80%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .slider .button,
+  .slider .button * {
+    font-size: 1rem;
+  }
+
+
+  .overlayContainer {
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+    width: 66vw;
+    height: 25vh;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .slider .button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .slider .button,
+  .slider .button * {
+    font-size: 0.9rem;
   }
 }

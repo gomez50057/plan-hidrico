@@ -45,9 +45,23 @@ const DocumentsInterest = () => {
                   <div className={styles.noThumbnail}>Sin miniatura</div>
                 )}
                 <h3 className={styles.cardTitle}>{doc.name}</h3>
-                <a href={doc.fileUrl} download className={styles.downloadButton}>
-                  Ver PDF
-                </a>
+                <div className={styles.buttonGroup}>
+                  <a
+                    href={doc.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.viewButton}
+                  >
+                    Ver
+                  </a>
+                  <a
+                    href={doc.fileUrl}
+                    download
+                    className={styles.downloadButton}
+                  >
+                    Descargar
+                  </a>
+                </div>
               </div>
             ))}
           </div>

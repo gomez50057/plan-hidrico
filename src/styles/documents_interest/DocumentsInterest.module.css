@@ -6,149 +6,106 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
-  /* ¡NO pongas overflow: hidden ni overflow: auto! */
+  padding: 1rem 2rem;
+  /* Fondo sutil para resaltar el glassmorphism */
 }
 
 /* ------------------------------------------
-   Cada fila (hasta 3 tarjetas en escritorio)
-   - Dejar que la altura la marque el contenido.
-   - Gap horizontal entre tarjetas = 1rem
-   - Gap vertical entre filas = 1rem (margin-bottom)
+   Cada fila (no se necesita mucho cambio aquí)
 ------------------------------------------- */
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;             /* Espacio entre tarjetas */
-  margin-bottom: 1rem;   /* Espacio vertical entre filas */
-  background-color: white;
-  box-sizing: border-box;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* ------------------------------------------
-   Sticky para la primera fila
-   - Se pega al llegar a 1rem del borde superior
-------------------------------------------- */
-.stickyFirstRow {
-  position: sticky;
-  top: 1rem;
-  z-index: 10;
-  /* Fondo blanco para que no se vea el contenido de atrás */
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ------------------------------------------
-   Sticky para la segunda fila
-   - Debe “pegarse” justo debajo de la primera
-     top = 1rem (espacio superior) + altura real de la fila 0 + 1rem (gap vertical)
-   - Si asumimos que la primera fila mide ~260px de alto (contenido + padding),
-     entonces top ≈ calc(260px + 2rem)
-   - Ajusta “260px” si tus tarjetas ocupan más o menos espacio.
-------------------------------------------- */
-.stickySecondRow {
-  position: sticky;
-  top: calc(260px + 2rem);
-  z-index: 9;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-/* ------------------------------------------
-   Estilos para cada tarjeta (card más grande)
+   Tarjeta con efecto glass 3D minimalista
 ------------------------------------------- */
 .card {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;       /* Más espacio interior */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fafafa;
-  text-align: center;
-  box-sizing: border-box;
-  /* Se puede ajustar min-height si quieres uniformar altura */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Imagen dentro de la tarjeta (más grande) */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------------------
+   Imagen con sombra sutil para 3D
+------------------------------------------- */
 .cardImage {
   width: 100px;
   height: 100px;
   object-fit: contain;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-/* En caso de no haber imagen */
+/* ------------------------------------------
+   Sin miniatura
+------------------------------------------- */
 .noThumbnail {
   width: 100px;
   height: 100px;
   margin-bottom: 1rem;
-  background-color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #fff;
   font-size: 0.9rem;
-  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
-/* Título en español (nombre del PDF) */
+/* ------------------------------------------
+   Título en glass
+------------------------------------------- */
 .cardTitle {
-  font-size: 1.25rem;    /* Texto más grande */
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--vinoClr);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Botón de descarga (Ver PDF) */
-.downloadButton {
+/* ------------------------------------------
+   Botón con glass y transición
+------------------------------------------- */
+.downloadButton,
+.viewButton {
   display: inline-block;
-  padding: 0.75rem 1.25rem; /* Botón más grande */
-  background-color: #006699;
-  color: white;
-  border-radius: 4px;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(-45deg, var(--vinoOsc), var(--vinoClr));
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
   text-decoration: none;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.downloadButton:hover {
-  background-color: #005580;
+.downloadButton:hover,
+.viewButton:hover {
+  background: linear-gradient(-45deg, var(--doradoOsc), var(--doradoClr));
+  transform: translateY(-2px);
 }
 
-/* ------------------------------------------
-   BREAKPOINT: Pantallas medianas (≤ 1024px)
-   - 2 columnas por fila
-   - Asumimos que la altura de la primera fila sigue siendo ~260px
-------------------------------------------- */
-@media (max-width: 1024px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .stickySecondRow {
-    /* Mismo cálculo de top, ya que el alto de la fila 0 no cambia por el grid */
-    top: calc(260px + 2rem);
-  }
-}
-
-/* ------------------------------------------
-   BREAKPOINT: Pantallas pequeñas (≤ 768px)
-   - 1 columna por fila
-   - Desactivar sticky para no saturar espacio
-   - Altura de filas ajustable según contenido
-------------------------------------------- */
-@media (max-width: 768px) {
-  .row {
-    grid-template-columns: 1fr;
-    margin-bottom: 1rem;  /* Gap vertical entre filas */
-  }
-  .stickyFirstRow,
-  .stickySecondRow {
-    position: relative;   /* Ya no es sticky en móvil */
-    top: auto;
-    box-shadow: none;
-  }
-  .card {
-    padding: 1rem;        /* Menos padding en tarjetas para móvil */
-  }
+.viewButton {
+  margin-right: 1rem;
 }

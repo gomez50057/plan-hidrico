@@ -16,7 +16,7 @@
   will-change: transform;
 }
 
-.contentHeader .headerImg01 img{
+.contentHeader .headerImg01 img {
   width: 100%;
   height: auto;
 }
@@ -27,7 +27,7 @@
   margin-top: 100px;
 }
 
-.contentHeader .headerImg03 {
+.headerImg03 {
   position: relative;
   width: 100%;
   height: auto;
@@ -42,6 +42,17 @@
 .contentHeader .headerImg03 img {
   width: 100%;
   height: auto;
+}
+
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .floatingImg {
@@ -59,50 +70,3 @@
     transform: translateY(-30px);
   }
 }
-
-/* @keyframes shadowAnimation {
-  0% {
-    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
-  }
-
-  100% {
-    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.25));
-  }
-} */
-
-/* Tamaño para 'md' */
-@media (min-width: 576px) {}
-
-/* Tamaño para 'lg' */
-@media (max-width: 768px) {
-
-  /* .contentHeader {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 100vw;
-    height: 80vh;
-    margin: 0;
-    gap: 80px;
-  }
-
-  .contentHeader .headerImg01 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-    width: 150vw;
-    height: 50%;
-  } */
-}
-
-/* Tamaño para 'xl' */
-/* @media (min-width: 1024px) {
-
-} */
-
-/* Tamaño para 'xxl' */
-/* @media (min-width: 1400px) {
-
-} */

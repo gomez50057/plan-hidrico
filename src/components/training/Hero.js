@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "@/styles/training/Hero.module.css";
-import LinksButton from "@/components/training/LinksButton";
 const imgBasePath = "/img/training/";
 
 
@@ -15,7 +14,8 @@ export default function Hero() {
           </div>
           <div className={styles.headerImg03}>
             <img src={`${imgBasePath}hero 03.png`} alt="portada de Ecos del territorio hídrico" className={styles.floatingImg} />
-            <LinksButton />
+            <div className={styles.overlayContainer}>
+            </div>
           </div>
         </div>
         <div className={styles.headerImg01}>
