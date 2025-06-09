@@ -39,16 +39,18 @@ export default function DocumentCards() {
         .toLowerCase()
         .includes(busqueda.toLowerCase());
       const coincideCategoria = categoriaFiltro.length
-        ? categoriaFiltro.some(cat => doc.categorias.includes(cat))
+        ? categoriaFiltro.some(cat => doc.categorias.some(c => c.nombre === cat))
         : true;
       const coincideFecha = fechaFiltro
-        ? doc.fecha_carga === fechaFiltro
+        ? doc.fecha_carga.split('T')[0] === fechaFiltro
         : true;
       return coincideBusqueda && coincideCategoria && coincideFecha;
     });
   }, [busqueda, categoriaFiltro, fechaFiltro, documentos]);
 
-  const categoriasUnicas = [...new Set(documentos.flatMap(doc => doc.categorias))];
+  const categoriasUnicas = [
+    ...new Set(documentos.flatMap(doc => doc.categorias.map(cat => cat.nombre)))
+  ];
   const options = categoriasUnicas.map(cat => ({ value: cat, label: cat }));
 
   if (loading) {
@@ -107,14 +109,16 @@ export default function DocumentCards() {
 
                 <div className={styles.cardMetaRow}>
                   <div>
-                    <p>{doc.categorias.join(', ')}</p>
+                    {/* Mostrar categorías como nombres separados por coma */}
+                    <p>{doc.categorias.map(cat => cat.nombre).join(', ')}</p>
+                    {/* Mostrar fecha de carga en formato YYYY-MM-DD */}
                     <p>
-                      <small>Fecha: {doc.fecha_carga}</small>
+                      <small>Fecha: {doc.fecha_carga.split('T')[0]}</small>
                     </p>
                   </div>
                   <div className={styles.footerLinkBox}>
                     <a
-                      href={doc.link}
+                      href={doc.archivo_pdf}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

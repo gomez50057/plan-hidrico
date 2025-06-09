@@ -156,12 +156,16 @@ const FormularioDocumento = () => {
             </div>
           </div>
 
+          {mensaje && (
+            <div className={`${styles.mensaje} ${mensaje.includes('éxito') ? styles.success : styles.errorMessage}`} >
+              {mensaje}
+            </div>
+          )}
           <div className={styles.formGroup}>
             <button type="submit" className={styles.submitButton}>
               Enviar Formulario
             </button>
           </div>
-          {mensaje && <p>{mensaje}</p>}
         </Form>
       )}
     </Formik>
