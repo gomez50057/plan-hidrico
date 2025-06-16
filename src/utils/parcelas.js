@@ -1,6 +1,6 @@
 export const dataParcelas = [
   {
-    imgParcela: "/img/parcelasDemostrativas/general/1.-El Huaxtho.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/1_El_Huaxtho.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Actopan.png",
     distrito: "003 Tula",
     modulo: "Organización Productora Agricola y Ganadera de las Aguas para Riego, A.C.  (Modulo 1,  Actopan.)",
@@ -18,8 +18,8 @@ export const dataParcelas = [
     link: "/parcelas/actopan-el-huaxtho",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/2.-El Llano.jpg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Mixquiahuala de Juárez.png",
+    imgParcela: "/img/parcelasDemostrativas/general/2_El_Llano.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Mixquiahuala_de_Juarez.png",
     distrito: "003 Tula",
     modulo: "Usuarios de Riego del Sistema Endho Xochitlán",
     municipio: "Mixquiahuala de Juárez",
@@ -36,8 +36,8 @@ export const dataParcelas = [
     link: "/parcelas/mixquiahuala-de-juárez-el-llano",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/3.-Bombeo Ejido Progreso.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso de Obregón.png",
+    imgParcela: "/img/parcelasDemostrativas/general/3_Bombeo_Ejido_Progreso.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso_de_Obregon.png",
     distrito: "003 Tula",
     modulo: "Usuarios de Riego del Sistema Endho Xochitlán",
     municipio: "Progreso de Obregón",
@@ -54,8 +54,8 @@ export const dataParcelas = [
     link: "/parcelas/progreso-de-obregón-bombeo-ejido-progreso",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/4.-Colonia Veracruz.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso de Obregón.png",
+    imgParcela: "/img/parcelasDemostrativas/general/4_Colonia_Veracruz.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso_de_Obregon.png",
     distrito: "003 Tula",
     modulo: "Usuarios de Riego del Sistema Endho Xochitlán, A.C.",
     municipio: "Progreso de Obregón",
@@ -72,8 +72,8 @@ export const dataParcelas = [
     link: "/parcelas/progreso-de-obregón-colonia-veracruz",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/5.-Palma Gorda.jpg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso de Obregón.png",
+    imgParcela: "/img/parcelasDemostrativas/general/5_Palma_Gorda.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso_de_Obregon.png",
     distrito: "003 Tula",
     modulo: "Usuarios de Riego del Sistema Endho Xochitlán",
     municipio: "Progreso de Obregón",
@@ -90,8 +90,8 @@ export const dataParcelas = [
     link: "/parcelas/progreso-de-obregón-palma-gorda",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/6.-Xamu.jpg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso de Obregón.png",
+    imgParcela: "/img/parcelasDemostrativas/general/6_Xamu.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Progreso_de_Obregon.png",
     distrito: "003 Tula",
     modulo: "Usuarios de Riego del Sistema Endho Xochitlán",
     municipio: "Progreso de Obregón",
@@ -108,8 +108,8 @@ export const dataParcelas = [
     link: "/parcelas/progreso-de-obregón-xamu",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/7.-Cañada Grande.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/San Salvador.png",
+    imgParcela: "/img/parcelasDemostrativas/general/7_Canada_Grande.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/San_Salvador.png",
     distrito: "003 Tula",
     modulo: "Organización Productora Agricola y Ganadera de las Aguas para Riego, A.C.  (Modulo 1,  Actopan.)",
     municipio: "San Salvador",
@@ -126,8 +126,8 @@ export const dataParcelas = [
     link: "/parcelas/san-salvador-cañada-grande",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/8.-Carr San Salvador- Caxuxi.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/San Salvador.png",
+    imgParcela: "/img/parcelasDemostrativas/general/8_Carr_San_Salvador_Caxuxi.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/San_Salvador.png",
     distrito: "003 Tula",
     modulo: "Organización Productora Agricola y Ganadera de las Aguas para Riego, A.C.  (Modulo 1,  Actopan.)",
     municipio: "San Salvador",
@@ -144,8 +144,8 @@ export const dataParcelas = [
     link: "/parcelas/san-salvador-carr-san-salvador-caxuxi",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/9.-Tothie La 23.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/San Salvador.png",
+    imgParcela: "/img/parcelasDemostrativas/general/9_Tothie_La_23.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/San_Salvador.png",
     distrito: "003 Tula",
     modulo: "Organización Productora Agricola y Ganadera de las Aguas para Riego, A.C.  (Modulo 1,  Actopan.)",
     municipio: "San Salvador",
@@ -162,8 +162,8 @@ export const dataParcelas = [
     link: "/parcelas/san-salvador-tothie-la-23",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/10.-Tothie La 23.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/San Salvador.png",
+    imgParcela: "/img/parcelasDemostrativas/general/10_Tothie_La_23.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/San_Salvador.png",
     distrito: "003 Tula",
     modulo: "Organización Productora Agricola y Ganadera de las Aguas para Riego, A.C.  (Modulo 1,  Actopan.)",
     municipio: "San Salvador",
@@ -180,8 +180,8 @@ export const dataParcelas = [
     link: "/parcelas/san-salvador-tothie-la-23-2",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/11.-El Solis.jpeg",
-    imgMunicipio: "/img/parcelasDemostrativas/municipios/Tezontepec de Aldama.png",
+    imgParcela: "/img/parcelasDemostrativas/general/11_El_Solis.webp",
+    imgMunicipio: "/img/parcelasDemostrativas/municipios/Tezontepec_de_Aldama.png",
     distrito: "003 Tula",
     modulo: "Asociacion de Campesinos, Sección 45 El Solís, A.C.",
     municipio: "Tezontepec de Aldama",
@@ -198,7 +198,7 @@ export const dataParcelas = [
     link: "/parcelas/tezontepec-de-aldama-el-solis",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/12.-San Primitivo.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/12_San_Primitivo.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Tlahuelilpan.png",
     distrito: "003 Tula",
     modulo: "Tlamaco-Juandho",
@@ -216,7 +216,7 @@ export const dataParcelas = [
     link: "/parcelas/tlahuelilpan-san-primitivo",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/13.-Ejido Teltipan de Juárez.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/13_Ejido_Teltipan_de_Juarez.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Tlaxcoapan.png",
     distrito: "003 Tula",
     modulo: "Asociación Civil \"Bombeo Agrícola Teltipán, A.C.\"",
@@ -234,7 +234,7 @@ export const dataParcelas = [
     link: "/parcelas/tlaxcoapan-ejido-teltipan-de-juárez",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/14.-Ejido Teltipan de Juárez.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/14_Ejido_Teltipan_de_Juarez.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Tlaxcoapan.png",
     distrito: "003 Tula",
     modulo: "Asociación Civil \"Bombeo Agrícola Teltipán, A.C.\"",
@@ -252,7 +252,7 @@ export const dataParcelas = [
     link: "/parcelas/tlaxcoapan-ejido-teltipan-de-juárez-2",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/15.-Ejido Teltipan de Juárez.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/15_Ejido_Teltipan_de_Juarez.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Tlaxcoapan.png",
     distrito: "003 Tula",
     modulo: "Asociación Civil \"Bombeo Agrícola Teltipán, A.C.\"",
@@ -270,7 +270,7 @@ export const dataParcelas = [
     link: "/parcelas/tlaxcoapan-teltipán-de-juárez",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/16.-Ejido Zozea.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/16_Ejido_Zozea.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Alfajayucan.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociación de usuarios de riego Alfajayucan A.C.",
@@ -288,7 +288,7 @@ export const dataParcelas = [
     link: "/parcelas/alfajayucan-ejido-zozea",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/17.-Naxthéy.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/17_Naxthey.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Alfajayucan.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociación de usuarios de riego Alfajayucan A.C.",
@@ -306,7 +306,7 @@ export const dataParcelas = [
     link: "/parcelas/alfajayucan-naxthéy",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/18.-Santa María Xingui.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/18_Santa_Maria_Xingui.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Alfajayucan.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociación de Usuarios de Riego Unidad Alfajayucan, A.C.",
@@ -324,7 +324,7 @@ export const dataParcelas = [
     link: "/parcelas/alfajayucan-santa-maría-xingui",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/19.-Taxhie.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/19_Taxhie.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Alfajayucan.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociación de usuarios de riego Alfajayucan A.C.",
@@ -342,7 +342,7 @@ export const dataParcelas = [
     link: "/parcelas/alfajayucan-taxhie",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/20.-Yonthe Grande.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/20_Yonthe_Grande.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Alfajayucan.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociación de usuarios de riego Alfajayucan A.C.",
@@ -360,7 +360,7 @@ export const dataParcelas = [
     link: "/parcelas/alfajayucan-yonthe-grande-la-mina",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/21.-El Cerrito.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/21_El_Cerrito.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Chilcuautla.png",
     distrito: "100 Alfajayucan",
     modulo: "Usuarios de Riego Canal del Centro, A.C.",
@@ -378,7 +378,7 @@ export const dataParcelas = [
     link: "/parcelas/chilcuautla-el-cerrito",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/22.-Zacualoya.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/22_Zacualoya.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Chilcuautla.png",
     distrito: "100 Alfajayucan",
     modulo: "Usuarios de Riego Canal del Centro, A.C.",
@@ -396,7 +396,7 @@ export const dataParcelas = [
     link: "/parcelas/chilcuautla-zacualoya",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/23.-Loma López Rayón.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/23_Loma_Lopez_Rayon.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Ixmiquilpan.png",
     distrito: "100 Alfajayucan",
     modulo: "Zona de Riego Tasquillo, A.C.",
@@ -414,7 +414,7 @@ export const dataParcelas = [
     link: "/parcelas/ixmiquilpan-loma-lópez-rayón",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/24.-López Rayón.jpeg",
+    imgParcela: "/img/parcelasDemostrativas/general/24_Lopez_Rayon.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Tasquillo.png",
     distrito: "100 Alfajayucan",
     modulo: "Asociacion Civil, Riego Zona Tasquillo A.C.",
@@ -432,7 +432,7 @@ export const dataParcelas = [
     link: "/parcelas/tasquillo-lópez-rayón",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/25.-San Nicolás Tecomatlán.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/25_San_Nicolas_Tecomatlan.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Ajacuba.png",
     distrito: "112 Ajacuba",
     modulo: "Asociación de Usuarios Valle de Ajacuba, A.C.",
@@ -450,7 +450,7 @@ export const dataParcelas = [
     link: "/parcelas/ajacuba-san-nicolás-tecomatlán",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/26.-San Nicolás Tecomatlán.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/26_San_Nicolas_Tecomatlan.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Ajacuba.png",
     distrito: "112 Ajacuba",
     modulo: "Asociación de Usuarios Valle de Ajacuba, A.C.",
@@ -468,7 +468,7 @@ export const dataParcelas = [
     link: "/parcelas/ajacuba-san-nicolás-tecomatlán-2",
   },
   {
-    imgParcela: "/img/parcelasDemostrativas/general/27.-San Nicolás Tecomatlán.jpg",
+    imgParcela: "/img/parcelasDemostrativas/general/27_San_Nicolas_Tecomatlan.webp",
     imgMunicipio: "/img/parcelasDemostrativas/municipios/Ajacuba.png",
     distrito: "112 Ajacuba",
     modulo: "Asociación de Usuarios Valle de Ajacuba, A.C.",

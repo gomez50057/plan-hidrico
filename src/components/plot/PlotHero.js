@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/plot/PlotHero.module.css";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import Link from "next/link";
+// import Link from "next/link";
 import { dataSuppliers } from "@/utils/suppliers";
 
 const PlotHero = () => {
@@ -49,7 +49,7 @@ const PlotHero = () => {
     restartAutoAdvance();
   };
 
-  const { Empresa, Giro, bg, Contacto, NumParcelas } = dataSuppliers[activeIndex];
+  const { Empresa, bg, ServiciosOfrecen, SitioWeb, RedesSociales } = dataSuppliers[activeIndex];
 
   return (
     <div
@@ -71,23 +71,73 @@ const PlotHero = () => {
           key={`${animationKey}-description`}
           className={`${styles.description} ${styles.textAnimation} delay-2`}
         >
-          <p>Giro: {Giro}</p>
+          <p>Servicios que ofrecen: {ServiciosOfrecen}</p>
         </div>
 
         <div
           key={`${animationKey}-method`}
           className={`${styles.method} ${styles.textAnimation} delay-2`}
         >
-          <p>Contacto: {Contacto}</p>
+          <p>
+            Sitio Web:&nbsp;
+            {SitioWeb && SitioWeb.trim() !== "" && SitioWeb.trim().toLowerCase() !== "no cuenta con página web"
+              ? SitioWeb
+                .replace(/\n/g, ",")            // Saltos de línea por coma
+                .replace(/\s+/g, " ")           // Espacios múltiples por uno solo
+                .split(",")                     // Separa por coma
+                .map(site => site.trim())
+                .filter(site => site.length > 0)
+                .map((site, idx, arr) => (
+                  <span key={site + idx}>
+                    <a
+                      href={
+                        site.startsWith("http")
+                          ? site
+                          : "https://" + site.replace(/^www\./, "")
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#1e88e5", textDecoration: "underline" }}
+                    >
+                      {site}
+                    </a>
+                    {idx < arr.length - 1 && ', '}
+                  </span>
+                ))
+              : "No cuenta con página web"}
+          </p>
         </div>
-
 
         <div
           key={`${animationKey}-numParcelas`}
           className={`${styles.method} ${styles.textAnimation} delay-2`}
         >
-          <p>Número de parcelas: {NumParcelas}</p>
+          <p>
+            Redes Sociales:&nbsp;
+            {Array.isArray(RedesSociales) && RedesSociales.length > 0
+              ? RedesSociales.map((red, idx) => (
+                <span key={idx}>
+                  {red.url && red.url.startsWith("http") ? (
+                    <a
+                      href={red.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#1e88e5", textDecoration: "underline" }}
+                    >
+                      Visítalos en {red.nombre}
+                    </a>
+                  ) : (
+                    // Solo muestra el texto tal cual si no es link
+                    `${red.nombre}${red.url && red.url.trim() ? (": " + red.url) : ""}`
+                  )}
+                  {/* Poner coma excepto en el último */}
+                  {idx < RedesSociales.length - 1 && ', '}
+                </span>
+              ))
+              : "No disponible"}
+          </p>
         </div>
+
         {/* <Link href={`${link}`} target="_blank" rel="noopener noreferrer" >
           <button
             key={`${animationKey}-button`}

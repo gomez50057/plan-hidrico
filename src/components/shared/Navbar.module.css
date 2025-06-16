@@ -6,10 +6,19 @@
   top: 0;
   left: 0;
   width: 100vw;
+  height: 60px;
   z-index: 1000;
   display: flex;
   justify-content: center;
   transition: top 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hidden {
+  top: calc(-1 * 60px);
+}
+
+.active {
+  top: 0;
 }
 
 .NavbarList {

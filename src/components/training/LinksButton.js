@@ -11,7 +11,7 @@ const LinksButton = ({ onShowTalleres }) => {
   }, []);
 
   const handleRedirect = () => {
-    window.open('https://moodle.org/?lang=es', '_blank');
+    window.open('https://capacitacion.hidalgo.gob.mx/', '_blank');
   };
 
   return (

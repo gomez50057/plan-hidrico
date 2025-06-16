@@ -89,7 +89,7 @@ export default function InfoSwiper() {
                 </p>
 
                 {renderInfoBlock("Modalidad", item.modalidad)}
-                {renderInfoBlock("Cómo llegar por tierra", item.llegarTierra)}
+                {/* {renderInfoBlock("Cómo llegar por tierra", item.llegarTierra)} */}
               </div>
             </div>
           </SwiperSlide>

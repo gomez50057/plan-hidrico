@@ -25,7 +25,7 @@ const info = [
     title: "Capacitación",
     subtitle:
       "Aprende a tu ritmo y accede a recursos prácticos que impulsarán tus habilidades al siguiente nivel. ¡Haz que tu conocimiento trabaje para ti!",
-    href: "/capacitacion",
+    href: "https://capacitacion.hidalgo.gob.mx",
     image: "/img/training/recursos/11.jpg",
   },
 ];
