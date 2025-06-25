@@ -3,6 +3,9 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "@/styles/plot/PlotHero.module.css";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { dataSuppliers } from "@/utils/suppliers";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const AUTO_ADVANCE_INTERVAL = 12000;
 
@@ -55,28 +58,57 @@ function RenderServiciosOfrecen({ ServiciosOfrecen }) {
   );
 }
 
-// Renderizador modular de redes sociales
+function getSocialIcon(nombre) {
+  const name = nombre.trim().toLowerCase();
+  if (name.includes("facebook")) return <FacebookIcon style={{ color: "#fff", verticalAlign: "middle" }} />;
+  if (name.includes("instagram")) return <InstagramIcon style={{ color: "#fff", verticalAlign: "middle" }} />;
+  if (name.includes("youtube")) return <YouTubeIcon style={{ color: "#fff", verticalAlign: "middle" }} />;
+  const icoFile = `/img/parcelasDemostrativas/icons/${nombre}.png`;
+  return (
+    <img
+      src={icoFile}
+      alt={nombre}
+      style={{
+        width: "1.35em",
+        height: "1.35em",
+        verticalAlign: "middle",
+        marginRight: "0.25em",
+        objectFit: "contain"
+      }}
+      onError={e => e.target.style.display = 'none'}
+    />
+  );
+}
+
 function RenderRedesSociales({ RedesSociales }) {
   if (!Array.isArray(RedesSociales) || RedesSociales.length === 0) {
     return "No disponible";
   }
-  return RedesSociales.map((red, idx) => (
-    <span key={idx}>
-      {red.url && red.url.startsWith("http") ? (
-        <a
-          href={red.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#1e88e5", textDecoration: "underline" }}
-        >
-          Visítalos en {red.nombre}
-        </a>
-      ) : (
-        `${red.nombre}${red.url && red.url.trim() ? (": " + red.url) : ""}`
-      )}
-      {idx < RedesSociales.length - 1 && ', '}
-    </span>
-  ));
+  return RedesSociales.map((red, idx) => {
+    const isLink = red.url && red.url.startsWith("http");
+    return (
+      <span key={idx} style={{ marginRight: "1em" }}>
+        {isLink ? (
+          <a
+            href={red.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.redSocialLink}
+          >
+            {getSocialIcon(red.nombre)}
+            {red.nombre}
+          </a>
+        ) : (
+          <>
+            {getSocialIcon(red.nombre)}
+            {red.nombre}
+            {red.url && red.url.trim() ? (": " + red.url) : ""}
+          </>
+        )}
+        {idx < RedesSociales.length - 1 && ', '}
+      </span>
+    );
+  });
 }
 
 const PlotHero = () => {
@@ -139,7 +171,7 @@ const PlotHero = () => {
             <RenderWebLinks SitioWeb={SitioWeb} />
           </p>
         </div>
-        <div className={`${styles.method} ${styles.textAnimation} delay-2`}>
+        <div className={`${styles.RedesSociales} ${styles.method} ${styles.textAnimation} delay-2`}>
           <p>
             Redes Sociales:&nbsp;
             <RenderRedesSociales RedesSociales={RedesSociales} />
