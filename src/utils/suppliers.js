@@ -208,7 +208,7 @@ export const dataSuppliers = [
     "Empresa": "ISAOSA S.A. de C.V.",
     "Logo": "5.png",
     "ServiciosOfrecen": "ISAOSA Empresa de Fertilizantes y Bionutrición mexicana que busca generar valor en la agricultura a través de Programas Completos de Nutrición de productos de valor agregado, que generan mayores beneficios en rendimiento, calidad y sanidad en los cultivos, promoviendo una agricultura sostenible. La mayor ganancia es para el agricultor, buscamos mayores beneficios para los distribuidores, ISAOSA y su equipo de trabajo.",
-    "SitioWeb": "\nhttp://www.isaosa.mx\n",
+    "SitioWeb": "http://www.isaosa.mx",
     "RedesSociales": [
       {"nombre": "Facebook", "url": "https://www.facebook.com/isaosanutrientes"},
       {"nombre": "Linkedin", "url": "ISAOSAMX"},

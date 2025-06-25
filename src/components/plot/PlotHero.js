@@ -1,53 +1,118 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "@/styles/plot/PlotHero.module.css";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-// import Link from "next/link";
 import { dataSuppliers } from "@/utils/suppliers";
+
+const AUTO_ADVANCE_INTERVAL = 12000;
+
+const normalizeUrl = (site) => {
+  let url = site.trim();
+  if (!/^https?:\/\//i.test(url)) {
+    url = "https://" + url.replace(/^www\./, "");
+  }
+  return url;
+};
+
+// Renderizador modular de enlaces web
+function RenderWebLinks({ SitioWeb }) {
+  if (!SitioWeb || SitioWeb.trim().toLowerCase() === "no cuenta con página web") {
+    return "No cuenta con página web";
+  }
+  return SitioWeb
+    .replace(/\n/g, ",")
+    .replace(/\s+/g, " ")
+    .split(",")
+    .map(site => site.trim())
+    .filter(Boolean)
+    .map((site, idx, arr) => (
+      <span key={site + idx}>
+        <a
+          href={normalizeUrl(site)}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#1e88e5", textDecoration: "underline" }}
+        >
+          {site}
+        </a>
+        {idx < arr.length - 1 && ', '}
+      </span>
+    ));
+}
+
+function RenderServiciosOfrecen({ ServiciosOfrecen }) {
+  if (!ServiciosOfrecen) return null;
+  const lines = ServiciosOfrecen.split('\n');
+  return (
+    <>
+      {lines.map((line, idx) => (
+        <span key={idx}>
+          {line}
+          {idx < lines.length - 1 && <br />}
+        </span>
+      ))}
+    </>
+  );
+}
+
+
+// Renderizador modular de redes sociales
+function RenderRedesSociales({ RedesSociales }) {
+  if (!Array.isArray(RedesSociales) || RedesSociales.length === 0) {
+    return "No disponible";
+  }
+  return RedesSociales.map((red, idx) => (
+    <span key={idx}>
+      {red.url && red.url.startsWith("http") ? (
+        <a
+          href={red.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#1e88e5", textDecoration: "underline" }}
+        >
+          Visítalos en {red.nombre}
+        </a>
+      ) : (
+        `${red.nombre}${red.url && red.url.trim() ? (": " + red.url) : ""}`
+      )}
+      {idx < RedesSociales.length - 1 && ', '}
+    </span>
+  ));
+}
 
 const PlotHero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [animationKey, setAnimationKey] = useState(0);
-  const [manualChange, setManualChange] = useState(false);
+  const intervalRef = useRef(null);
 
+  // Callback para pasar a la siguiente slide
+  const advance = useCallback(() => {
+    setActiveIndex(idx => (idx + 1) % dataSuppliers.length);
+  }, []);
+
+  // Auto avance cada N segundos
   useEffect(() => {
-    setAnimationKey((prevKey) => prevKey + 1);
-  }, [activeIndex]);
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(advance, AUTO_ADVANCE_INTERVAL);
+    return () => clearInterval(intervalRef.current);
+  }, [advance, activeIndex]);
 
-  useEffect(() => {
-    if (!manualChange) {
-      const interval = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % dataSuppliers.length);
-      }, 6000);
-      return () => clearInterval(interval);
-    }
-  }, [manualChange]);
-
-  const handleNext = () => {
-    setManualChange(true);
-    setActiveIndex((prev) => (prev + 1) % dataSuppliers.length);
-    restartAutoAdvance();
+  // Navegación manual reinicia el intervalo
+  const handleNav = (direction) => {
+    clearInterval(intervalRef.current);
+    setActiveIndex(idx => {
+      if (direction === "next") return (idx + 1) % dataSuppliers.length;
+      if (direction === "prev") return (idx - 1 + dataSuppliers.length) % dataSuppliers.length;
+      return idx;
+    });
   };
 
-  const handlePrev = () => {
-    setManualChange(true);
-    setActiveIndex((prev) => (prev - 1 + dataSuppliers.length) % dataSuppliers.length);
-    restartAutoAdvance();
-  };
-
-  const restartAutoAdvance = () => {
-    setManualChange(false);
-  };
-
-  const getNextIndex = (index, offset) => {
-    return (index + offset) % dataSuppliers.length;
-  };
-
+  // Clic en preview reinicia autoavance
   const handlePreviewClick = (index) => {
-    setManualChange(true);
+    clearInterval(intervalRef.current);
     setActiveIndex(index);
-    restartAutoAdvance();
   };
+
+  const getNextIndex = (index, offset) => (index + offset) % dataSuppliers.length;
 
   const { Empresa, bg, ServiciosOfrecen, SitioWeb, RedesSociales } = dataSuppliers[activeIndex];
 
@@ -55,124 +120,68 @@ const PlotHero = () => {
     <div
       className={styles.container}
       style={{ backgroundImage: `url(${bg})` }}
+      aria-label={`Vista de empresa ${Empresa}`}
     >
       <div className={styles.overlay}></div>
 
-      {/* Contenido principal: título, descripción y botón */}
+      {/* Contenido principal */}
       <div className={styles.content}>
-        <div
-          key={`${animationKey}-name`}
-          className={`${styles.name} ${styles.textAnimation} delay-1`}
-        >
+        <div className={`${styles.name} ${styles.textAnimation} delay-1`}>
           <h2>{Empresa}</h2>
         </div>
-
-        <div
-          key={`${animationKey}-description`}
-          className={`${styles.description} ${styles.textAnimation} delay-2`}
-        >
-          <p>Servicios que ofrecen: {ServiciosOfrecen}</p>
+        <div className={`${styles.description} ${styles.textAnimation} delay-2`}>
+          <p>
+            Servicios que ofrecen: <RenderServiciosOfrecen ServiciosOfrecen={ServiciosOfrecen} />
+          </p>
         </div>
-
-        <div
-          key={`${animationKey}-method`}
-          className={`${styles.method} ${styles.textAnimation} delay-2`}
-        >
+        <div className={`${styles.method} ${styles.textAnimation} delay-2`}>
           <p>
             Sitio Web:&nbsp;
-            {SitioWeb && SitioWeb.trim() !== "" && SitioWeb.trim().toLowerCase() !== "no cuenta con página web"
-              ? SitioWeb
-                .replace(/\n/g, ",")            // Saltos de línea por coma
-                .replace(/\s+/g, " ")           // Espacios múltiples por uno solo
-                .split(",")                     // Separa por coma
-                .map(site => site.trim())
-                .filter(site => site.length > 0)
-                .map((site, idx, arr) => (
-                  <span key={site + idx}>
-                    <a
-                      href={
-                        site.startsWith("http")
-                          ? site
-                          : "https://" + site.replace(/^www\./, "")
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "#1e88e5", textDecoration: "underline" }}
-                    >
-                      {site}
-                    </a>
-                    {idx < arr.length - 1 && ', '}
-                  </span>
-                ))
-              : "No cuenta con página web"}
+            <RenderWebLinks SitioWeb={SitioWeb} />
           </p>
         </div>
-
-        <div
-          key={`${animationKey}-numParcelas`}
-          className={`${styles.method} ${styles.textAnimation} delay-2`}
-        >
+        <div className={`${styles.method} ${styles.textAnimation} delay-2`}>
           <p>
             Redes Sociales:&nbsp;
-            {Array.isArray(RedesSociales) && RedesSociales.length > 0
-              ? RedesSociales.map((red, idx) => (
-                <span key={idx}>
-                  {red.url && red.url.startsWith("http") ? (
-                    <a
-                      href={red.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "#1e88e5", textDecoration: "underline" }}
-                    >
-                      Visítalos en {red.nombre}
-                    </a>
-                  ) : (
-                    // Solo muestra el texto tal cual si no es link
-                    `${red.nombre}${red.url && red.url.trim() ? (": " + red.url) : ""}`
-                  )}
-                  {/* Poner coma excepto en el último */}
-                  {idx < RedesSociales.length - 1 && ', '}
-                </span>
-              ))
-              : "No disponible"}
+            <RenderRedesSociales RedesSociales={RedesSociales} />
           </p>
         </div>
-
-        {/* <Link href={`${link}`} target="_blank" rel="noopener noreferrer" >
-          <button
-            key={`${animationKey}-button`}
-            className={`${styles.textAnimation} delay-3`}
-          >
-            Leer más
-          </button>
-        </Link> */}
-
       </div>
 
       {/* Vista previa de los siguientes 2 slides */}
       <div className={styles.previewContainer}>
-        {Array(2)
-          .fill(null)
-          .map((_, offset) => {
-            const nextIndex = getNextIndex(activeIndex, offset + 1);
-            const { bg: nextBg } = dataSuppliers[nextIndex];
-            return (
-              <div
-                key={nextIndex}
-                className={`${styles.previewItem} ${styles.slideAnimation}`}
-                style={{ backgroundImage: `url(${nextBg})` }}
-                onClick={() => handlePreviewClick(nextIndex)}
-              ></div>
-            );
-          })}
+        {[1, 2].map(offset => {
+          const nextIndex = getNextIndex(activeIndex, offset);
+          const { bg: nextBg, Empresa: nextEmpresa } = dataSuppliers[nextIndex];
+          return (
+            <div
+              key={nextIndex}
+              className={`${styles.previewItem} ${styles.slideAnimation}`}
+              style={{ backgroundImage: `url(${nextBg})` }}
+              title={nextEmpresa}
+              tabIndex={0}
+              aria-label={`Ir a la empresa ${nextEmpresa}`}
+              onClick={() => handlePreviewClick(nextIndex)}
+              onKeyDown={e => { if (e.key === "Enter" || e.key === " ") handlePreviewClick(nextIndex); }}
+            />
+          );
+        })}
       </div>
 
       {/* Botones de navegación manual */}
       <div className={styles.button}>
-        <button className={styles.prevButton} onClick={handlePrev}>
+        <button
+          className={styles.prevButton}
+          onClick={() => handleNav("prev")}
+          aria-label="Anterior"
+        >
           <ArrowBackIos />
         </button>
-        <button className={styles.nextButton} onClick={handleNext}>
+        <button
+          className={styles.nextButton}
+          onClick={() => handleNav("next")}
+          aria-label="Siguiente"
+        >
           <ArrowForwardIos />
         </button>
       </div>
