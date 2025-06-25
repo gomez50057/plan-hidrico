@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: nowrap;
   min-width: fit-content;
-  animation: scroll 20s linear infinite;
+  animation: scroll 80s linear infinite;
   animation-play-state: running;
 }
 
@@ -24,14 +24,21 @@
   position: relative;
   margin: 0 2rem;
   text-decoration: none;
-  /* evita que el logo se encoja */
   flex-shrink: 0;
 }
 
 .logoContainer {
-  width: 200px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: margin-bottom 0.6s cubic-bezier(0.33, 1, 0.68, 1), transform 0.3s;
+  margin-bottom: 0rem;
+}
+
+.logoContainer:hover {
+  margin-bottom: 2.5rem;
 }
 
 .logoImage {
@@ -62,9 +69,11 @@
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
   white-space: nowrap;
+  z-index: 1000;
+  /* <-- AÑADE ESTO */
 }
 
-.logoLink:hover .tooltip {
+.logoContainer:hover .tooltip {
   opacity: 1;
 }
 
