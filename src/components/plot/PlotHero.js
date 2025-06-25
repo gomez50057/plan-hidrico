@@ -55,7 +55,6 @@ function RenderServiciosOfrecen({ ServiciosOfrecen }) {
   );
 }
 
-
 // Renderizador modular de redes sociales
 function RenderRedesSociales({ RedesSociales }) {
   if (!Array.isArray(RedesSociales) || RedesSociales.length === 0) {

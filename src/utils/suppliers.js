@@ -150,7 +150,7 @@
 export const dataSuppliers = [
   {
     "No": 1,
-    "Empresa": "Maquinas Diesel S.A. de C.V. \n(Madisa CAT)",
+    "Empresa": "Maquinas Diesel S.A. de C.V. (Madisa CAT)",
     "Logo": "1.png",
     "ServiciosOfrecen": "Maquinas Diesel\nMADISA es una empresa con más de 79 años en el mercado, más de 4000 mil empleados y presencia en más del 60% del territorio mexicano, con presencia en Hidalgo por más de 27 años, reconocida como empresa socialmente responsable.\nOfrecemos soluciones integrales en maquinaria nueva y usada, con marcas de gran prestigio como CATERPILLAR para maquinaria pesada, New Holland y CASE para actividades agropecuarias, respaldadas con un amplio soporte al producto con servicio de mantenimiento, reparaciones, refacciones, soporte técnico y monitoreo de equipos.",
     "SitioWeb": "www.madisa.com",
@@ -163,7 +163,7 @@ export const dataSuppliers = [
   },
   {
     "No": 2,
-    "Empresa": "GIMTRAC S.A. de C.V.\nJohn Deere",
+    "Empresa": "GIMTRAC S.A. de C.V. John Deere",
     "Logo": "2.png",
     "ServiciosOfrecen": "Somos GIMTRAC S.A DE C.V un distribuidor autorizado de maquinaria agrícola de la marca John Deere. Nos dedicamos a la venta de tractores e implementos, soluciones en agricultura de precisión (equipos John Deere para autoguiado, dosis variable de líquidos-solidos, gestión de siembra, drones agrícolas DJI), insumos para riego agrícola -residencial, refacciones y contamos con un área de servicio calificada para atender a nuestros clientes en temas de mantenimiento preventivo y correctivo.",
     "SitioWeb": "www.gimtrac.com.mx",
@@ -191,7 +191,7 @@ export const dataSuppliers = [
   },
   {
     "No": 4,
-    "Empresa": "Comercializadora MEGASEM \nSemillas Aspros",
+    "Empresa": "Comercializadora MEGASEM Semillas Aspros",
     "Logo": "4.png",
     "ServiciosOfrecen": "ASPROS es hoy la alternativa ideal en semillas híbridas de maíz, ofrecemos un amplio portafolio de productos y servicios para satisfacer las necesidades de nuestros agricultores y demás miembros de la cadena productiva.\nASPROS es para el agricultor inteligente y práctico, que busca rendimientos competitivos a un costo razonable, porque ASPROS es la única marca nacional que invierte en Investigación y Desarrollo a la altura de las marcas multinacionales y que además cuenta con la infraestructura necesaria para garantizar la calidad y consistencia de sus productos.",
     "SitioWeb": "https://asprossemillas.com/ ",
@@ -231,7 +231,7 @@ export const dataSuppliers = [
     "No": 7,
     "Empresa": "Serviriego S.A de C.V.",
     "Logo": "7.png",
-    "ServiciosOfrecen": "Nuestros principales servicios son:\nAntes de la tecnificación de riego.\n1. Levantamientos topográficos. \n2. Diseños hidráulicos de la zona de riego. \n3. Marcado de zona \n4. Supervisión de obra \n5. Coordinación \n6. Seguimiento \n7. Obra civil que se requiera \n8. Aperturas de caminos \n9. Ordenar tareas \n10. Enumerar los plazos\nEn tecnificación de riego \n1. Entubamientos \n2. Canales \n3. Revestimientos \n4. Sistema de riego por goteo \n5. Sistema de riego por aspersión \n6. Sistema de riego por compuerta \n7. Obra civil serviriego s.a de c.v \n8. Anivelacion de tierras \n9. Sistema de riego por cañones",
+    "ServiciosOfrecen": "Nuestros principales servicios son:\nAntes de la tecnificación de riego.\n1. Levantamientos topográficos. \n2. Diseños hidráulicos de la zona de riego. \n3. Marcado de zona \n4. Supervisión de obra \n5. Coordinación \n6. Seguimiento \n7. Obra civil que se requiera \n8. Aperturas de caminos \n9. Ordenar tareas \n10. Enumerar los plazos\n \nEn tecnificación de riego \n1. Entubamientos \n2. Canales \n3. Revestimientos \n4. Sistema de riego por goteo \n5. Sistema de riego por aspersión \n6. Sistema de riego por compuerta \n7. Obra civil serviriego s.a de c.v \n8. Anivelacion de tierras \n9. Sistema de riego por cañones",
     "SitioWeb": "No cuenta con página web",
     "RedesSociales": [
       {"nombre": "Sin redes sociales", "url": ""}
