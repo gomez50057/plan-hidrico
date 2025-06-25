@@ -278,3 +278,20 @@
 
 
 
+.swipeHint {
+  position: absolute;
+  bottom: 12px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: clamp(1rem, 1.5vw + 0.6rem, 2rem);
+  color: #4d4d4d;
+  opacity: 0.65;
+  animation: hint-bounce 1.7s infinite;
+}
+
+@keyframes hint-bounce {
+  0%, 100% { transform: translateX(0); }
+  40% { transform: translateX(7px); }
+}

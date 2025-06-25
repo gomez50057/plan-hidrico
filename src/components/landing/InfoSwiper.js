@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import styles from "@/styles/InfoSwiper.module.css";
 import { dataParcelas } from "@/utils/parcelas";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function InfoSwiper() {
   return (
@@ -84,12 +85,16 @@ export default function InfoSwiper() {
                     rel="noopener noreferrer"
                     className={styles.linkMaps}
                   >
-                    ¡Haz clic aquí para ver la parcela en el mapa y planificar tu visita! 
+                    ¡Haz clic aquí para ver la parcela en el mapa y planificar tu visita!
                   </a>
                 </p>
 
                 {renderInfoBlock("Modalidad", item.modalidad)}
                 {/* {renderInfoBlock("Cómo llegar por tierra", item.llegarTierra)} */}
+                <div className={styles.swipeHint}>
+                  <ArrowForwardIosIcon style={{ fontSize: "1.2em" }} />
+                  <span>Desliza</span>
+                </div>
               </div>
             </div>
           </SwiperSlide>
