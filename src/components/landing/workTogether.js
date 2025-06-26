@@ -1,29 +1,33 @@
+import { trabajar_conjunto } from "@/utils/workTogetherUtils";
 import styles from '@/styles/workTogether.module.css';
+
 const imgBasePath = "/img/numbers/";
 
 export default function WorkTogether() {
   return (
-    <div className={styles.container}>
-      <div className={styles.text}>
-        <div className={styles.left}>
-          <span className={styles.title}>
-            <em>1.REHABILITACIÓN Y REVESTIMIENTO DE TODOS LOS CANALES PRINCIPALES, LATERALES Y SUBLATERALES:</em>
-          </span>
+    <div className={styles.containerWorkTogether}>
+      <h2><span>¿Cómo Vamos</span> a <span className="spanDoarado">Trabajar</span> en <span className="spanDoarado">Conjunto?</span></h2>
+      {Object.values(trabajar_conjunto).map((data, idx) => (
+        <div className={styles.container} key={idx}>
+          <div className={styles.text}>
+            <div className={styles.left}>
+              <span className={styles.title}>
+                <em>{data.titulo}</em>
+              </span>
+            </div>
+            <div className={styles.right}>
+              <ul>
+                {Array.isArray(data.items) && data.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className={styles.bgImage}>
+            <img src={`${imgBasePath}${data.img}`} alt="img_representativa" className={styles.floatingImg} />
+          </div>
         </div>
-        <div className={styles.right}>
-          <ul>
-            <li>
-              Los trabajos se realizarán de 2025 a 2028, durante los meses de octubre a marzo (Ciclo Agrícola Otoño – Invierno, con la finalidad de afectar lo menos posible el ciclo agrícola y la economía del productor.
-            </li>
-            <li>
-              Habrá un corte técnico de agua de riego durante el periodo de ejecución de las obras.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.bgImage}>
-        <img src={`${imgBasePath}1.png`} alt="img_representativa" className={styles.floatingImg} />
-      </div>
+      ))}
     </div>
   );
 }

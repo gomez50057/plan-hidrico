@@ -1,5 +1,12 @@
-.container {
+.containerWorkTogether {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
+  padding: 2rem 2.5rem;
+}
+
+.container {
+  width: 100%;
   min-height: 200px;
   position: relative;
   display: flex;
@@ -9,12 +16,12 @@
 }
 
 .bgImage {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   z-index: 1;
   pointer-events: none;
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
@@ -25,7 +32,8 @@
 }
 
 .text {
-  width: calc(100vw - 230px);
+  position: absolute;
+  width: calc(100% - 225px);
   display: flex;
   align-items: flex-start;
   gap: 60px;
@@ -38,7 +46,7 @@
   flex: 1;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .title {
