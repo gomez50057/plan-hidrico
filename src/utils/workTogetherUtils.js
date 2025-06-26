@@ -1,6 +1,6 @@
 export const trabajar_conjunto = {
   elem01: {
-    titulo: "1. REHABILITACIÓN Y REVESTIMIENTO DE TODOS LOS CANALES PRINCIPALES, LATERALES Y SUBLATERALES:",
+    titulo: "1. REHABILITACIÓN Y REVESTIMIENTO DE TODOS LOS CANALES PRINCIPALES, LATERALES Y SUBLATERALES",
     items: [
       "Los trabajos se realizarán de 2025 a 2028, durante los meses de octubre a marzo (Ciclo Agrícola Otoño – Invierno, con la finalidad de afectar lo menos posible el ciclo agrícola y la economía del productor.",
       "Habrá un corte técnico de agua de riego durante el periodo de ejecución de las obras."
@@ -8,7 +8,7 @@ export const trabajar_conjunto = {
     img: "1.png"
   },
   elem02: {
-    titulo: "2. REHABILITACIÓN Y REVESTIMIENTO DE REGADERAS/CANALETAS:",
+    titulo: "2. REHABILITACIÓN Y REVESTIMIENTO DE REGADERAS/CANALETAS",
     items: [
       "El periodo de ejecución de los trabajos coincidirá con el revestimiento los canales principales, laterales y sublaterales.",
       "Se priorizarán las zonas con altos niveles de pérdida por infiltración de agua.",
@@ -18,7 +18,7 @@ export const trabajar_conjunto = {
     img: "2.png"
   },
   elem03: {
-    titulo: "3. NIVELACIÓN DE TIERRAS:",
+    titulo: "3. NIVELACIÓN DE TIERRAS",
     items: [
       "El Gobierno Estatal adquirirá 11 equipos de nivelación (9 tractores de alta potencia y 2 más de 155 hp, ambos equipos con sus respectivas niveladoras.",
       "Bajo una solicitud de los productores y en coordinación con los Módulos de Riego.",
@@ -27,7 +27,7 @@ export const trabajar_conjunto = {
     img: "3.png"
   },
   elem04: {
-    titulo: "4. TECNIFICACIÓN DEL RIEGO PARCELARIO:",
+    titulo: "4. TECNIFICACIÓN DEL RIEGO PARCELARIO",
     items: [
       "Implementando sistemas de riego por goteo, aspersión y multicompuertas.",
       "Seleccionando zonas agrícolas con criterios técnicos para determinar la tecnología idónea."
@@ -35,7 +35,7 @@ export const trabajar_conjunto = {
     img: "4.png"
   },
   elem05: {
-    titulo: "5. ASISTENCIA TÉCNICA:",
+    titulo: "5. ASISTENCIA TÉCNICA",
     items: [
       "Acompañamiento de especialistas durante el proceso de tecnificación parcelaria.",
       "Capacitación permanente para fortalecer el conocimiento y las capacidades productivas."
