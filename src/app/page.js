@@ -3,6 +3,7 @@ import AboutSection from "@/components/landing/About";
 import JustificationSection from "@/components/landing/Justification";
 // import MapSection from "@/components/landing/maps/ProjectMap";
 import MapSection from "@/components/landing/MapSection";
+import WorkTogether from "@/components/landing/workTogether";
 import InfoSwiper from "@/components/landing/InfoSwiper";
 import PublicKnowledgeSection from "@/components/landing/PublicKnowledgeSection";
 // import LogoCarousel from "@/components/landing/LogoCarousel";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <JustificationSection />
+      <WorkTogether />
       <InfoSwiper />
       <CarouselSlider />
       <PublicKnowledgeSection />
