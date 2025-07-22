@@ -1,162 +1,67 @@
 export const documentos = [
   {
-    nombre_documento: 'Gestión de cuencas hidrográficas',
-    descripcion: 'Estrategias para el manejo sostenible del recurso hídrico en cuencas agrícolas.',
-    autor: 'Dr. María Ríos',
-    fecha_carga: '2024-04-10',
+    nombre_documento: 'Acuerdo Nacional por el Derecho Humano al Agua y la Sustentabilidad',
+    descripcion: 'El Acuerdo Nacional por el Derecho Humano al Agua y la Sustentabilidad es una iniciativa en México que busca garantizar el acceso seguro al agua como un derecho humano. Promueve una nueva forma de gestionar el agua para que sea sustentable, justa y participativa que proteja los ecosistemas, respete los derechos de las comunidades y asegure el uso equitativo del recurso.',
+    autor: 'Comisión Nacional del Agua',
+    fecha_carga: '2025-07-22',
     categorias: ['Agua', 'Gestión'],
-    link: '#'
+    link: '/pdfs/citizen/acuerdo-nacional-agua-sustentabilidad.pdf'
   },
   {
-    nombre_documento: 'Uso racional del agua en cultivos de maíz',
-    descripcion: 'Recomendaciones técnicas para mejorar el rendimiento con menor uso de agua.',
-    autor: 'Ing. Carlos Paredes',
-    fecha_carga: '2024-03-18',
-    categorias: ['Agua', 'Agricultura'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Nivelación de terrenos agrícolas',
-    descripcion: 'Manual de procedimientos para nivelar suelos con pendiente natural.',
-    autor: 'Tec. Luis Bravo',
-    fecha_carga: '2024-02-15',
-    categorias: ['Nivelación', 'Agricultura'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Sistemas presurizados de riego',
-    descripcion: 'Comparación entre goteo y aspersión en distintos cultivos.',
-    autor: 'Dra. Helena Guzmán',
-    fecha_carga: '2023-12-30',
-    categorias: ['Riego', 'Agua'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Monitoreo de humedad en suelos agrícolas',
-    descripcion: 'Uso de sensores para determinar necesidades de riego.',
-    autor: 'Ing. Jorge Acosta',
-    fecha_carga: '2024-01-20',
-    categorias: ['Riego', 'Tecnología'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Captación de agua de lluvia para riego',
-    descripcion: 'Sistemas caseros y comunitarios de recolección de agua.',
-    autor: 'Ing. Patricia León',
-    fecha_carga: '2024-03-12',
-    categorias: ['Agua', 'Sostenibilidad'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Diagnóstico de sistemas de riego comunitarios',
-    descripcion: 'Evaluación de eficiencia y recomendaciones de mejora.',
-    autor: 'Dr. Rodrigo Méndez',
-    fecha_carga: '2024-01-05',
-    categorias: ['Riego', 'Gestión'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Planes de riego en temporada seca',
-    descripcion: 'Guía de planificación del recurso hídrico.',
-    autor: 'Tec. Gabriela Soto',
-    fecha_carga: '2023-11-10',
-    categorias: ['Riego', 'Agua'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Mapeo de canales de riego existentes',
-    descripcion: 'Herramientas SIG aplicadas a la infraestructura de riego.',
-    autor: 'Ing. Manuel Olivares',
-    fecha_carga: '2024-02-01',
-    categorias: ['Riego', 'Tecnología'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Optimización del riego por gravedad',
-    descripcion: 'Diseño y ejecución en terrenos semi-plano.',
-    autor: 'Dra. Carmen Vera',
-    fecha_carga: '2023-12-02',
-    categorias: ['Riego', 'Nivelación'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Erosión hídrica en suelos agrícolas',
-    descripcion: 'Causas, impactos y soluciones.',
-    autor: 'Dr. Andrés Salgado',
-    fecha_carga: '2024-04-01',
-    categorias: ['Agua', 'Suelos'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Guía básica de zanjas de infiltración',
-    descripcion: 'Captura y almacenamiento de agua en campo.',
-    autor: 'Ing. Silvia López',
-    fecha_carga: '2023-10-15',
-    categorias: ['Agua', 'Conservación'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Estudio de eficiencia hídrica en cultivos de arroz',
-    descripcion: 'Comparativa entre parcelas con y sin nivelación.',
-    autor: 'Tec. Eduardo Mora',
-    fecha_carga: '2024-03-22',
-    categorias: ['Agricultura', 'Nivelación'],
-    link: '#'
-  },
-  {
-    nombre_documento: 'Desarrollo de planes de manejo de agua',
-    descripcion: 'Enfoques participativos y territoriales.',
-    autor: 'Dra. Paula Núñez',
-    fecha_carga: '2023-09-05',
+    nombre_documento: 'Reglas de Operación para el Programa de Apoyo a la Infraestructura Hidroagrícola 2025',
+    descripcion: 'Documento que establece los criterios y la organización para la asignación de recursos destinados a mejorar la infraestructura de riego y drenaje en distritos, unidades de riego y temporal tecnificado en México.',
+    autor: 'Comisión Nacional del Agua',
+    fecha_carga: '2025-07-22',
     categorias: ['Agua', 'Gestión'],
-    link: '#'
+    link: '/pdfs/citizen/reglas-operacion-programa-infraestructura-hidroagricola-2025.pdf'
   },
   {
-    nombre_documento: 'Fertilización eficiente en zonas regadas',
-    descripcion: 'Relación entre fertilizante, humedad y absorción.',
-    autor: 'Ing. Tomás Vega',
-    fecha_carga: '2024-04-03',
-    categorias: ['Riego', 'Fertilización'],
-    link: '#'
+    nombre_documento: 'Ecosistema Agroalimentario del Mezquital',
+    descripcion: 'El Agroparque del Valle del Mezquital es una iniciativa estratégica orientada a la transformación y modernización del sector agroalimentario en esta región del estado de Hidalgo. El proyecto tiene como objetivo principal integrar la producción primaria con procesos de valor agregado, comercialización, innovación tecnológica y sostenibilidad ambiental, a través de una plataforma agroindustrial que impulse el desarrollo económico y social de las comunidades rurales.',
+    autor: 'Unidad de Planeación y Prospectiva',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/ecosistema-agroalimentario-mezquital.pdf'
   },
   {
-    nombre_documento: 'Experiencias exitosas de riego parcelario',
-    descripcion: 'Casos documentados en comunidades rurales.',
-    autor: 'Tec. Lorena Alfaro',
-    fecha_carga: '2024-02-27',
-    categorias: ['Riego', 'Agricultura'],
-    link: '#'
+    nombre_documento: 'Plan Estatal de Desarrollo 2022-2028',
+    descripcion: 'El Plan Estatal de Desarrollo 2022-2028 es un documento estratégico que establece las metas, objetivos y acciones específicas destinadas a mejorar la calidad de vida de los residentes de un municipio en diversos aspectos. Incluye análisis de la situación actual, identificación de necesidades y prioridades, así como la definición de políticas y proyectos a implementar en áreas clave como infraestructura, educación, salud, medio ambiente, economía y cultura. Este plan busca promover el crecimiento sostenible, la equidad social y el desarrollo integral de la comunidad, involucrando la participación activa de la sociedad civil, el sector privado y el gobierno local. Su objetivo es trazar un rumbo claro para el progreso y bienestar a largo plazo, teniendo en cuenta las características y desafíos específicos de cada municipio.',
+    autor: 'Gobierno del Estado del Hidalgo',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/plan-estatal-desarrollo-2022-2028.pdf'
   },
   {
-    nombre_documento: 'Estudio hidrogeológico para perforación de pozos',
-    descripcion: 'Metodología y riesgos técnicos.',
-    autor: 'Dr. Enrique Lozano',
-    fecha_carga: '2023-11-25',
-    categorias: ['Agua', 'Subterránea'],
-    link: '#'
+    nombre_documento: 'Plan Nacional de Desarrollo 2025 - 2030',
+    descripcion: 'Es un documento estratégico que establece las directrices, objetivos y metas del gobierno de México para el desarrollo económico, social y político del país durante el periodo de 2025 a 2030. Este plan tiene como objetivo guiar las políticas públicas y la toma de decisiones del gobierno federal para lograr un crecimiento sostenido y equitativo, atendiendo las necesidades y demandas de la sociedad mexicana.',
+    autor: 'Gobierno Federal Mexicano',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/plan-nacional-desarrollo-2025-2030.pdf'
   },
   {
-    nombre_documento: 'Evaluación de pérdidas por escurrimiento',
-    descripcion: 'Herramientas para cuantificación en parcelas.',
-    autor: 'Ing. Marta Ruiz',
-    fecha_carga: '2024-01-29',
-    categorias: ['Agua', 'Conservación'],
-    link: '#'
+    nombre_documento: 'Plan Nacional Hídrico 2024-2030',
+    descripcion: 'El objetivo principal del Plan Nacional Hídrico 2024-2030 es garantizar el derecho humano al agua en cantidad y calidad suficiente, asegurar la sostenibilidad de nuestros recursos y fomentar un manejo adecuado y responsable del agua en todos sus usos.',
+    autor: 'Comisión Nacional del Agua',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/plan-nacional-hidrico-2024-2030.pdf',
   },
   {
-    nombre_documento: 'Nivelación con uso de tecnología GPS',
-    descripcion: 'Precisión en el diseño de pendientes agrícolas.',
-    autor: 'Tec. Javier Figueroa',
-    fecha_carga: '2024-03-05',
-    categorias: ['Nivelación', 'Tecnología'],
-    link: '#'
+    nombre_documento: 'Programa Sectorial de Desarrollo de Agricultura y Desarrollo Rural 2023-2028',
+    descripcion: 'Instrumento de planeación de mediano plazo elaborado por las dependencias coordinadoras de sector de la Administración Pública Estatal, en el cual se definen los objetivos, estrategias y acciones a realizar en cada sector para el desarrollo del Estado.',
+    autor: 'Secretaría de Agricultura y Desarrollo Rural del Estado de Hidalgo',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/programa-sectorial-agricultura-rural-2023-2028.pdf'
   },
   {
-    nombre_documento: 'Manual para diseño de obras de riego',
-    descripcion: 'Criterios técnicos y normativos.',
-    autor: 'Dra. Mónica Aranda',
-    fecha_carga: '2024-02-12',
-    categorias: ['Riego', 'Diseño'],
-    link: '#'
-  }
+    nombre_documento: 'Programa Sectorial de Agricultura y Desarrollo Rural 2020-2024',
+    descripcion: 'El Programa Sectorial de Agricultura y Desarrollo Rural (SADER) 2020-2024 es un documento que establece las políticas y estrategias prioritarias para el sector agropecuario y pesquero de México, alineado con el Plan Nacional de Desarrollo. Su objetivo principal es alcanzar la autosuficiencia alimentaria, contribuir al bienestar rural y promover prácticas sostenibles. El programa se enfoca en aumentar la producción y productividad, apoyar a pequeños y medianos productores, y garantizar alimentos nutritivos y de calidad.',
+    autor: 'Secretaría de Agricultura y Desarrollo Rural de México',
+    fecha_carga: '2025-07-22',
+    categorias: ['Agua', 'Gestión'],
+    link: '/pdfs/citizen/programa-sectorial-agricultura-rural-2020-2024.pdf'
+  },
+
 ];

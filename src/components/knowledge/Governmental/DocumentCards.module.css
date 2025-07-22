@@ -7,9 +7,11 @@
 .filtros {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
+  position: relative;
+  z-index: 9000;
 }
 
 .filtros input[type="text"],

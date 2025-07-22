@@ -42,11 +42,11 @@ export default function DocumentCards() {
           onChange={(selected) => setCategoriaFiltro(selected ? selected.map(s => s.value) : [])}
         />
 
-        <input
+        {/* <input
           type="date"
           value={fechaFiltro}
           onChange={e => setFechaFiltro(e.target.value)}
-        />
+        /> */}
       </div>
 
       <div className={styles.grid}>
@@ -65,10 +65,10 @@ export default function DocumentCards() {
                 </div>
 
                 <div className={styles.cardMetaRow}>
-                  <div>
+                  {/* <div>
                     <p>{doc.categorias.join(', ')}</p>
                     <p><small>Fecha: {doc.fecha_carga}</small></p>
-                  </div>
+                  </div> */}
                   <div className={styles.footerLinkBox}>
                     <a href={doc.link} target="_blank" rel="noopener noreferrer">
                       Ver documento
