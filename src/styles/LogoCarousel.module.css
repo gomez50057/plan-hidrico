@@ -13,6 +13,7 @@
   min-width: fit-content;
   animation: scroll 80s linear infinite;
   animation-play-state: running;
+  gap: 1rem;
 }
 
 .carouselWrapper:hover .carousel {

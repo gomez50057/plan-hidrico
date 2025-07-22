@@ -44,14 +44,14 @@
 }
 
 .slideOverlay h2 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: bold;
   margin: 0;
   color: var(--blanco);
 }
 
 .slideOverlay p {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
   margin-top: 0.5rem;
   color: var(--blanco);
 }
@@ -64,7 +64,7 @@
   margin-top: 1rem;
 }
 
-.buttonWrapper  a {
+.buttonWrapper a {
   text-decoration: none;
 }
 
