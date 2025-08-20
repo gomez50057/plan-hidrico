@@ -8,7 +8,7 @@ export default function Hero() {
     <section>
       <div className={styles.contentHeader}>
         <div className={`${styles.headerImg}`}>
-          <img src={`${imgBasePath}hero.svg`} alt="portada de Ecos del territorio hídrico" className={styles.floatingImg} />
+          <img src={`${imgBasePath}hero.png`} alt="portada de Ecos del territorio hídrico" className={styles.floatingImg} />
         </div>
       </div>
     </section>

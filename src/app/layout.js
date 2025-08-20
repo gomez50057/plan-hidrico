@@ -4,16 +4,16 @@ import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 import "@/styles/globals.css";
 
 export const metadata = {
-  title: "Plan Hídrico Metropolitano | Gobierno de Hidalgo",
+  title: "Plan Hídrico del Valle del Mezquital | Gobierno de Hidalgo",
   description:
-    "Consulta el Plan Hídrico Metropolitano del Estado de Hidalgo. Una estrategia integral para la gestión sostenible del agua.",
+    "Descubre la estrategia integral para la gestión sustentable del agua y mejorar la productividad del campo en el Valle del Mezquital",
   keywords: [
     "Plan Hídrico Hidalgo",
     "Agua en Hidalgo",
     "Gestión hídrica",
     "Planeación ambiental",
     "Gobierno del Estado de Hidalgo",
-    "Zonas metropolitanas",
+    "Valle del Mezquital",
   ],
   icons: {
     icon: "/favicon.ico",
@@ -31,17 +31,17 @@ export const metadata = {
 
   // Open Graph (para compartir en redes como Facebook, WhatsApp, LinkedIn)
   openGraph: {
-    title: "Plan Hídrico Metropolitano | Gobierno de Hidalgo",
+    title: "Plan Hídrico del Valle del Mezquital | Gobierno de Hidalgo",
     description:
-      "Descubre la estrategia integral para el desarrollo sustentable del agua en las zonas metropolitanas de Hidalgo.",
+      "Descubre la estrategia integral para la gestión sustentable del agua y mejorar la productividad del campo en el Valle del Mezquital",
     url: "https://planhidrico.hidalgo.gob.mx",
-    siteName: "Plan Hídrico Metropolitano",
+    siteName: "Plan Hídrico del Valle del Mezquital",
     images: [
       {
         url: "/og-image-hidrico.png",
         width: 1200,
         height: 630,
-        alt: "Imagen representativa del Plan Hídrico Metropolitano",
+        alt: "Imagen representativa del Plan Hídrico del Valle del Mezquital",
       },
     ],
     locale: "es_MX",

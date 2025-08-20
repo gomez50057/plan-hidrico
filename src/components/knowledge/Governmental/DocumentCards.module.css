@@ -1,7 +1,5 @@
 .container {
   padding: 2rem;
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f4f4;
 }
 
 .filtros {
@@ -35,6 +33,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  overflow: hidden;
 }
 
 .card::before,
@@ -79,6 +78,9 @@
 
 .cardFooter {
   margin-top: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .footerInfo {
@@ -89,23 +91,26 @@
 .authorLine {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  margin: 0;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .authorLine hr {
-  flex: 1;
+  flex: 1 1 auto;
   border: none;
   border-top: 2px solid var(--grisClr);
   margin: 0;
+  min-width: 0;
 }
 
 .authorLine strong {
-  white-space: nowrap;
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--grisClr);
+  min-width: 0;
+  word-break: break-word;
 }
 
 .cardMetaRow {
@@ -149,6 +154,11 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .authorLine strong {
+    max-width: 60vw;
+    font-size: 1rem;
   }
 
   .cardMetaRow {
