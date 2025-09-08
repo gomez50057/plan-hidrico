@@ -1,8 +1,8 @@
 export const trabajar_conjunto = {
   elem01: {
-    titulo: "REHABILITACIÓN Y REVESTIMIENTO DE TODOS LOS CANALES PRINCIPALES, LATERALES Y SUBLATERALES",
+    titulo: "REHABILITACIÓN Y REVESTIMIENTO DE CANALES PRINCIPALES, LATERALES Y SUBLATERALES",
     items: [
-      "Los trabajos se llevarán a cabo de 2025 a 2028, durante los meses de octubre a marzo, correspondientes al Ciclo Agrícola Otoño–Invierno, con el propósito de impactar lo menos posible el ciclo productivo y la economía de los agricultores.",
+      "Los trabajos se llevarán a cabo de 2025 a 2030, durante los meses de octubre a marzo, correspondientes al Ciclo Agrícola Otoño–Invierno, con el propósito de impactar lo menos posible el ciclo productivo y la economía de los agricultores.",
       "Habrá un corte técnico de agua de riego durante el periodo de ejecución de las obras."
     ],
     img: "1.png"

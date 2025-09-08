@@ -28,7 +28,6 @@
   width: 75vw;
 }
 
-
 /*  */
 /* Elemento 01 */
 /*  */
@@ -138,6 +137,7 @@
   width: calc(100% - 3rem);
   height: auto;
   padding: 1rem 1.5rem;
+  text-align: justify;
 }
 
 .item {
@@ -176,6 +176,7 @@
   word-break: break-word;
   flex: 1;
   font-weight: 500;
+  padding-right: 0.5rem;
 }
 
 
@@ -218,7 +219,6 @@
   .textElement02 {
     font-size: 0.8rem;
   }
-
 }
 
 /* ==========================
@@ -261,10 +261,7 @@
   
   .textElement02 {
     font-size: 0.8rem;
-  }
-
-
-  
+  }  
 
   .element01,
   .element02 {
@@ -310,58 +307,6 @@
    Celulares (<=767px)
    ========================== */
 @media (max-width: 767px) {
-  /* .wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .element01,
-  .element02 {
-    flex-direction: column;
-    width: 95vw;
-    gap: 1rem;
-  }
-
-  .textElement01 h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .textElement01 p {
-    font-size: 1rem;
-    text-align: justify;
-  }
-
-  .imgContainerElement02 {
-    max-width: 95vw;
-  }
-
-  .imgContainerElement02 img:nth-of-type(1) {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .imgContainerElement02 img:nth-of-type(2) {
-    width: 100%;
-  }
-
-  .fileShapeR {
-    width: 95vw;
-    margin-left: 0;
-  }
-
-  .item {
-    width: 100%;
-    right: 0;
-  }
-
-  .cardElement02 {
-    padding: 1rem;
-  } */
-
-  
-
   .element01 {
     width: 400vw;
   }
