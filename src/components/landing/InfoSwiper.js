@@ -88,7 +88,7 @@ export default function InfoSwiper() {
                         </div>
                       )}
                     </div>
-                    <div className={styles.cardDText}>
+                    <div className={styles.cardDTextBottom}>
                       <p>Módulo de riego:</p>
                       <p>{item.modulo}</p>
                     </div>

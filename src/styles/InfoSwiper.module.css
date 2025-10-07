@@ -111,20 +111,31 @@
   padding: 1rem 0;
 }
 
-.cardDText p:first-of-type {
+.cardDTextBottom {
+  padding: 1rem;
+}
+
+.cardDTextBottom {
+  text-align: justify;
+  min-height: 120px;
+  min-width: 220px;
+}
+
+.cardDText p:first-of-type,
+.cardDTextBottom p:first-of-type {
   font-weight: 700;
   font-size: 1.3rem;
   color: var(--vinoClr);
   margin: 0;
 }
 
-.cardDText p:nth-of-type(2) {
+.cardDText p:nth-of-type(2),
+.cardDTextBottom p:nth-of-type(2) {
   font-weight: 400;
   font-size: 1.1rem;
   margin: 0;
 }
 
-/* Container CardDText */
 .containerCardDText {
   margin-left: 20px;
   display: flex;
@@ -132,7 +143,6 @@
   gap: 0.2rem;
 }
 
-/* Dynamic Parcela Image */
 .imgMunicipioWrapper {
   padding: 1rem 0;
   width: 100%;
@@ -156,7 +166,6 @@
     transform: translateX(7px);
   }
 }
-
 
 .swiperWrapper {
   position: relative;
@@ -216,17 +225,32 @@
     height: 550px;
   }
 
-  .cardDText p:first-of-type {
+  .cardDText p:first-of-type,
+  .cardDTextBottom p:first-of-type {
     font-size: 1.2rem;
   }
 
-  .cardDText p:nth-of-type(2) {
+  .cardDText p:nth-of-type(2) .cardDTextBottom p:nth-of-type(2) {
     font-size: 1rem;
+  }
+
+  .imageWrapper {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
   }
 }
 
 /* Tablets (768px - 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+  }
+
   .infoSwiperContainer {
     flex-direction: column;
     align-items: center;
@@ -262,17 +286,27 @@
     padding: 20px 10px;
   }
 
-  .cardDText p:first-of-type {
+
+
+  .cardDText p:first-of-type,
+  .cardDTextBottom p:first-of-type {
     font-size: 1.1rem;
   }
 
-  .cardDText p:nth-of-type(2) {
+  .cardDText p:nth-of-type(2),
+  .cardDTextBottom p:nth-of-type(2) {
     font-size: 1rem;
   }
 }
 
 /* Celulares (<=767px) */
 @media (max-width: 767px) {
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+  }
+
   .infoSwiperContainer {
     flex-direction: column;
     align-items: center;
@@ -313,11 +347,13 @@
     padding: 15px 10px;
   }
 
-  .cardDText p:first-of-type {
+  .cardDText p:first-of-type,
+  .cardDTextBottom p:first-of-type {
     font-size: 1rem;
   }
 
-  .cardDText p:nth-of-type(2) {
+  .cardDText p:nth-of-type(2),
+  .cardDTextBottom p:nth-of-type(2) {
     font-size: 0.9rem;
   }
 }

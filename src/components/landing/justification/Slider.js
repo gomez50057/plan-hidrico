@@ -7,45 +7,85 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from './Slider.module.css';
 
 const imgBasePath = "/img/";
+const DESKTOP_MIN = 1300; // Solo aplica GSAP desde este ancho
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Slider = ({ items }) => {
   const containerRef = useRef(null);
   const wrapperRef = useRef(null);
+  const animationRef = useRef(null);
+  const mqRef = useRef(null);
 
   useLayoutEffect(() => {
     const containerEl = containerRef.current;
     const wrapper = wrapperRef.current;
     if (!containerEl || !wrapper) return;
 
-    const containerWidth = containerEl.getBoundingClientRect().width;
-    const wrapperWidth = wrapper.scrollWidth;
-    const offset = 1000;
+    const enableGsap = () => {
+      // Evita dobles instancias
+      if (animationRef.current) {
+        animationRef.current.scrollTrigger?.kill();
+        animationRef.current.kill();
+        animationRef.current = null;
+      }
 
-    const initialX = containerWidth - offset;
-    const finalX = containerWidth - wrapperWidth - offset;
+      const containerWidth = containerEl.getBoundingClientRect().width;
+      const wrapperWidth = wrapper.scrollWidth;
+      const offset = 1000;
 
-    gsap.set(wrapper, { x: initialX });
+      const initialX = containerWidth - offset;
+      const finalX = containerWidth - wrapperWidth - offset;
 
-    const animation = gsap.to(wrapper, {
-      x: finalX,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: containerEl,
-        start: 'center center',
-        pin: true,
-        scrub: 1,
-        end: () => `+=${wrapperWidth}`,
-        invalidateOnRefresh: true,
-      },
-    });
+      gsap.set(wrapper, { x: initialX }); // posición inicial en desktop
 
-    ScrollTrigger.refresh();
+      animationRef.current = gsap.to(wrapper, {
+        x: finalX,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerEl,
+          start: 'center center',
+          pin: true,
+          scrub: 1,
+          end: () => `+=${wrapperWidth}`,
+          invalidateOnRefresh: true,
+        },
+      });
 
+      ScrollTrigger.refresh();
+    };
+
+    const disableGsap = () => {
+      if (animationRef.current) {
+        animationRef.current.scrollTrigger?.kill();
+        animationRef.current.kill();
+        animationRef.current = null;
+      }
+      // Limpia transformaciones para layout vertical natural
+      gsap.set(wrapper, { clearProps: 'transform' });
+      // Por si quedó algún pin activo
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.trigger === containerEl) st.kill();
+      });
+      ScrollTrigger.refresh();
+    };
+
+    const applyMode = (isDesktop) => {
+      if (isDesktop) enableGsap();
+      else disableGsap();
+    };
+
+    // Media query para alternar comportamiento
+    mqRef.current = window.matchMedia(`(min-width: ${DESKTOP_MIN}px)`);
+    applyMode(mqRef.current.matches);
+
+    const onChange = (e) => applyMode(e.matches);
+    mqRef.current.addEventListener('change', onChange);
+
+    // Cleanup
     return () => {
-      animation.scrollTrigger.kill();
-      animation.kill();
+      mqRef.current?.removeEventListener('change', onChange);
+      disableGsap();
     };
   }, [items]);
 
@@ -78,6 +118,9 @@ const Slider = ({ items }) => {
             <img src={`${imgBasePath}img02Justificacion.png`} alt="Polígono del valle del mezquital" />
           </div>
           <div className={styles.fileShapeR}>
+            <div className={styles.topShape}>
+              <img src={`${imgBasePath}topShape.png`} alt="Polígono del valle del mezquital" />
+            </div>
             <h2 className={styles.title}>
               ¿Qué busca el <span className='spanDoaradoClr'>Plan Hídrico</span> del <span className='spanDoaradoClr'>Valle del Mezquital?</span>
             </h2>
