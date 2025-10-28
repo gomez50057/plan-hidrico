@@ -40,7 +40,7 @@ const MapSection = () => {
               {isFullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
             </div>
             <iframe
-              src="https://gomez50057.github.io/Plan-Hidrico-Metropolitano/"
+              src="https://gomez50057.github.io/Plan-Hidrico-Metropolitano-mapa/"
               title="Mapa Interactivo"
               width="100%"
               height="100%"
