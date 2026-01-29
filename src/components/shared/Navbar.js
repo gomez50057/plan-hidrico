@@ -18,6 +18,8 @@ const NAV_ITEMS = [
     submenu: [
       { label: "Ecos del territorio hídrico", href: "/ecos-del-territorio-hidrico" },
       { label: "Planeación para el futuro del agua", href: "/planeacion-para-el-futuro-del-agua" },
+      { label: "Planes Directores de los Distritos de Riego", href: "/planes-directores-dr/" },
+      { label: "Proveedores Cooperantes en Parcelas Demostrativas", href: "/proveedores-cooperantes" },
     ],
   },
   { label: "Capacitación", href: "/capacitacion" },
