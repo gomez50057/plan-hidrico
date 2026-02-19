@@ -12,3 +12,8 @@ module.exports = {
   },
 };
 
+const nextConfig = {
+  output: "standalone",
+};
+
+module.exports = nextConfig;
