@@ -22,7 +22,7 @@ const NAV_ITEMS = [
       { label: "Proveedores Cooperantes en Parcelas Demostrativas", href: "/proveedores-cooperantes" },
     ],
   },
-  { label: "Capacitación", href: "/capacitacion" },
+  // { label: "Capacitación", href: "/capacitacion" },
   {
     label: "Tecnificación y nivelación parcelaria",
     href: "https://bancodeproyectos.hidalgo.gob.mx/planhidrico/login/",
